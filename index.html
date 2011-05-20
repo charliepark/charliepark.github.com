@@ -5,7 +5,7 @@ title: BaseRocket
 <ul id='interviews'>
 {% for post in site.posts limit:10 %}
 	<li>
-    	<a href='http://{{post.slug}}.charliepark.github.com/' title='View an interview with {{post.person}}.'>
+    	<a href='http://charliepark.github.com/{{post.title}}' title='View an interview with {{post.person}}.'>
 			<img src='/images/portraits/{{post.slug}}.jpg' alt='{{post.person}}' width='500' height='335' class='portrait'>
 			<h2 class='person'>{{post.person}}</h2>
 		</a>
