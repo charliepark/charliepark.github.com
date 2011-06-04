@@ -1,197 +1,72 @@
-a:link, a:visited {
-color: #fe2e9a;
-text-decoration: none;
-}
+/* from Eric Meyer: v2.0b1 | 201101 */
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{border:0;font:inherit;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{display:block}
+body{line-height:1}
+ol, ul{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none}
+ins{text-decoration:none}
+del{text-decoration:line-through}
+table{border-collapse:collapse;border-spacing:0}
+/* end of Eric Meyer's CSS Reset */
 
-a:hover {
-text-decoration: underline;
-}
+body, input, select, textarea{color:#000;font-family:'helvetica neue',helvetica,arial,sans-serif;font-size:14px;line-height:1.618}
 
-article.contents h3:before {
-counter-increment: questions;
-content: counter(questions);
-background-color: #eee;
-padding: 5px;
-margin: 0 10px 0 0;
-font-weight: bold;
-}
+a{color:#c00;text-decoration:none;}
+h1 a, h2 a{color:inherit}
+h5.subscribe a{color:inherit}
+nav a{display:inline-block;padding:0 10px 2px;width:80px;background:rgba(255,0,0,0.0);}
+nav a + a{border-left: 1px solid #eee}
 
-article.contents ul, article.contents ol {
-list-style: disc;
-padding: 10px 25px;
-font-size: 80%;
-}
+abbr{text-transform:lowercase;font-variant:small-caps}
 
-aside#sidebar {
-float: right;
-width: 130px;
-padding: 20px 0 0 10px;
-font-size: 80%;
-}
+article{border-bottom:1px solid #ccc;margin:0 10px 20px;padding:10px 0 40px;}
+b{font-weight:bold;}
+blockquote{border-left:5px solid #ccc;color:#444;font-size:13px;margin:10px;padding:0 20px;}
+body{margin:0 auto;padding:0;position:relative;width:520px;}
+code{font-family:monaco,monospace;font-size:.9em}
+dd{border-left:5px solid #E5F2FF;margin:0 0 1em 10px;padding:0 0 0 10px;}
+div.meta_wrapper{border:1px solid #C9C6C3;border-width:1px 0;color:#666;font-size:12px;line-height:20px;margin:10px 0 30px;padding:10px 0 2px;}
+.postdate{clear:both;float:left;width:200px;}
 
-aside#sidebar img {
-margin-bottom: 10px;
-}
+dl{}
+dt{font-size:14px;font-weight:bold;}
 
-aside#sidebar p {
-padding: 0;
-margin: 0 0 10px 0;
-}
+em{font-style:italic}
 
-aside#sidebar .fusiontext a {
-color: #000;
-font-size: 90%;
-}
+form#search{margin:5px auto 0;text-align:center;}
+header:after{display:block;clear:both;content:'';float:none;height:1px;}
 
-body {
-counter-reset: questions;
-padding: 20px;
-margin: 0;
-font-family: "helvetica neue", helvetica, serif;
-font-size: 15px;
-}
+h1, h2, h3, h4, h5, h6{font-family:"Adobe Garamond Pro","Apple Garamond","Garamond","Georgia",serif;line-height:1;padding:1em 0 .2em;}
+h1{font-size:64px;letter-spacing:2px;padding:30px 10px 0;text-align:center;text-transform:uppercase;word-spacing:2px;background:rgba(255,0,0,0.0)}
+h2{font-size:40px;padding-left:1em;text-indent:-1em;text-transform:uppercase;}
+h3{font-size:30px;padding-top:22px;}
+h4{font-size:20px;}
+h5.subscribe{background:url('rss2.png') 62px 3px no-repeat;background-size: 14px;clear:both}
 
-footer {
-clear: both;
-padding-top: 20px;
-color: #888;
-font-size: 80%;
-}
+header{}
+html{background:#fff;}
 
-h1 {
-float: left;
-padding: 10px 0;
-margin: 0 30px 0 0;
-font-size: 250%;
-}
+form#search input{background:#fff;border:0;box-shadow:inset 0 1px 2px #ccc;-moz-border-radius: 2px;border-radius: 2px;color:#aaa;font-size:13px;font-weight:inherit;height:10px;margin:0 auto;padding:4px 6px;text-align:center;width:220px;}
 
-h1 a:link, h1 a:visited {
-color: #000 !important;
-}
+li{margin:0 0 0 20px;padding:0;}
+li:last-child{padding-bottom:20px;}
+li li:last-child{padding: 0;}
+ol li{list-style:decimal}
+ol ol li{list-style:upper-alpha;}
+ul li{list-style:disc;}
+ul.tags li{border-left:1px solid #ccc;display:inline;list-style:none;margin:0;padding:0 8px;position:relative;}
+ul.tags li:first-child{border:0;padding-left:0}
+ul ul li{list-style:circle;}
 
-h2 {
-padding: 0;
-margin: 0;
-font-size: 150%;
-font-weight: normal;
-}
+nav{font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;text-align:center;text-transform:lowercase;background:rgba(255,0,0,0.0)}
 
-h2 a:link, h2 a:visited {
-color: #000 !important;
-}
+p{padding:0 0 1em;}
+p.meta{border:1px solid #eee; border-width:1px 0;color:#888;font-size:12px;margin:0 0 10px;padding:2px 0 2px;}
+blockquote p{padding:0}
+blockquote p+p{padding-top:1em}
+strong{font-weight:bold;line-height:1em;}
 
-h3 {
-padding: 0;
-margin: 20px 0 0 0;
-color: #555;
-font-size: 140%;
-font-weight: normal;
-}
-
-html {
-width: 702px;
-margin: auto;
-}
-
-img.icon {
-float: left;
-margin-right: 20px;
-}
-
-p#tagline {
-padding: 10px 0 0 0;
-margin: 0;
-color: #888;
-font-size: 80%;
-}
-
-p.credits {
-float: right;
-padding: 0;
-margin: 0;
-color: #aaa;
-font-size: 80%;
-}
-
-p.summary {
-padding: 0;
-margin: 2px 0 0 0;
-font-size: 85%;
-color: #666;
-}
-
-nav ul {
-padding: 10px 0 20px 0;
-margin: 0;
-font-size: 120%;
-border-bottom: dotted 1px #aaa;
-}
-
-nav ul li {
-display: inline;
-}
-
-nav ul li.selected {
-font-weight: bold;
-}
-
-nav ul li:after {
-content: " / ";
-color: #ddd;
-}
-
-
-section#contents {
-width: 500px;
-padding: 20px 18px 0 0;
-line-height: 25px;
-}
-
-section#contents a:hover img {
-opacity: 0.9;
-}
-
-section#contents img {
-border: solid 1px #000;
-margin-bottom: 10px;
-}
-
-time {
-display: block;
-padding: 0;
-margin: 0;
-font-size: 70%;
-color: #888;
-}
-
-time:before {
-content: "Published on ";
-}
-
-ul, ol {
-padding: 10px;
-margin: 10px 20px;
-font-size: 85%;
-}
-
-ul#interviews {
-list-style: none inside;
-padding: 0;
-margin: 0;
-font-size: 100%;
-}
-
-ul#interviews li {
-clear: left;
-padding-bottom: 5px;
-margin-bottom: 15px;
-border-bottom: dotted 1px #ddd;
-}
-
-ul#interviews a h2 {
-color: #000;
-}
-
-ul#interviews a:hover h2 {
-color: #fe2e9a;
-}
+ul.tags{float:right;width:280px}
