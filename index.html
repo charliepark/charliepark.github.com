@@ -6,5 +6,5 @@ title: Charlie Park
 	<h2><a href='{{post.url}}'>{{post.title}}</a></h2>
 	<p class='summary'>{{post.launched}}</p>
 	<time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%B %d, %Y"}}</time>
-	{{post.tags}}
+	{{array_to_sentence(post.categories)}}
 {% endfor %}
