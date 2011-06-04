@@ -6,5 +6,5 @@ title: Archives
 	<h2><a href='{{post.url}}'>{{post.title}}</a></h2>
 	<p class='summary'>{{post.launched}}</p>
 	<time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%B %d, %Y"}}</time>
-	<ul><li>{{post.tags}}</li></ul>
+	<p>{{post.category}}</p>
 {% endfor %}
