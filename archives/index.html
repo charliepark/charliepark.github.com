@@ -9,4 +9,9 @@ title: Archives
 	<p>{{post.category}}</p>
 {% endfor %}
 
-site.categories.CATEGORY
+{% for category in site.categories %}
+
+<li><a href="/categories/{{ category[0] }}.html">{{ category[0] }}</a></li>
+
+{% endfor %}
+
