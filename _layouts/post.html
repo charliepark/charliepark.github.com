@@ -1,6 +1,26 @@
 ---
 layout: default
 ---
+<article>
+
+	<h2><a href="">The Thing You Are Doing</a></h2>
+	<p>{{page.tags}}</p>
+	<p class="meta"><time datetime="{{page.date | date: "%Y-%m-%d"}}">{{page.date | date: "%B %d, %Y"}}</time></p>
+	<p>From Ask MetaFilter, user <a href="http://www.metafilter.com/user/99473" target="_blank">stoneweaver</a>, in response to the question &#8220;<a href="http://ask.metafilter.com/185014/" target="_blank">How [can I] get that military focus, time &amp; project management skills, excellent organization and self-discipline without the actual military experience?</a>&#8221;:</p>
+
+	<blockquote>
+	<p>You are absolutely going to hate my answer, which I&#8217;m sorry for. The answer is: Just do it. When the alarm goes off and you don&#8217;t want to get up? Just get up and do it. Tell yourself &#8220;Just for today, I&#8217;m going to just get up.&#8221; When the project needs to be done, just do it. Say to yourself, &#8220;This is going to take a half hour, and I can do it for the next half hour.&#8221;</p>
+
+	<p>Being organized and having time management aren&#8217;t easy. There&#8217;s not some magical thing the people in the military know that you don&#8217;t know. It&#8217;s not any more fun or whatever for them. It&#8217;s just that they aren&#8217;t expecting it to be. It doesn&#8217;t keep them from doing it.</p>
+
+	<p>Stop thinking of it as a <strong>choice</strong> and recognize that it&#8217;s just the thing you are doing. When the alarm goes off, you get up. Full stop. When you are sitting down to finish paperwork, that&#8217;s what you&#8217;re doing. Full stop. When you have other fun things to do, things you would rather do, recognize that they&#8217;re not the priority and you have to do first things first. Full stop.</p>
+
+	<p>It&#8217;s about not giving yourself a break. But do start small. Instead of tackling it all Right Now, decide that for the next month you&#8217;re going to get out of bed when the alarm goes off no exceptions. Once you&#8217;ve got that, move on to the next thing. One at a time.</p>
+
+	</blockquote>
+</article>
+
+
 <article class="overview">
 	<img src="/images/portraits/{{page.slug}}.jpg" alt="{{page.person}}" width="500" height="335" class="portrait">
 	{% if page.credits %}<p class="credits">Credits: {% if page.credits.url %}<a href="{{page.credits.url}}" title="{{page.person}} by {{page.credits.name}}.">{{page.credits.name}}</a>{% else %}{{page.credits.name}}{% endif %}</p>{% endif %}
