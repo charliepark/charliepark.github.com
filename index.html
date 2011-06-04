@@ -3,7 +3,7 @@ layout: default
 title: Charlie Park
 ---
 {% for post in site.posts limit:10 %}
-	<h2><a href='{{post.url}}'>{{post.slug}}</a></h2>
+	<h2><a href='{{post.url}}'>{{post.title}}</a></h2>
 	<p class='summary'>{{post.launched}}</p>
 	<time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%B %d, %Y"}}</time>
 {% endfor %}
