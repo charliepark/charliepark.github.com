@@ -40,8 +40,9 @@ form#search{margin:5px auto 0;text-align:center;}
 header:after{display:block;clear:both;content:'';float:none;height:1px;}
 
 h1, h2, h3, h4, h5, h6{font-family:"League Gothic", "Helvetica Neue", helvetica, arial, sans-serif;line-height:1;padding:1em 0 .2em;}
-h1{font-size:100px;padding:30px 10px 0;text-align:center;text-transform:lowercase;word-spacing:5px;}
-h2{font-size:60px;padding-left:1em;text-indent:-1em;text-transform:uppercase;}
+.site_title{font-size:100px;padding:30px 10px 0;text-align:center;text-transform:lowercase;word-spacing:5px;}
+.post_title{font-size:60px;padding-left:1em;text-indent:-1em;text-transform:uppercase;}
+h2{font-size:40px;}
 h3{font-size:30px;padding-top:22px;}
 h4{font-size:20px;}
 h5.subscribe{background:url('rss2.png') 62px 3px no-repeat;background-size: 14px;clear:both}
