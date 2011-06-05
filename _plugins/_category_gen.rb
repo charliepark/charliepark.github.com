@@ -1,45 +1,75 @@
 module Jekyll
-  
+
   class CategoryIndex < Page
-    # Initialize a new CategoryIndex.
-    #   +base+ is the String path to the <source>
-    #   +dir+ is the String path between <source> and the file
-    #
-    # Returns <CategoryIndex>
     def initialize(site, base, dir, category)
       @site = site
       @base = base
       @dir = dir
       @name = 'index.html'
+
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'category_index.html')
       self.data['category'] = category
+
       category_title_prefix = site.config['category_title_prefix'] || 'Category: '
       self.data['title'] = "#{category_title_prefix}#{category}"
     end
   end
-  
-  class Site
-    # Write each category page
-    #
-    # Returns nothing
-    def write_category_index(dir, category)
-      index = CategoryIndex.new(self, self.source, dir, category)
-      index.render(self.layouts, site_payload)
-      index.write(self.dest)
-    end
 
-    def write_category_indexes
-      if self.layouts.key? 'category_index'
-        dir = self.config['category_dir'] || 'categories'
-        self.categories.keys.each do |category|
-          self.write_category_index(File.join(dir, category), category)
+  class CategoryGenerator < Generator
+    safe true
+    
+    def generate(site)
+      if site.layouts.key? 'category_index'
+        dir = site.config['category_dir'] || 'categories'
+        site.categories.keys.each do |category|
+          write_category_index(site, File.join(dir, category), category)
         end
       end
     end
-  end
   
-  AOP.after(Site, :write) do |site_instance, result, args|
-    site_instance.write_category_indexes
+    def write_category_index(site, dir, category)
+      index = CategoryIndex.new(site, site.source, dir, category)
+      index.render(site.layouts, site.site_payload)
+      index.write(site.dest)
+      site.pages << index
+    end
   end
+
+  class TagIndex < Page
+    def initialize(site, base, dir, tag)
+      @site = site
+      @base = base
+      @dir = dir
+      @name = 'index.html'
+
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
+      self.data['tag'] = tag
+
+      tag_title_prefix = site.config['tag_title_prefix'] || 'Tag: '
+      self.data['title'] = "#{tag_title_prefix}#{tag}"
+    end
+  end
+
+  class TagGenerator < Generator
+    safe true
+    
+    def generate(site)
+      if site.layouts.key? 'tag_index'
+        dir = site.config['tag_dir'] || 'tag'
+        site.tags.keys.each do |tag|
+          write_tag_index(site, File.join(dir, tag), tag)
+        end
+      end
+    end
+  
+    def write_tag_index(site, dir, tag)
+      index = TagIndex.new(site, site.source, dir, tag)
+      index.render(site.layouts, site.site_payload)
+      index.write(site.dest)
+      site.pages << index
+    end
+  end
+
 end

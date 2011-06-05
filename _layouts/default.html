@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header>
-		<h1><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h1>
+		<{{page.title_element || h2}} class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></{{page.title_element || h2}}>
 		<nav><a href="/about">about</a><a href="/projects">projects</a><a href="/archives">archives</a></nav>
 		<form id="search"><input placeholder="search" /></form>
 	</header>
