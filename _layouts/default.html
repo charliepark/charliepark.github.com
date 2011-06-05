@@ -8,9 +8,8 @@
 </head>
 <body>
 	<header>
-		
 		<{% if page.title_element %}{{ page.title_element }}{% else %}h2{% endif %} class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></{% if page.title_element %}{{ page.title_element }}{% else %}h2{% endif %}>
-		<nav><a href="/about">about</a><a href="/projects">projects</a><a href="/archives">archives</a></nav>
+		<nav><a href="/about" style="margin-right:1px">about</a><a href="/projects" style="margin-right:1px">projects</a><a href="/archives" style="margin-left:1px">archives</a></nav>
 		<form id="search"><input placeholder="search" /></form>
 	</header>
 	{{content}}

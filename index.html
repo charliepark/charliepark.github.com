@@ -4,8 +4,6 @@ title: Charlie Park
 title_element: h1
 ---
 
-<p>See if the page title element (above) posts as an h2. Otherwise, you'll need to use the liquid templates to handle an "if page.title_element ... else ... endif thing.</p>
-
 {% for post in site.posts limit:10 %}
 	<h2 class="post_title"><a href='{{post.url}}'>{{post.title}}</a></h2>
 	<p class='summary'>{{post.launched}}</p>
