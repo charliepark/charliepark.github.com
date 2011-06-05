@@ -17,7 +17,6 @@ body, input, select, textarea{color:#000;font-family:'helvetica neue',helvetica,
 a{color:#c00;text-decoration:none;}
 h1 a, h2 a{color:inherit}
 h5.subscribe a{color:inherit}
-nav a{display:inline-block;padding:0 10px 2px;position:relative;width:80px;}
 
 abbr{text-transform:lowercase;font-variant:small-caps}
 
@@ -57,7 +56,7 @@ li li:last-child{padding: 0;}
 ol li{list-style:decimal}
 ol ol li{list-style:upper-alpha;}
 ul li{list-style:disc;}
-ul#nav li{display:inline;margin:0;padding:0}
+ul#nav li{display:inline-block;margin:0;padding:0 10px 2px;position:relative;width:80px;}
 ul.tags li{border-left:1px solid #ccc;display:inline;list-style:none;margin:0;padding:0 8px;position:relative;}
 ul.tags li:first-child{border:0;padding-left:0}
 ul ul li{list-style:circle;}
