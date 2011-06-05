@@ -17,7 +17,7 @@ body, input, select, textarea{color:#000;font-family:'helvetica neue',helvetica,
 a{color:#c00;text-decoration:none;}
 h1 a, h2 a{color:inherit}
 h5.subscribe a{color:inherit}
-nav a{display:inline-block;padding:0 10px 2px;width:80px;}
+nav a{display:inline-block;padding:0 10px 2px;position:relative;width:80px;}
 
 abbr{text-transform:lowercase;font-variant:small-caps}
 
