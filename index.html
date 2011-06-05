@@ -11,4 +11,6 @@ title_element: h1
 	{{post.category}}
 {% endfor %}
 
-{{ site.tags }}
+{% for post in site.tags %}
+	<p><a href='{{post.url}}'>{{post.title}}</a></p>
+{% endfor %}
