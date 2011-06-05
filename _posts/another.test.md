@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Another Test"
-category: a thing I made
 tags:
 - sinatra
 - experiments
