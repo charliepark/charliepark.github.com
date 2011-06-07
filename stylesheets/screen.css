@@ -28,7 +28,7 @@ body, input, select, textarea{color:#000;font-family:'helvetica neue',helvetica,
 a{color:#c00;text-decoration:none;}
 h1 a, h2 a{color:inherit}
 h5.subscribe a{color:inherit}
-a.archive_list_article_link{color#000;font-size:20px;font-weight:bold;padding:0 10px;}
+a.archive_list_article_link{color:#000;font-size:20px;font-weight:bold;padding:0 10px;}
 a.nav_list_link{display:inline-block;padding:5px 0}
 a.tag_list_link{border-left: 1px solid #ccc;color:#888;font-size:11px;margin:0;padding: 0 6px;}
 a.tag_list_link:first-child{border:0}
@@ -41,6 +41,7 @@ b{font-weight:bold;}
 blockquote{border-left:5px solid #ccc;color:#444;font-size:13px;margin:10px;padding:0 20px;}
 body{margin:0 auto;padding:0 0 100px;position:relative;width:520px;}
 code{font-family:monaco,monospace;font-size:.9em}
+pre code{background:#f6f6f6;border:1px solid #eee;display:block;padding:10px 14px;}
 dd{border-left:5px solid #E5F2FF;margin:0 0 1em 10px;padding:0 0 0 10px;}
 div.meta_wrapper{border:1px solid #C9C6C3;border-width:1px 0;color:#666;font-size:12px;line-height:20px;margin:0 0 20px;padding:0 0 1px;text-transform:uppercase}
 .postdate{clear:both;float:left;width:200px;}
@@ -90,6 +91,8 @@ p.meta{border:1px solid #eee; border-width:1px 0;color:#888;font-size:12px;margi
 p.summary{padding:5px 0 5px 58px;}
 blockquote p{padding:0}
 blockquote p+p{padding-top:1em}
+p+pre{margin:-1em 0 1em}
+
 strong{font-weight:bold;line-height:1em;}
 
 section{margin:0 10px 20px;padding:0 0 40px;}

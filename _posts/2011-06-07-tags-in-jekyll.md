@@ -24,7 +24,18 @@ For some reason, Jekyll doesn't automatically produce those pages.
 
 I looked at a number of different blogs, and at the source code for a number of different Jekyll-powered blogs. I also poked around at Stack Overflow and Google Groups. They were useful in that they pointed me in the right direction. But all assumed more familiarity with Jekyll than I have, or they had some other issue that prevented my "getting it".
 
-Eventually, I figured out how to make it work, mainly by abusing some "Categories in Jekyll" code that others had put online. My approach ended up being almost identical to some code -- http://brizzled.clapper.org/id/105/index.html
+Eventually, I figured out how to make it work, mainly by abusing some "Categories in Jekyll" code that others had put online. My approach ended up being almost identical to some code I found at <http://brizzled.clapper.org/id/105/index.html>. In fact, I might have inadvertently lifted his code wholesale.
+
+But nowhere in my escapades of ignorance did I find anyone who had written up an explanation of exactly what to do, where. So here you go.
 
 ## The Solution
 
+Jekyll recognizes tags out of the box. In your <abbr>YAML</abbr> frontmatter, add tags like this:
+
+    tags:
+    - jekyll
+    - code
+
+
+
+There are two main files you&rsquo;ll need to add.
