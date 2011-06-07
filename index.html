@@ -6,11 +6,6 @@ title_element: h1
 
 {% for post in site.posts limit:10 %}
 	<h2 class="post_title"><a href='{{post.url}}'>{{post.title}}</a></h2>
-	<p class='summary'>{{post.launched}}</p>
-	<time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%B %d, %Y"}}</time>
-	{{post.category}}
-{% endfor %}
-
-{% for post in site.tags %}
-	<p><a href='{{post.url}}'>{{post.title}}</a></p>
+	<div class="meta_wrapper"><time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%B %d, %Y"}}</time><ul class="tag_list">{% for tag in post.tags %}<li class="inline archive_list"><a class="tag_list_link" href="/tag/{{ tag }}">{{ tag }}</a></li>{% endfor %}</ul></div>
+	{{post.content}}
 {% endfor %}
