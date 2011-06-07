@@ -28,7 +28,6 @@ body, input, select, textarea{color:#000;font-family:'helvetica neue',helvetica,
 a{color:#c00;text-decoration:none;}
 h1 a, h2 a{color:inherit}
 h5.subscribe a{color:inherit}
-a.archive_list_article_link{color#000;font-size:20px;font-weight:bold;padding:0 10px;}
 a.nav_list_link{display:inline-block;padding:5px 0}
 a.tag_list_link{border-left: 1px solid #ccc;color:#888;font-size:11px;margin:0;padding: 0 6px;}
 a.tag_list_link:first-child{border:0}
