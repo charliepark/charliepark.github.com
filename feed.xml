@@ -5,21 +5,20 @@ permalink: /feed/index.html
 <?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>The Setup</title>
-	<link href="http://usesthis.com/" />
-	<link href="http://usesthis.com/feed/" rel="self" />
-	<id>http://usesthis.com/</id>
+	<link href="http://charliepark.org" />
+	<link href="http://charliepark.org/feed/" rel="self" />
+	<id>http://charliepark.org</id>
 	<updated>{{site.posts[0].date | date_to_xmlschema}}</updated>
-	<author><name>Daniel Bogan</name></author>
+	<author><name>Charlie Park</name></author>
 	{% for post in site.posts %}
 	<entry>
-		<title>{{post.person}}</title>
-		<link href="http://{{post.slug}}.usesthis.com/" />
-		<id>http://{{post.slug}}.usesthis.com/</id>
+		<title>{{post.title}}</title>
+		<link href="{{post.url}}" />
+		<id>{{post.url}}</id>
 		<published>{{post.date | date_to_xmlschema}}</published>
 		<updated>{{post.date | date_to_xmlschema}}</updated>
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p><img src="/images/portraits/{{post.slug}}.jpg" alt="{{post.person}}" width="500" height="335" /></p>
 				{{post.content}}
 			</div>
 		</content>
