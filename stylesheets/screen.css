@@ -92,11 +92,11 @@ ul.tags li:first-child{border:0;padding-left:0}
 ul ul li{list-style:circle;}
 li.archive_list{line-height:1;list-style:none;margin:0;}
 li.inline{display:inline}
-li.nav_list_item{display:inline-block;margin:0;position:relative;width:86px;}
+li.nav_list_item{display:inline-block;margin:0;position:relative;width:90px;}
 li.tag_list_item{line-height:1;list-style:none;margin:0;}
 
 
-ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 23px;text-align:center;text-transform:lowercase;width:258px;}
+ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 16px;text-align:center;text-transform:lowercase;width:270px;}
 
 p{padding:0 0 1em;}
 p.meta{border:1px solid #eee; border-width:1px 0;color:#888;font-size:12px;margin:0 0 10px;padding:2px 0 2px;}
