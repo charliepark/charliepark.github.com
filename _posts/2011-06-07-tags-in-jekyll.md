@@ -65,7 +65,7 @@ In the tag_index file, put this:
           {% endfor %}
         </ul>
       </li>
-      {% endif %}
+      {.% endif %}
       {% endfor %}
       {% endfor %}
     </ul>

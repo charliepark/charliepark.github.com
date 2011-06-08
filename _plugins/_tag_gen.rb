@@ -18,7 +18,7 @@ module Jekyll
   end
 
   class TagGenerator < Generator
-    safe false
+    safe true
     
     def generate(site)
       if site.layouts.key? 'tag_index'
