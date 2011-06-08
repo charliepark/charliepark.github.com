@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="description" content="{% if page.summary %}{{ page.summary }} (from Charlie Park){% else %}Charlie Park is an indie web developer and family man. He lives in Virginia. You should grab a beer with him.{% endif %}">
+	<link rel="alternate" href="http://feeds.feedburner.com/charlieparkorg" type="application/rss+xml">
   <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
@@ -15,14 +16,23 @@
 	<header>
 		<{% if page.title_element %}{{ page.title_element }}{% else %}h2{% endif %} class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></{% if page.title_element %}{{ page.title_element }}{% else %}h2{% endif %}>
 		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about</a></li><li class="nav_list_item" style="right:10px"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
-		<form id="search" action="http://google.com/search"><input type="text" name="q" placeholder="search" /><input type="hidden" name="q" value="+site%3Ametafilter.com" /></form>
 	</header>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+	</div>
 	<section>
 	{{content}}
 	</section>
 	<footer>
   </footer>
-
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
