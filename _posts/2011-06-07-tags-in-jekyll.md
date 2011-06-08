@@ -6,7 +6,7 @@ tags:
 summary: A quick overview of adding tags to a Jekyll-powered blog.
 ---
 
-<div class="update_box"><strong>Update:</strong> At the moment, I'm having no trouble having Jekyll render this locally. It seems to be having trouble over at Github. If I can figure out why, I'll let you know. For now, though, I'm processing the Jekyll files locally and uploading them to Github along with a .nojekyll command.</div>
+<div class="update_box"><strong>Update:</strong> At the moment, I'm having no trouble geting Jekyll to render this locally. It seems to be having trouble over at Github. If I can figure out why, I'll let you know. For now, though, it's ... um ... not working.</div>
 
 When I decided to convert my blog over to Jekyll, I was pretty excited about it. It seemed to offer the right balance between power and simplicity.
 
