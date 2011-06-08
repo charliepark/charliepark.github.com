@@ -53,8 +53,8 @@ In the tag_index file, put this:
     ---
     <h2 class="post_title">{{page.title}}</h2>
     <ul>
-      {% for post in site.posts %}
-      {% for tag in post.tags %}
+      {.% for post in site.posts %}
+      {.% for tag in post.tags %}
       {.% if tag == page.tag %}
       <li class="archive_list">
         <time style="color:#666;font-size:11px;" datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%m/%d/%y"}}</time> <a class="archive_list_article_link" href='{{post.url}}'>{{post.title}}</a>
@@ -66,11 +66,11 @@ In the tag_index file, put this:
         </ul>
       </li>
       {.% endif %}
-      {% endfor %}
-      {% endfor %}
+      {.% endfor %}
+      {.% endfor %}
     </ul>
 
-*Note: In one of the lines up there, it has a "\{.%" ... get rid of that period between the curly bracket and the percent sign.*
+*Note: In some of the lines up there, it has a "\{.%" ... get rid of that period between the curly bracket and the percent sign.*
 
 **What that does:** When this page is created (more on that in a sec), it'll have a specific tag assigned to it. That is, multiple pages will be created, each with their own official tag. This goes through every post in the site, and if the post has a tag that matches the tag for the page that's being generated, the post is then listed, along with its publication date and summary. Obviously, if your posts don't include a summary, you can leave that line off. Or, if there's some other bit of metadata you want to include, you can add it into the layout.
 
