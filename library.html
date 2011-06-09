@@ -3,16 +3,17 @@
 <head>
   <title>WRL Wireless Network Login</title>
 	<style type="text/css" media="screen">
-	body{background:#c0d8f4;font-family:verdana, sans-serif;font-weight:bold;text-align:center;}
+	body{background:#c0d8f4;font-family:verdana, sans-serif;font-weight:bold;margin:0 auto;text-align:center;width:800px;}
 	h1{padding:50px 0 30px}
 	h2{padding-bottom:30px}
 	input.button{margin:20px 20px}
 
 
+	body{width:100%}
 	h1{padding:20px 0}
 	h2{padding:0 0 20px}
-	p{padding:0 0 20px}
-	input.button{display:block;font-size:30px;line-height:40px;margin:10px auto;-moz-border-radius: 10px;border-radius: 10px;width:200px}
+	p{padding:0 0}
+	input.button{display:block;font-size:60px;height:100px;line-height:100px;margin:20px auto 0;-moz-border-radius: 10px;border-radius: 10px;width:400px}
 	</style>
 	<style type="text/css" media="screen and (max-device-width: 480px)">
 	</style>
@@ -118,7 +119,8 @@
 	<input type="hidden" value="guest" name="UserName">
 	<input type="hidden" value="guest" name="Password">
 	<h2>Internet Use Policy</h2>
-	<p>I will follow Williamsburg Regional Library policies when using the network.<br />I will not use this network to send, receive, view, or download illegal material.</p>
+	<p>I will follow Williamsburg Regional Library policies when using the network.</p>
+	<p>I will not use this network to send, receive, view, or download illegal material.</p>
 	<input class="button" type="submit" name="button" value="Accept" onClick="javascript:popUp('/cgi-bin/hotspotlogin.cgi?res=popup1&uamip=192.168.45.1&uamport=3990')">
 	<input class="button" type="button" value="Decline" onClick="window.close();">
 </body>
