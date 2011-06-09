@@ -14,6 +14,7 @@
 	h2{padding:0 0 20px}
 	p{padding:0 0}
 	input.button{display:block;font-size:60px;height:100px;line-height:100px;margin:20px auto 0;-moz-border-radius: 10px;border-radius: 10px;width:400px}
+	input.button.accept{margin-top:40px}
 	</style>
 	
   <meta http-equiv="Cache-control" content="no-cache">
@@ -119,7 +120,7 @@
 	<h2>Internet Use Policy</h2>
 	<p>I will follow Williamsburg Regional Library policies when using the network.</p>
 	<p>I will not use this network to send, receive, view, or download illegal material.</p>
-	<input class="button" type="submit" name="button" value="Accept" onClick="javascript:popUp('/cgi-bin/hotspotlogin.cgi?res=popup1&uamip=192.168.45.1&uamport=3990')">
-	<input class="button" type="button" value="Decline" onClick="window.close();">
+	<input class="accept button" type="submit" name="button" value="Accept" onClick="javascript:popUp('/cgi-bin/hotspotlogin.cgi?res=popup1&uamip=192.168.45.1&uamport=3990')">
+	<input class="decline button" type="button" value="Decline" onClick="window.close();">
 </body>
 </html>
