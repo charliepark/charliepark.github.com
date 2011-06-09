@@ -74,7 +74,7 @@ header:after{display:block;clear:both;content:'';float:none;height:1px;}
 h1, h2, h3, h4, h5, h6{font-weight:bold;line-height:1;padding-bottom:.2em;}
 h1, h2 {font-family:"LeagueGothicRegular", helvetica,"League Gothic", "Helvetica Neue", helvetica, arial, sans-serif;font-weight:normal;letter-spacing:-1px;}
 h2{font-size:40px}
-h3{font-size:20px;padding-top:10px;}
+h3{font-size:20px;padding-top:20px;}
 h4{font-size:16px;}
 
 header{}
