@@ -126,3 +126,11 @@ ul.tags{float:right;width:280px}
 ul.tag_list{margin-left:52px;padding-bottom:10px;}
 
 
+@media screen and (max-device-width: 480px) {
+	.site_title{font-size:60px;padding-top:10px;}
+	html{background:#fff}
+}
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){	
+}
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape){
+}
