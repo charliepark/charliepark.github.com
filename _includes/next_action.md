@@ -1,1 +1,1 @@
-<p class="next_actions">To get updates on when I post more to the blog, <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
+<p class="next_actions">To get updates when I post more, <a href="http://twitter.com/charliepark/">follow me on the Twitter machine</a>.</p>
