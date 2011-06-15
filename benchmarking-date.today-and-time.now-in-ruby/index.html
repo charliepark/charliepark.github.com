@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Time.now is much faster than Date.today. (from Charlie Park)">
+	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
+  <!--  old OpenID credentials; keep around for a bit longer <link rel="openid.server" href="http://charliepark.mp/server" /> <link rel="openid.delegate" href="http://charliepark.mp/"> -->
+	<title>Benchmarking Date.today and Time.now in Ruby</title>
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
+		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
+	</header>
+	</div>
+	<section>
+		<h1 class="post_title">Benchmarking Date.today and Time.now in Ruby</h1>
+	<div class="meta_wrapper"><time datetime="2011-06-15">June 15, 2011</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/ruby">ruby</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/code">code</a></li></ul></div>
+	<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
+
+<p>For example, if you want to know what day today is, you can either fetch Date.today.day or Time.now.day.</p>
+
+<p>In my head, Date is a much simpler concept than Time. After all, Time deals with things like milliseconds and Epochs and things like that, where Date &#8230; well, I woke up this morning, and it was today&#8217;s date. And when I get up tomorrow, it&#8217;ll be tomorrow&#8217;s date. &#8220;Date&#8221; seems much more tangible.</p>
+
+<p>I was curious, though, to know if there was a difference in how quickly Ruby could process the two. So I ran a test.</p>
+
+<h3 id='the_first_test'>The First Test</h3>
+
+<p>I was in a Rails app, so I fired up script/console, and added the following code:</p>
+
+<pre><code>require &#39;benchmark&#39;
+
+Benchmark.ms { 1000.times { puts Time.now } }
+
+Benchmark.ms { 1000.times { puts Date.today } }</code></pre>
+
+<h3 id='the_results'>The Results</h3>
+
+<p>What I found was really interesting.</p>
+
+<p>I ran the test a couple of times, and the average processing time for Time.now was 104 ms. The average processing time for Date.today was 251 ms.</p>
+
+<p>That means it took Date.today about two and a half times as long to get processed than Time.now.</p>
+
+<h3 id='the_second_test'>The Second Test</h3>
+
+<p>I was curious to see if those results would hold if I ran a more complicated test. So I made the processing a tiny bit trickier:</p>
+
+<pre><code>def month_name_t(month = Time.now.month)
+  Date::MONTHNAMES[month]
+end
+Benchmark.ms { 1000.times { month_name_t } }
+
+def month_name_d(month = Date.today.month)
+  Date::MONTHNAMES[month]
+end
+Benchmark.ms { 1000.times { month_name_d } }</code></pre>
+
+<h3 id='more_results'>More Results</h3>
+
+<p>This time around, the difference was even more pronounced.</p>
+
+<p>On average, month_name_t (Time.now) took 2 ms. And month_name_d (Date.today) took 80 ms.</p>
+
+<p>So when we made the function just a bit more complex, it increased the processing time dramatically: <strong>Date.today took 40 times as long to process as Time.now.</strong></p>
+
+<h3 id='the_conclusion'>The Conclusion</h3>
+
+<p><strong>When you&#8217;re processing Times and Dates in your app, and you don&#8217;t <em>need</em> to use the Date object for some reason, use Time.</strong></p>
+	<p class="next_actions">To get updates when I post more, <a href="http://twitter.com/charliepark/">follow me on the Twitter machine</a>.</p>
+	</section>
+	<footer>
+  </footer>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-15921981-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>
