@@ -128,8 +128,8 @@ ul.tag_list{margin-left:52px;padding-bottom:10px;}
 
 
 @media screen and (max-device-width: 480px) {
-	.site_title{font-size:140px;padding-top:10px;}
-	form#search{background:#eee;position:absolute;top:70px}
+	.site_title{font-size:150px;padding-top:10px;}
+	form#search{background:#eee;position:absolute;top:55px}
 	html{background:#fff}
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){	
