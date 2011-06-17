@@ -103,9 +103,6 @@ li.inline{display:inline}
 li.nav_list_item{display:inline-block;margin:0;position:relative;width:90px;}
 li.tag_list_item{line-height:1;list-style:none;margin:0;}
 
-
-ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 16px;text-align:center;text-transform:lowercase;width:270px;}
-
 p{padding:0 0 1em;}
 p.meta{border:1px solid #eee; border-width:1px 0;color:#888;font-size:12px;margin:0 0 10px;padding:2px 0 2px;}
 p.next_actions{background:#f6f6f6;border:1px solid #eee;font-size:11px;line-height:20px;margin:20px 0 20px;padding:5px 12px;text-align:center;text-transform:uppercase}
@@ -123,13 +120,15 @@ th.service{font-weight:bold;padding:0 10px;text-align:right}
 
 time.archive_list_post_date{color:#666;float:left;font-size:11px;padding-top:1px}
 
+ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 16px;text-align:center;text-transform:lowercase;width:270px;}
+
 ul.tag_list_in_post{border-left:1px solid #bbb;display:inline;margin-left:15px;padding:0 0 0 10px;}
 ul.tags{float:right;width:280px}
 ul.tag_list{margin-left:52px;padding-bottom:10px;}
 
 
 @media screen and (max-device-width: 480px) {
-	.site_title{font-size:40px;padding-top:10px;}
+	.site_title{font-size:100px;padding-top:10px;}
 	html{background:#fff}
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){	
