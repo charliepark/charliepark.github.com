@@ -33,8 +33,9 @@ div.gs-webResult.gs-result{padding:0 10px}
 .gsc-search-button{display:none}
 .gs-result a.gs-visibleUrl, .gs-result .gs-visibleUrl{color:#666 !important}
 .gs-result .gs-title, .gs-result .gs-title *{color:#c00 !important;font-size:14px !important;font-weight:bold !important; text-decoration:none !important}
-.site_title{font-size:160px;padding:30px 0 0;text-align:center;text-transform:lowercase;word-spacing:5px;}
+.postdate{clear:both;float:left;width:200px;}
 .post_title{font-size:50px;padding:1em 0 .2em 1em;text-indent:-1em;}
+.site_title{font-size:160px;padding:30px 0 0;text-align:center;text-transform:lowercase;word-spacing:5px;}
 
 body, input, select, textarea{color:#000;font-family:'helvetica neue',helvetica,arial,sans-serif;font-size:14px;line-height:1.618}
 
@@ -61,7 +62,6 @@ div.meta_wrapper{border:1px solid #C9C6C3;border-width:1px 0;color:#666;font-siz
 div.project{background:#f6f6f6;border:1px solid #eee;float:left;height:80px;margin:0 20px 20px 0;padding:10px;width:130px;}
 div.project.col3{margin-right:0}
 div.update_box{background:#f6f6f6;border:1px solid #eee;font-size:13px;margin-bottom:1em;padding:8px 10px 0}
-.postdate{clear:both;float:left;width:200px;}
 
 dl{}
 dt{font-size:14px;font-weight:bold;}
@@ -128,11 +128,12 @@ ul.tag_list{margin-left:52px;padding-bottom:10px;}
 
 
 @media screen and (max-device-width: 480px) {
+	.post_title{padding-top:20px}
 	.site_title{font-size:150px;padding-top:10px;}
 	form#search{background:#eee;position:absolute;top:50px}
 	html{background:#fff}
 	li.nav_list_item{width:85px}
-	ul#nav{font-size:20px;margin-left:30px;width:255px}
+	ul#nav{font-size:20px;margin:-20px 0 0 30px;width:255px}
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){	
 }
