@@ -132,7 +132,7 @@ ul.tag_list{margin-left:52px;padding-bottom:10px;}
 	form#search{background:#eee;position:absolute;top:50px}
 	html{background:#fff}
 	li.nav_list_item{width:80px}
-	ul#nav{margin-left:26px;width:240px}
+	ul#nav{font-size:20px;margin-left:40px;width:240px}
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){	
 }
