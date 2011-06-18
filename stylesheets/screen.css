@@ -128,10 +128,10 @@ ul.tag_list{margin-left:52px;padding-bottom:10px;}
 
 
 @media screen and (max-device-width: 480px) {
-	.post_title{padding-top:20px}
+	.post_title{padding-top:40px}
 	.site_title{font-size:150px;padding-top:10px;}
 	form#search{background:#eee;position:absolute;top:50px}
-	html{background:#fff}
+	html{background:#fff;padding:10px}
 	li.nav_list_item{width:85px}
 	ul#nav{font-size:20px;margin:-20px 0 0 30px;width:255px}
 }
