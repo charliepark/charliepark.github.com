@@ -130,12 +130,11 @@ ul.tag_list{margin-left:52px;padding-bottom:10px;}
 @media screen and (max-device-width: 480px) {
 	.post_title{padding-top:40px}
 	.site_title{font-size:150px;margin:0 auto;padding:0;padding-top:10px;}
-	body{}
 	form#search{background:#eee;position:absolute;top:50px}
 	html{background:#fff}
 	li.nav_list_item{width:90px}
 	section{margin:0 0 0 20px;}
-	ul#nav{font-size:20px;margin:-20px 0 0 20px;width:270px}
+	ul#nav{font-size:20px;margin:-20px 0 0 23px;width:270px}
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait){	
 }
