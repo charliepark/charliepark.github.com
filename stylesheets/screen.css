@@ -131,7 +131,7 @@ ul.tag_list{margin-left:52px;padding-bottom:10px;}
 	.post_title{padding-top:40px}
 	.site_title{font-size:150px;padding-top:10px;}
 	form#search{background:#eee;position:absolute;top:50px}
-	html{background:#fff;}
+	html{background:#fff;padding: 10px 20px}
 	li.nav_list_item{width:85px}
 	section{margin:0 auto;}
 	ul#nav{font-size:20px;margin:-20px 0 0 30px;width:255px}
