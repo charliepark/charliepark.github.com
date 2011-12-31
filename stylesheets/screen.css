@@ -91,6 +91,8 @@ html{background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAD6
 
 img.framed{border:10px solid #fff;box-shadow:0 2px 4px #ccc;margin-left:-10px;}
 img.screenshot{box-shadow:0 2px 4px #888;margin: 5px 0 0;}
+img{max-width:500px}
+
 
 form#search input{background:rgba(255,255,255,0.8);border:0;box-shadow:inset 0 1px 2px #ccc;-moz-border-radius: 2px;border-radius: 2px;color:#aaa;font-size:13px;font-weight:inherit;height:10px;margin:0 auto;padding:4px 6px;text-align:center;width:120px;}
 input.gsc-input{background:rgba(255,255,255,0.8) !important;border:0 !important;box-shadow:inset 0 1px 2px #ccc;-moz-border-radius: 2px;border-radius: 2px;color:#aaa;font-size:13px;font-weight:inherit;height:10px;margin:0 auto;padding:4px 6px !important;position:absolute;top:179px;right:17px;text-align:center;width:120px !important;}
@@ -106,7 +108,7 @@ ul.tags li:first-child{border:0;padding-left:0}
 ul ul li{list-style:circle;}
 li.archive_list{list-style:none;margin:0;padding-bottom:10px;}
 li.inline{display:inline}
-li.nav_list_item{display:inline-block;margin:0;position:relative;width:90px;}
+li.nav_list_item{display:inline-block;font-size:18px;margin:0;position:relative;width:90px;}
 li.tag_list_item{line-height:1;list-style:none;margin:0;}
 
 p{padding:0 0 1em;}

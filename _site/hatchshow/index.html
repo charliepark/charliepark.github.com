@@ -7,11 +7,11 @@
   <style type="text/css" media="screen">
   @font-face {
       font-family: 'LeagueGothicRegular';
-      src: url('/fonts/League_Gothic-webfont.eot');
-      src: url('/fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-           url('/fonts/League_Gothic-webfont.woff') format('woff'),
-           url('/fonts/League_Gothic-webfont.ttf') format('truetype'),
-           url('/fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+      src: url('../fonts/League_Gothic-webfont.eot');
+      src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+           url('../fonts/League_Gothic-webfont.woff') format('woff'),
+           url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
+           url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
       font-weight: normal;
       font-style: normal;
   }
@@ -96,8 +96,9 @@
         var t = $(this);
         t.wrap("<span class='hatchshow_temp' style='display:block'>");
         var pw = t.parent().width();
-        while( t.width() < pw ){t.css('font-size', (t.fontSize()+1)+"px")};
-        while( t.width() > pw ){t.css('font-size', (t.fontSize()-.1)+"px")};
+        while( t.width() < pw ){t.css('font-size', (t.fontSize()+1)+"px"),
+          function(){while( t.width() > pw ){t.css('font-size', (t.fontSize()-.1)+"px")}};
+        };
       }).css('visibility','visible');
     };
     jQuery.fn.fontSize = function(){return parseInt($(this).css('font-size').replace('px',''));};
