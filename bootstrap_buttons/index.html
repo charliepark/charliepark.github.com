@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Beautiful Buttons for Twitter Bootstrappers</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="jquery.css">
+	<style type="text/css" media="screen">
+		#embedded_css{background:#eee;border-radius: 5px;color:#444;font-size:12px;height:200px;padding:20px 20px;overflow:auto;text-shadow: none;white-space:pre}
+		#instructions{background:#444;border-radius: 10px;color:#ccc;margin-top:-20px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);}
+		#plug{border-top: 1px solid #DDD;clear:both;margin-top:20px;padding-top: 22px;}
+		.ui-slider {clear:left;cursor:pointer;float:left;margin: 0 0 15px;width: 99%;}
+		a, a:hover{color:#fff;text-decoration:none;}
+		#plug a, #plug a:hover{color:hsl(0, 100%, 62%);}
+		button{clear:left;display:block;float:left;margin:15px auto 22px;width:100%}
+		#instructions h2, #instructions h3{color:#eee}
+		#plug h4{background:#DCEAF4;border-radius: 10px;padding:15px;}
+		#instructions strong{color:#fff}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<section>
+			<div class="page-header">
+				<h1>Beautiful Buttons for<br />Twitter Bootstrappers</h1>
+			</div>
+		</section>
+		<section style="padding-top:20px">
+			<div class="row">
+				<div class="span6 columns">
+					<h2>Button Hue</h2>
+					<div id="hue"></div>
+					<h2>Button Saturation</h2>
+					<div id="saturation"></div>
+					<h2>Button Lightness</h2>
+					<div id="lightness"></div>
+					<h2>Button Puffiness</h2>
+					<div id="delta"></div>
+					<button class="btn custom large">Be Excellent To Each Other &raquo;</button>
+					<div id="plug">
+						<h4 style="font-size:19px;line-height:1.4">We built this generator to help us build <a href="https://monotask.com">Monotask</a>. If you&rsquo;re easily distracted by shiny things online, you should <a href="https://monotask.com">check Monotask out</a>.</h4>
+					</div>
+				</div>
+				<div id="instructions" class="span10 columns">
+					<div style="padding:20px">
+					<h2>How to Use This CSS Generator</h2>
+					<p>This is an extension to the <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> framework. <strong>It makes creating pretty buttons easy.</strong> (Send improvements to <a href="https://twitter.com/charliepark">@charliepark</a>.)</p>
+					<h3>First, monkey with the sliders on the left.</h3>
+					<p>(Button Puffiness might only affect certain browsers.)</p>
+					<h3>Second, copy the CSS in the box below.</h3>
+					<p>You should be able to just pop it into your CSS file. Apply the class &ldquo;custom&rdquo; to any button (or other element) on your site that you want to have these colors.</p>
+					<div id="embedded_css"></div>
+				</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script src="application.js" type="text/javascript"></script>
+</body>
+</html>
