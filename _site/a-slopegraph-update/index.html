@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="New examples of slopegraphs. Also, we go over Bumps Charts, Ladder Plots, and some new techniques for enhancing slopegraphs. (from Charlie Park)">
+	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
+  <!--  old OpenID credentials; keep around for a bit longer <link rel="openid.server" href="http://charliepark.mp/server" /> <link rel="openid.delegate" href="http://charliepark.mp/"> -->
+	<title>A Slopegraph Update</title>
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
+		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
+	</header>
+	<section>
+		<h1 class="post_title">A Slopegraph Update</h1>
+	<div class="meta_wrapper"><time datetime="2011-12-31">December 31, 2011</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/data visualization">data visualization</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/graphs">graphs</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/Edward Tufte">Edward Tufte</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/slopegraphs">slopegraphs</a></li></ul></div>
+	<div class='update_box'>
+  <p>Okay. A forewarning. This follow-up post gets lost in the weeds at several points. I wrote it shortly after <a href='http://charliepark.org/slopegraphs'>my initial slopegraphs piece</a>, but didn't post it for some reason or another. If you haven't read the original piece, I'd encourage you to check it out. It's more interesting, and more polished.</p>
+  <p>Honestly, I'd prefer for you to think of this follow-up as a very rough draft that I'm publishing simply so it'll be off my plate.</p>    
+  <p>But for those of you looking for more details, examples, and whatnot, here you go.</p>
+</div>
+<p>It&#8217;s clear there&#8217;s something here.</p>
+
+<p>The response to <a href='http://charliepark.org/slopegraphs'>the original slopegraphs post</a> I published on Monday blew me away. You know how when line charts that zigzag within a range get new data that&#8217;s wildly out-of-sync with the existing data, and the chart for the existing data points totally flattens? That&#8217;s what happened here.</p>
+
+<p>The post was linked to by Edward Tufte himself, by John Gruber and Jason Kottke, was the #1 post on Hacker News for several hours, was on MetaFilter, and saw a massive amount of activity on Twitter. I&#8217;m humbled and amazed by the attention the post has gotten, and excited for what it might do to help slopegraphs see more widespread adoption.</p>
+
+<p>In posting it, I also learned a great deal from a lot of you, and I wanted to write a follow-up, to share that learning with you.</p>
+
+<p>We&#8217;re going to look at <a href='#charts_that_are_similar_to_slopegraphs'>some charts that are similar to slopegraphs</a> (bumps charts and parallel-coordinate plots), at <a href='#some_new_slopegraph_examples'>some new examples of slopegraphs</a> you all have shared with me, at <a href='#whiskerslopes'>a new possible enhancement to drawing slopegraphs</a> that you might consider, at <a href='#percentages_or_absolute_values'>percentage vs. absolute value comparisons</a>, at <a href='#more_best_practices'>more best practices</a>, and at <a href='#new_slopegraph_software'>some new software for drawing slopegraphs</a> (and a few old ones that I didn&#8217;t know about when I wrote the first piece).</p>
+
+<p>Whew. Let&#8217;s get started.</p>
+
+<h2 id='charts_that_are_similar_to_slopegraphs'>Charts That Are Similar to Slopegraphs</h2>
+
+<h3 id='bumps_charts'>Bumps Charts</h3>
+
+<p>Many of you were quick to note the similarity between slopegraphs and &#8220;Bumps Charts&#8221;.</p>
+
+<p>From <a href='http://www.cucbc.org/bumps'>the Cambridge University Combined Boat Clubs</a> site:</p>
+
+<blockquote>
+<p>Side-by-side racing is not possible over a long distance on the narrow and winding River Cam, so the bumps format was introduced in the early 19th century as an exciting alternative.</p>
+
+<p>At the start of the bumping races, crews line up along the river with one and a half boat lengths of clear water between them. On the start signal (the firing of a cannon) they chase each other up the river. When a bump occurs (when one crew is hit by it&#8217;s chasing crew), they pull over to allow the other crews to continue racing.</p>
+
+<p>The next day, all crews involved in a bump swap places and the race is run again.</p>
+</blockquote>
+
+<p>The manner of charting these &#8220;bumps&#8221; is with a &#8220;bumps chart&#8221;. It looks like this:</p>
+<img src='../images/a_slopegraph_update/bumps_chart_example.png' style='margin: 0 0 0 35px' /><cite><a href='http://www.cucbc.org/charts?year=2010&amp;event=M&amp;day=Fi&amp;sex=M'>http://www.cucbc.org/charts?year=2010&amp;event=M&amp;day=Fi&amp;sex=M</a></cite>
+<p>(I should note that Tufte mentions bumps charts in <em><a href='http://www.amazon.com/gp/product/0961392118/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0961392118'>Envisioning Information</a></em> (p. 111).)</p>
+
+<p>The bumps chart reveals the progression of the boats through the series of races. And, because of the forced rankings, the drama and tension of the races is carried through to the chart reader. Just look at the rivalry going on between Churchill III and Homerton II. Or the stunning rise of Caius III. Or poor Girton V.</p>
+
+<p>So are bumps charts slopegraphs? Absolutely. Are slopegraphs bumps charts? Not always. <strong>I would draw the Venn circle for bumps charts as completely contained within the larger Venn circle of slopegraphs.</strong></p>
+
+<p>If you&#8217;re interested in seeing more bumps charts, and several slopegraphs classified as bumps, <a href='http://junkcharts.typepad.com/junk_charts/bumps_chart/'>Junk Charts</a> has a number of both good and bad examples. Several slopegraphs are at <a href='http://processtrends.com/toc_bumps_charts.htm'>ProcessTrends.com</a> as well.</p>
+
+<p>It should be noted that sometimes, bumps charts can be a little too ambitious:</p>
+<img src='../images/a_slopegraph_update/tour_bumps.jpg' /><cite><a href='http://jeromedaksiewicz.com/images/stories/downloads/TdF/TdF_Standings-001a.jpg'>http://jeromedaksiewicz.com/images/stories/downloads/TdF/TdF_Standings-001a.jpg</a></cite>
+<p>In the examples I gave the other day, we saw two charts (baseball and speed-per-dollar) that could be classified as bumps charts. Interestingly, although, by comparing different things along the two Y-axes, they both had flavors of Maurice d&#8217;Ocagne&#8217;s / Al Inselberg&#8217;s Parallel Coordinate Plots.</p>
+
+<h3 id='parallel_coordinate_plots'>Parallel Coordinate Plots</h3>
+
+<p>I mentioned these in passing in the post the other day, but wanted to give a little more context on these.</p>
+
+<p>While I won&#8217;t go deep on PCPs, they&#8217;re basically a means of comparing different items across a range of criteria. The idea is that you have more than one vertical axis, and each vertical axis shows how the item performed according to that specific criterion.</p>
+
+<p>For example, <a href='http://peltiertech.com/'>Jon Peltier</a> made this Parallel-Coordinates Plot comparing the performance of baseball players, measuring their on-base, power, base-running, and fielding percentages:</p>
+<img src='../images/a_slopegraph_update/pcp.png' /><cite><a href='http://peltiertech.com/WordPress/composite-baseball-player-evaluation/'>http://peltiertech.com/WordPress/composite-baseball-player-evaluation/</a></cite>
+<p>If you&#8217;re new to PCPs, it&#8217;s important to note that even though there&#8217;s a line present, PCPs <em>aren&#8217;t</em> measuring performance over time.</p>
+
+<p>If you want to see a really good example of a parallel-coordinate plot, head over to the Juice Analytics <a href='http://www.juiceanalytics.com/nfl-visualization/'>&#8220;spike chart&#8221; of NFL team performance</a>. In their words, &#8220;Our NFL stats &#8216;spike chart&#8217; is an easy way to see who&#8217;s leading the league in passing, rushing, receiving, tackles, team offense, and team defense. By showing key metrics side by side, you get the full picture of a player or team performance–not just the highlights.&#8221; It&#8217;s a well-done tool. (Although it&#8217;s not trying to necessarily draw in the slopes of a normal PCP, which I think is a good thing. See the next paragraph for why.)</p>
+
+<p>So are parallel coordinate plots slopegraphs? Generally, I&#8217;d say they aren&#8217;t. Why? <strong>In most PCPs, the <em>slope across the entire chart</em> carries no meaning.</strong> The line is there only to aid your eye in tracking an individual agent&#8217;s values across the chart. Switching the order of the columns &#8211; and changing their slope &#8211; doesn&#8217;t change the general outcome of the chart.</p>
+
+<p>Look at the PCP above, comparing baseball performance. If you switched the order of the columns, so the slopes were different, would that change the information the chart carries? Not at all. If the order were &#8220;Power, On Base, Fielding, Running&#8221;, such that both lines angled downwards as you go from left-to-right, that wouldn&#8217;t be any different than if the order were reversed, and the slopes of both had an upward trend across the chart.</p>
+
+<p>I mentioned above that in my original slopegraph piece, the salary-per-dollar and speed-per-dollar charts both had aspects of PCPs. Do I still consider them slopegraphs? Yes and kind of. Both charts are a cross between a PCP and a Bumps Chart. For another example of this PCP/BC cross, check out <a href='http://visualization.geblogs.com/visualization/innovationdeepdive/'>this interactive chart comparing different countries&#8217; rankings in innovation</a> from GE, designed by Pentagram&#8217;s Lisa Strausfeld.</p>
+
+<p>For <a href='http://charliepark.org/slopegraphs#ben_frys_baseball_chart'>Ben Fry&#8217;s Baseball Chart</a>, there are only two criteria: each team&#8217;s win-loss ratio and each team&#8217;s budget. As such, you can think of it as &#8220;a super-close zoom-in on a parallel-coordinates plot&#8221;. In this case, <strong>the slope <em>does</em> carry meaning</strong>. The gradient matters.</p>
+
+<p>So should I have included the <a href='http://charliepark.org/slopegraphs/#speed_per_dollar'>Speed Per Dollar</a> example as a slopegraph? I&#8217;ve gone back and forth on this, and I think, ultimately, I <em>should</em> have included it, but I should have noted that <strong>rather than being <em>a</em> slopegraph, it&#8217;s actually <em>several</em> slopegraphs, pinned together.</strong> It&#8217;s horsepower vs. weight, and weight vs. price, and price vs. performance.</p>
+
+<p>And now that I think about it, seeing it in that light, it might be even better if it were presented as horsepower divided by weight, to get a &#8220;hypothetical speed value&#8221;, and then to use that new metric as the value to compare with the price. So you&#8217;d have a single slopegraph, of the &#8220;speed&#8221; (or whatever you&#8217;d call that metric) in one column and the &#8220;price&#8221; in another column. Then, you&#8217;d have steeper lines showing better (or worse) values. And once you do all that, you&#8217;d have (effectively) the same chart that Ben Fry had, with his win-ratio/budget chart.</p>
+
+<p>As a sidenote on the Speed Per Dollar example, one of you (Kyle Harr) astutely noted in an e-mail to me:</p>
+
+<blockquote>
+<p>In the WindingRoad graph, all columns are arranged according to descending &#8216;value&#8217;: that is, lower weights and prices are better and therefore appear at the top of the column while higher horsepower is more desirable and also appears at the top of the column.</p>
+
+<p>This does cause certain models to jump rather drastically between columns, adding some clutter, but that&#8217;s the point: a car like the Veyron may yield absolute best performance, but in the end, it&#8217;s not a very efficient way to get it.</p>
+
+<p>While the WindingRoad graph is substantially more cluttered, the colored and patterned lines do make it relatively straight forward to read. Dave&#8217;s design was cleaner in other areas but reordering the columns obscures critical information in my opinion.</p>
+</blockquote>
+
+<p>I agree: I do still think it was smart of Dave to swap the weight and horsepower columns, but keeping &#8220;more horsepower at the top&#8221; would probably have been better.</p>
+
+<p>As a final note on PCPs, I just want to say that I&#8217;m not a huge fan of them overall. I can see some of their general utility, but I suspect that in many cases where PCPs are used, the data (and the reader) might be better served by chunking the data into multiple charts, each one highlighting certain pieces of information and answering specific questions.</p>
+
+<h3 id='ladder_graphs'>Ladder Graphs</h3>
+
+<p>A term that&#8217;s occasionally been used for sloped graphs is the &#8220;ladder graph&#8221;. A ladder graph is actually <em>very</em> close to a slopegraph. Kurt Heisler, of the U.S. Department of Health and Human Services, e-mailed me with info on ladder graphs, and pointing to a few examples. He notes: &#8220;A common step in Concept Mapping is to ask participants to take a list of statements and rate them according to their importance, relevance, etc. to the &#8220;concept&#8221; being studied. The statement ratings are analyzed quantitatively with pattern matching, a process that groups statements into clusters based on similarities on how they were rated. Each cluster, then, has its own average rating. If you want compare how two groups rated each cluster, compare ratings between Time 1 and Time 2, or compare how clusters were rated using two different rating scales, you use a Ladder Graph. Because of the number of data points, you can also measure agreement with correlation statistics.&#8221;</p>
+<img src='../images/a_slopegraph_update/laddergraph.png' />
+<p>Basically, if the group in the left column agrees with the group in the right column about priorities and whatnot, the slopes will all be 0&#176;, and will all line up.</p>
+
+<p>So isn&#8217;t a ladder graph just another name for a slopegraph? Not quite.</p>
+
+<p>The key distinction between the two: A ladder graph compares the forced ranking of multiple variables among two groups. A slopegraph, though, would be a good candidate for showing &#8220;a progression of univariate data among multiple actors over time&#8221;.</p>
+
+<p>Kurt Heisler also pointed out a few more examples of ladder graphs, for those looking to drill a bit deeper:</p>
+
+<ul>
+<li>Mary Kane and William Trochim&#8217;s book <em><a href='http://www.amazon.com/gp/product/B004AYD4C8/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=charpark-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B004AYD4C8'>Concept Mapping for Planning and Evaluation</a></em> (<a href='http://books.google.com/books?id=Z_yZHb4hA78C&amp;amp;printsec=frontcover&amp;amp;dq=concept+mapping+for+planning+and+evaluation&amp;amp;hl=en&amp;amp;ei=t60dTuWLOsrq0QG9rf3JBw&amp;amp;sa=X&amp;amp;oi=book_result&amp;amp;ct=result&amp;amp;resnum=1&amp;amp;ved=0CDIQ6AEwAA#v=onepage&amp;amp;q=ladder&amp;amp;f=false'>citations at Google Books</a>) (2007)</li>
+
+<li>Page 17 of the academic paper <em><a href='http://www.cbfa.org/Jinkerson.pdf'>Use of Concept Mapping/Pattern Matching as a Strategic Planning Tool for a Local Congregation</a></em>, by Darryl Jinkerson (2003)</li>
+</ul>
+
+<h2 id='some_new_slopegraph_examples'>Some New Slopegraph Examples</h2>
+
+<p>Happily, I&#8217;ve learned of several other slopegraphs that existed before the post earlier this week. Happily, too, several charts have been developed since then.</p>
+
+<h3 id='slopegraphs_from_before_the_article'>Slopegraphs From Before The Article</h3>
+
+<p>I&#8217;ve tried to include these chronologically.</p>
+
+<h4 id='graphing_agreement_and_disagreement'>Graphing Agreement and Disagreement</h4>
+
+<p>In 2004 and 2009, Nicholas Cox at the University of Durham wrote &#8220;<a href='https://docs.google.com/viewer?a=v&amp;amp;q=cache:2qp1IWzgX4kJ:www.stata-journal.com/sjpdf.html?articlenum%3Dgr0005+&amp;amp;hl=en&amp;amp;gl=us&amp;amp;pid=bl&amp;amp;srcid=ADGEESjoTK9El9UGdA_nxS07_-7dOPZPFtZwJC4LzV65g4vodjR-002sTphhTDZZ5vnnD3pLapCirbw7xAMCYJdmU4PK0uM0B2nLz5Cz2QrSsFAbhf524DWcw0HH4_alh1jqtzRERsPD&amp;amp;sig=AHIEtbQK5YOz7o3UZTtAcKBWjYF-JRxdiw'>Speaking Stata: Graphing agreement and disagreement</a>&#8221; (2004). He also wrote &#8220;Speaking Stata: Paired, parallel, or profile plots for changes, correlations, and other comparisons&#8221; (2009). Both appeared in <em>The Stata Journal</em>. He includes a number of examples of slopegraphs, and includes some alternative representations for when a chart&#8217;s rendering must be done by a computer (for example: avoiding label collision by plotting each item vertically or horizontally, each in its own column, in Tukey-style quasi-whiskerplot).</p>
+
+<h4 id='infant_mortality'>Infant Mortality</h4>
+
+<p>In April of 2009, the <em>New York Times</em> showed a comparison of infant mortality rates from 1960 to 2004:</p>
+<img src='../images/a_slopegraph_update/infant_mortality.gif' /><cite><a href='http://www.nytimes.com/imagepages/2009/04/06/health/infant_stats.html'>http://www.nytimes.com/imagepages/2009/04/06/health/infant_stats.html</a></cite>
+<p>A few things to note: They resolve the issue of tie-breaking by having the points converge, and listing the tied countries in order of their original ranking from the left side of the chart. Their labeling could have been made clearer by including the actual rank number next to each rank endpoint on the chart (there&#8217;s no way to tell at a glance how many places the US dropped, for example). By including the rank number, it would also eliminate the need for the &#8220;Lower infant death rates&#8221; and &#8220;Higher infant death rates&#8221; labels.</p>
+
+<p>Also, in an e-mail from <a href='http://www.vanderveer.org.nz/personnel/person.php?id=28'>Dr. Michael MacAskill</a>, he notes: &#8220;The problem with this example is that it also departs from Tufte&#8217;s example by using ranks rather than the actual values. Ranks are unstable when dealing with values with little real variation (such as child mortality rates in developed countries), in this case giving the erroneous impression of a substantial change in US mortality rates.&#8221; I&#8217;ll discuss this a bit more down below, in the &#8220;relative vs. absolute&#8221; portion of the <a href='#more_best_practices'>more best practices</a> section.</p>
+
+<h4 id='college_tuition_and_fees'>College Tuition and Fees</h4>
+
+<p>In September of 2009, <a href='http://tomschenkjr.net/'>Tom Schenk</a> developed this slopegraph, comparing Iowa&#8217;s tuition and fee changes with those of surrounding states:</p>
+<img src='../images/a_slopegraph_update/tuition.png' /><cite><a href='http://tomschenkjr.net/2010/11/10/not-everything-is-under-insert-non-traditional-basic-graphs/'>http://tomschenkjr.net/2010/11/10/not-everything-is-under-insert-non-traditional-basic-graphs/</a></cite>
+<h4 id='jobs_in_the_netherlands'>Jobs in the Netherlands</h4>
+
+<p>Also in 2009, while working for the Dutch province of Flevoland, Joshua de Haseth made a slopegraph showing economic data and job growth among different Dutch provinces.</p>
+<img src='../images/a_slopegraph_update/dehaseth.png' />
+<p>He made the chart in Excel, and since he wrote it as &#8220;in Excel (!)&#8221;, I&#8217;m guessing it wasn&#8217;t the easiest chart to make. Maybe Microsoft will try to steal the term &#8220;slopegraph&#8221; as well as <a href='http://charliepark.tumblr.com/post/809003601/me-getting-annoyed-by-microsofts-abuse-of-copyright'>sparkline</a>, and this will be a walk in the park in a few years.</p>
+
+<h4 id='brazilian_prison_population_change'>Brazilian Prison Population Change</h4>
+
+<p>In November of 2010, Brazilian newsweekly <em>Época</em> showed a visualization of the increasing prison population across the country.</p>
+<img src='../images/a_slopegraph_update/br_prison_population.jpg' /><cite><a href='http://colunas.epoca.globo.com/fazcaber/2011/03/25/editora-globo-ganha-dois-premios-malofiej/'>http://colunas.epoca.globo.com/fazcaber/2011/03/25/editora-globo-ganha-dois-premios-malofiej/</a></cite>
+<p>You can see a larger version of this at <a href='http://revistaepoca.globo.com/Revista/Epoca/0,,EMI182813-18049,00-DIAGRAMA+A+POPULACAO+BRASILEIRA+CRESCE+MAIS+NOS+PRESIDIOS.html'>the Epoca website</a> (click on the large &#8220;2&#8221; at the top of the chart on that page).</p>
+
+<p>This chart won a Malofiej prize, an international contest described as &#8220;the infographics equivalent of the Pulitzer Prizes&#8221;, awarded by the Spanish chapter of the <a href='http://www.snd.org/'>Society for News Design</a></p>
+
+<h4 id='medicare_adoption'>Medicare Adoption</h4>
+
+<p>In April of 2011, Brent Jones at the <em>St. Louis Observer</em> created a chart showing <a href='http://www.stlbeacon.org/health-science/health/109896-medicare-changes-are-reassuring-and-worrisome'>Medicare adoption rates in different states</a>. This is more of a PCP/Bumps cross than a slopegraph, but I wanted to link to it here anyway.</p>
+
+<h4 id='the_canadian_power_list'>The Canadian Power List</h4>
+
+<p>Im May of 2010, Grant Hamilton at the <em>Brandon Sun</em> published a quasi-slopegraph/bumps chart looking at a listing of <a href='http://www.brandonsun.com/opinion/blogs/Power-surges-106791028.html?thx=y'>power brokers in the Brandon area of Manitoba</a>. Like the Medicare Adoption link above, I won&#8217;t analyze this one too much here, but I wanted to mention it.</p>
+
+<h4 id='the_tablet_effect'>The Tablet Effect</h4>
+
+<p>On July 11, 2011 &#8230;</p>
+<img src='../images/a_slopegraph_update/tablet_effect.jpg' /><cite><a href='http://www.resolvemr.com/'>http://www.resolvemr.com/</a></cite>
+<p>Ironically, this one was published online on the same day as my original article. It comes from an industry report created by <a href='http://www.resolvemr.com/'>Resolve Market Research</a>.</p>
+
+<p>I have a few quibbles with this one, but it&#8217;s a good example of a slopegraph.</p>
+
+<p>Apart from general eyecandy issues, two specific slopegraph concerns:</p>
+
+<ul>
+<li>In the chart as it was originally presented, it isn&#8217;t clear at a glance whether the textual labels (the %s) are the comparison points, or whether the ends of the lines themselves are the comparison points. (Here, the chart&#8217;s been shrunken a bit, but you can see it at its full size by clicking <a href='http://localhost:4000/images/a_slopegraph_update/tablet_effect.jpg'>here</a>.) After a second or two, you see that the percentage labels are simply giving a more complete picture of the data, and it&#8217;s the lines that carry the dominant data. But because the <em>labels</em> have a higher contrast from the black background than the <em>lines</em>, the eye is drawn to the percentages. One way to handle this would be to make the percentage labels less contrasting from the background, rather than white, so they stand out less.</li>
+
+<li>Also, the legend should probably disappear altogether, and the names of the different readers could be appended to one (or both) of the percentage labels.</li>
+</ul>
+
+<h3 id='slopegraphs_since_the_article'>Slopegraphs Since The Article</h3>
+
+<h4 id='final_cut_pro_price_changes'>Final Cut Pro Price Changes</h4>
+
+<p>On July 14th, 2011, Alex Gollner posted this slopegraph comparing price changes of Apple&#8217;s Final Cut Pro X:</p>
+<img src='../images/a_slopegraph_update/final_cut_pro.gif' /><cite><a href='http://alex4d.wordpress.com/2011/07/14/fpx-july-2011-price-changes/'>http://alex4d.wordpress.com/2011/07/14/fpx-july-2011-price-changes/</a></cite>
+<h4 id='defense_spending'>Defense Spending</h4>
+<p>On July 15th, 2011, Gulliver posted slopegraphs of <acronym>NATO</acronym> defense spending as a percentage of <acronym>GDP</acronym>.</p><img src='../images/a_slopegraph_update/nato.jpg' /><cite><a href='http://tachesdhuile.blogspot.com/2011/07/fun-with-slopegraphs-nato-defense.html'>http://tachesdhuile.blogspot.com/2011/07/fun-with-slopegraphs-nato-defense.html</a></cite>
+<h4 id='military_expenditure_in_east_asia'>Military Expenditure in East Asia</h4>
+
+<p>Also on July 15th, 2011, Per Henrik Johansen used David Ruaru&#8217;s <a href='https://github.com/bobthecat/codebox/blob/master/table.graph.r'>slopegraphs in R</a> script to create a slopegraph showing military expenditures in 2000 and 2010:</p>
+<img src='../images/a_slopegraph_update/military_expenditures.png' /><cite><a href='http://blog.perhenrik.com/2011/07/military-expenditure-in-east-asia-as.html'>http://blog.perhenrik.com/2011/07/military-expenditure-in-east-asia-as.html</a></cite>
+<p>He describes the creation of the chart as &#8220;a piece of cake&#8221;.</p>
+
+<h4 id='gdp_per_capita_among_the_worlds_poorest_countries'>GDP Per Capita Among The World&#8217;s Poorest Countries</h4>
+
+<p><em>Also</em> on July 15th, 2011, <a href='http://amoondisaster.wordpress.com/'>Jon Custer</a> developed a slopegraph comparing GDP per capita, from 1959 to 2009.</p>
+<img src='../images/a_slopegraph_update/gdp.png' /><cite><a href='http://amoondisaster.wordpress.com/2011/07/15/telling-stories-with-data-the-slopegraph/'>http://amoondisaster.wordpress.com/2011/07/15/telling-stories-with-data-the-slopegraph/</a></cite>
+<p>He also goes in-depth on the process he went through in making the chart, what he liked about it, and where he would like to see it improve. If you have any interested in making slopegraphs, <a href='http://amoondisaster.wordpress.com/2011/07/15/telling-stories-with-data-the-slopegraph/'>his post</a> is well worth a look. As a preview:</p>
+
+<blockquote>
+<p>However, what I really like about this style of presentation is that it breaks the story down into discrete sub-narratives by country and decade. As I alluded to yesterday, I am somewhat skeptical of tendency in development economics to focus on large-scale trends — with the implication often being that this will allow us to devise ‘universal’ rules. Too often economists write off the outliers as uninteresting, unimportant, or even harmful to their analysis. But given the rarity of the outcome development economists are searching for — poor country becomes rich country — it seems like the outliers are exactly what they should be focusing on. Looking at this chart, the natural question for the uninitiated would be “What’s the deal with China?” not “Hey, what’s up with Burkina Faso, Ethiopia, and Malawi?”</p>
+
+<p>This chart also helps to generate questions that would not be so obvious in a more granular presentation, especially to those not accustomed to reading charts, as the human brain is pretty good at recognizing and comparing the slopes of straight lines. Looking at the chart for a few minutes quickly reveals the important moments in the economic histories of these diverse countries: what happened in Uganda in the 70s? China in the 80s? Most countries in the 2000s? And what the hell is wrong with Zimbabwe? You can also discern other interesting pieces of data, such as the fact that economic dynamo India actually only surpassed economic basketcase Pakistan in per-capita GDP relatively recently. Some countries have been particularly volatile, like Malawi, while Morocco was a good, steady performer. You really lose surprisingly little meaning compared to the conventional line chart, especially considering the number of distractions which are eliminated.</p>
+</blockquote>
+
+<h2 id='whiskerslopes'>Whiskerslopes</h2>
+
+<p>As I mentioned in the original piece, handling overlapping labels is tricky.</p>
+
+<p>One interesting approach to handling that was proposed by <a href='http://yawp.com/services.html'>Mike Stone</a>. He added a version of Tufte&#8217;s &#8220;revised box plot&#8221; to each axis, showing the median value, the quartiles on each axis (the lines run from the 75% point to the 90% point (above the median) and the 25% point to the 10% point (below the median)).</p>
+<img src='../images/a_slopegraph_update/whisker.png' />
+<p>Here&#8217;s how he described it, in an e-mail to me:</p>
+
+<blockquote>
+<p><strong>The whisker diagrams have the same general effect as the hairline between rows of numbers in a table. They break the textual data into smaller chunks which are easier for the reader to process.</strong> By my estimation, there are fourteen easily resolved buckets for information on either side: top, middle, and bottom for each line, same for the spaces between the lines and the median dot, plus &#8216;everything above the top line&#8217; and &#8216;everything below the bottom line&#8217;.</p>
+
+<p>Grouping the textual information in those buckets released me from the problem of using the text as a data point per se. I was able to make the graphical information do what it does well &#8211; showing the relationships between values &#8211; while letting the text do what it does well &#8211; telling us the exact values associated with the lines nearby.</p>
+
+<p>Given that slopegraphs are best suited to numerical data, the whisker diagrams do provide meaningful information. Best of all, they give a lot of bang for the buck while maintaining the &#8216;pure data ink&#8217; character of the original chart.</p>
+</blockquote>
+
+<p>At first, I was thrown by the added lines, but I think he&#8217;s right, that by introducing the vertical lines, it isn&#8217;t as necessary for the text labels to line up as closely with the endpoints of the lines.</p>
+
+<p>I think the added vertical lines would need to be added carefully, but they do add to the chart. Mike continues:</p>
+
+<blockquote>
+<p>[adding the whisker lines highlights] the oddball values. Britain skipped from the top quartile to just below average. Canada, Greece, and the US all dropped roughly half a bracket. Finland went from &#8216;a bit above average&#8217; to &#8216;a bit below average&#8217;. Everyone else stayed about where they started, with France and Belgium moving from the high and low ends of their bracket toward the middle.</p>
+
+<p>Thing is, that&#8217;s not obvious from the slopes of the lines. The lines for Greece and Spain are nearly parallel, but it&#8217;s Spain and Switzerland that more or less define the 10-25% bracket.</p>
+</blockquote>
+
+<p>I&#8217;m eager to see how you all take this enhancement and refine it and run with it. Again, it&#8217;s not always going to be practical or necessary to add it, but you might find that it enhances your charts, and frees you up from some of the problem of label collisions.</p>
+
+<h2 id='more_best_practices'>More Best Practices</h2>
+
+<p>I wanted to point out three &#8220;best practices&#8221; that I&#8217;d neglected to mention the first time around.</p>
+
+<p>First, <strong>if you have multiple comparisons (as in the cancer slopegraph), maintain a consistent scale for the horizontal alignment of your columns</strong>. In the cancer scale, that was a 5-year period. In the NATO defense budgets example I linked to above, that was a 3-year period.</p>
+
+<p>If you have data that spans a 10-year gap as your first line of slopes, and then an update to the dataset only covers a five-year gap, you need to be careful how you place your columns. If they&#8217;re equidistant from one another, the relative gradients will be misrepresented.</p>
+
+<p>Second, <strong>be clear about whether the &#8220;comparison point&#8221; on the chart is <em>the end of the slope line</em> or <em>the data label itself</em>.</strong></p>
+
+<p>I touched on this a bit with my critiques of the &#8220;Tablet Effect&#8221; slopegraph above.</p>
+
+<p>Third, <strong>determine whether you want to highlight the <em>absolute</em> rate of change or the <em>fractional</em> rate of change</strong>.</p>
+
+<p>Earlier, I mentioned Michael MacAskill&#8217;s critique of the <em>Times</em>&#8217; &#8220;Infant Mortality&#8221; chart. A similar point was made in an e-mail to me from <a href='http://new.oberlin.edu/arts-and-sciences/departments/chemistry/terry-s.-carlton.dot'>Terry Carlton</a>, who noted:</p>
+
+<blockquote>
+<p>A country&#8217;s slope in this graph is larger, the larger the increase in what is being graphed, namely, government receipts as a percentage of GDP. But comparing slopes could be misleading. Suppose that for country A, the increase is from 10% in 1970 to 20% in 1979, whereas for country B the increase is from 40% to 50%. The slope for both countries would be the same even though what is graphed doubles between 1970 and 1979 for country A, but increases by only a fourth (i.e., by 25% of the original 40%) for country B.</p>
+
+<p>Next, consider country C, for which government receipts as a percentage of GDP increase from from 40% in 1970 to 60% in 1979. The slope for C would be twice that for A, yet the fractional increase in what is being graphed is twice as large for A as for C.</p>
+
+<p>I suspect that many users of slopegraphs would be more interested in the fractional increase of what is being graphed rather than in the absolute increase. A slope graph that used a logarithmic vertical scale would have equal slopes for equal fractional changes, and the larger of two slopes would always be associated with the larger fractional change.</p>
+</blockquote>
+
+<p>It&#8217;s a good point. If the comparative rate-of-change is the most salient aspect of the data that you&#8217;re highlighting, consider making your slopegraph&#8217;s axes reflect the percentage of change. I suspect this would end up having a midpoint on the left-hand axis (0%), with the different slopes fanning out above and below the 0% line to the right hand axis, which would have positive percentage values above the mid-line, and negative values below.</p>
+
+<p>You might have two different slopegraphs: One showing the absolute change, and one showing the relative change. Alternately, include the secondary data point in parentheses, after the right-hand label (so, in the original GDP example, you could label Sweden&#8217;s right-hand datapoint &#8220;57.4 Sweden (22.4%)&#8221;; Britain&#8217;s would be &#8220;39.0 Britain (-4.2%)&#8221;.</p>
+
+<h2 id='new_slopegraph_software'>New Slopegraph Software</h2>
+
+<p>It&#8217;s been neat seeing new software implementations developing. I&#8217;ll add these to the original post, but I wanted to call them out here, for people looking for the update.</p>
+
+<ul>
+<li>The team at <a href='http://www.juiceanalytics.com/'>Juice Analytics</a> has one of the oldest and best implementations of slopegraph rendering available, with software available for free for the <a href='http://www.juiceanalytics.com/writing/real-world-tufte-graphics/'>Mac</a> and <a href='http://www.juiceanalytics.com/writing/tufte-style-comparison-chart-generator/'>Excel on the PC</a>. A <em>lot</em> of you wrote in to tell me about Juice&#8217;s work. Thank you.</li>
+
+<li><a href='http://log.tofias.net/?3330f900'>Michael Tofias</a>, in <a href='http://pastie.org/private/no94bdylb2l14eo5myiaa'>Stata</a></li>
+
+<li>Pradeep Gowda, in <a href='http://pradeepgowda.com/programming/tuft-graphics-processingjs/'>Processing</a></li>
+
+<li>Hamilton Ulmer, in <a href='http://skedasis.com/d3/slopegraph/'>Javascript/d3</a></li>
+
+<li>a better fork of my own Javascript implementation, by Erik Solen, in <a href='https://github.com/solenoid/slopegraph'>Javascript/d3</a></li>
+</ul>
+
+<h2 id='wrapping_up_again'>Wrapping Up (Again)</h2>
+
+<p>So, yeah: I think slopegraphs have a promising future. It&#8217;s been exciting to see the activity surrounding them this week, and to be a part of it.</p>
+
+<p>I think the most succinct description I saw came from <a href='http://radar.oreilly.com/2011/07/four-short-links-12-july-2011.html'>Nat Torkington at O&#8217;Reilly&#8217;s Radar</a>, who said &#8220;[slopegraphs convey] rank, value, and delta over time.&#8221; That&#8217;s a pretty high data-to-ink ratio right there. Far better than my blabbering.</p>
+
+<p>As you develop more slopegraphs in the future, I&#8217;d encourage you to post them at <a href='www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003nk&amp;amp;topic_id=1'>Edward Tufte&#8217;s forum thread on slopegraphs</a>. And, of course, let me know, on <a href='http://twitter.com/charliepark'>Twitter</a> or by e-mail (<a href='mailto:charlie@pearbudget.com'>charlie@pearbudget.com</a>), what you come up with. I&#8217;m looking forward to it.</p>
+	<footer>
+	<p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
+	</footer>
+	</section>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div></div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-15921981-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>

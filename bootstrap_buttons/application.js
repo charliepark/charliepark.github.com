@@ -47,7 +47,7 @@ function generateHSLGradient(hsl, highlight, lowlight, superLowlight, text) {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, '+highlight+'), color-stop(100%, '+lowlight+'));\n\
   background-image: -webkit-linear-gradient(top, '+highlight+', '+lowlight+');\n\
   background-image: -o-linear-gradient(top, '+highlight+', '+lowlight+');\n\
-  background-image: linear-gradient(top, '+highlight+', '+lowlight+');\n\
+  background-image: linear-gradient('+highlight+', '+lowlight+');\n\
   border-color: '+lowlight+' '+lowlight+' '+superLowlight+';\n\
   '+text+'\n';
 }

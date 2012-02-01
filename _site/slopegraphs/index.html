@@ -29,7 +29,7 @@
 
 <h2 id='the_tablegraphic'>The Table-Graphic</h2>
 
-<p>In his 1983 book <em>The Visual Display of Quantitative Information</em>, Tufte displayed a new type of data graphic.</p>
+<p>In his 1983 book <em><a href='http://www.amazon.com/gp/product/0961392142/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0961392142'>The Visual Display of Quantitative Information</a></em>, Tufte displayed a new type of data graphic.</p>
 <img src='/images/slopegraphs/slopegraph.gif' style='width:500px' /><cite>Tufte, Edward. <em>The Visual Display of Quantitative Information</em>.<br />Cheshire, Connecticut: Graphics Press; 1983; p. 158</cite>
 <p>As Tufte notes in his book, this type of chart is useful for seeing:</p>
 
@@ -108,7 +108,7 @@
 
 <p>(Stephen Few discusses this concept of dual-scaled axes &#8212; although he isn&#8217;t talking about this chart type &#8212; in <a href='http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf'>his March 2008 newsletter</a>.)</p>
 
-<p>A few bloggers (<a href='http://peltiertech.com/WordPress/graphing-the-cost-of-health-care/'>Jon Peltier</a>, for example) criticized the NatGeo chart, noting that, like the Fry chart above, it was an Isenberg-style parallel-coordinates plot, and that a better option would be a scatter plot. (I disagree that it&#8217;s <em>really</em> a parallel-coordinates plot, as parallel-coordinate plots usually compress everything into a unified vertical axis height, so the scale is somewhat pre-determined. I digress.)</p>
+<p>A few bloggers (<a href='http://peltiertech.com/WordPress/graphing-the-cost-of-health-care/'>Jon Peltier</a>, for example) criticized the NatGeo chart, noting that, like the Fry chart above, it was an Inselberg-style parallel-coordinates plot, and that a better option would be a scatter plot. (I disagree that it&#8217;s <em>really</em> a parallel-coordinates plot, as parallel-coordinate plots usually compress everything into a unified vertical axis height, so the scale is somewhat pre-determined. I digress.)</p>
 
 <p>In <a href='http://blogs.ngm.com/blog_central/2010/01/the-other-health-care-debate-lines-vs-scatterplot.html'>a great response on the NatGeo blog</a>, Uberti then re-drew the data in a scatter plot:</p>
 <img src='/images/slopegraphs/natgeo_scatter.jpg' style='width:500px' />
@@ -128,7 +128,7 @@
 
 <p>Back in July of 2007 (I know: we&#8217;re going back in time a bit, but this chart diverges even more from Tufte&#8217;s than the others, and I wanted to build up to it), a designer at online driving magazine <a href='http://windingroad.com'>WindingRoad.com</a> developed the &#8220;Speed per Dollar&#8221; index:</p>
 <img src='/images/slopegraphs/spd_original.jpg' style='width:500px' />
-<p>Again, what we have is, essentially, an Isenberg-style parallel-coordinates plot, with a Fry-style forced-rank. In this case, though, each step of the progression leads us through the math, to the conclusion at the right-side of the chart: dollar-for-dollar, your best bet is the <a href='http://www.arielatom.com/north-america/'>Ariel Atom</a>.</p>
+<p>Again, what we have is, essentially, an Inselberg-style parallel-coordinates plot, with a Fry-style forced-rank. In this case, though, each step of the progression leads us through the math, to the conclusion at the right-side of the chart: dollar-for-dollar, your best bet is the <a href='http://www.arielatom.com/north-america/'>Ariel Atom</a>.</p>
 <img src='/images/slopegraphs/ariel_atom.jpg' style='width:500px' />
 <p>Homina homina homina.</p>
 
@@ -160,7 +160,7 @@
 
 <p>At the moment, both of the canonical slopegraphs were made by hand, in Adobe Illustrator. A few people have made initial efforts at software that aids in creating slopegraphs. It&#8217;s hard, though. If the labels are too close together, they collide, making the chart less legible. A well-done piece of software, then, is going to include collision-detection and account for overlapping labels in some regard.</p>
 
-<p>Here are a few software tools that are at least in-process. As far as I know, the R implementation is the only one that&#8217;s working solidly at the moment:</p>
+<p>Here are a few software tools that are currently being developed:</p>
 
 <ul>
 <li>Dr. David Ruau has developed a working version of <a href='https://github.com/bobthecat/codebox/blob/master/table.graph.r'>slopegraphs in R</a></li>
@@ -200,7 +200,7 @@
 <li>Left-align the names of the items on both the left-hand and right-hand axes, to make vertical scanning of the items&#8217; names easier.</li>
 <li>Include both the <em>names</em> of the items and their <em>values</em> on both the left-hand and right-hand axes.</li> 
 <li>Use a thin, light gray line to connect the data. A too-heavy line is unnecessary and will make the chart harder to read.</li>
-<li>But: When a chart features multiple slope intersections (like the baseball or speed-per-dollar charts above), judicious use of color can avoid what Ben Fry describes as the "pile of sticks" phenomenon (<em><a href='http://www.amazon.com/gp/product/0596514557/ref=as_li_ss_tl?ie=UTF8&tag=charpark-20&linkCode=as2&camp=217145&creative=399369&creativeASIN=0596514557'>Visualizing Data</a></em>, 121).</li>
+<li>But: When a chart features multiple slope intersections (like the baseball or speed-per-dollar charts above), judicious use of color can avoid what Ben Fry describes as the "pile of sticks" phenomenon (<em><a href='http://www.amazon.com/gp/product/0596514557/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0596514557'>Visualizing Data</a></em>, 121).</li>
 <li>A table (with more statistical detail) might be a good complement to use alongside the slopegraph. As Tufte <a href='http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003nk&amp;topic_id=1'>notes</a>: &#8220;The data table and the slopegraph are colleagues in explanation not competitors. One display can serve some but not all functions.&#8221;</li>
 <li>Defer to current best practices outlined by Tufte, Stephen Few, and others, including maximizing data-to-ink ratios, minimizing chartjunk, and so on.
 <ul>
@@ -217,7 +217,7 @@
 
 <p>If you see a slopegraph out in the wild, or if you have any feedback on this post, shoot me a note on Twitter (<a href='http://twitter.com/charliepark'>@charliepark</a>) or by e-mail (<a href='mailto:charlie@pearbudget.com'>charlie@pearbudget.com</a>). I look forward to learning more from you.</p>
 	<footer>
-	<p class="next_actions">To get updates when I post more, <a href="http://twitter.com/charliepark/">follow me on the Twitter machine</a>.</p>
+	<p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
 	</footer>
 	</section>
   <script type="text/javascript">
