@@ -12,10 +12,15 @@ function refreshSwatch() {
 		hsl = "hsl("+hue+", "+saturation+"%, "+lightness+"%)",
 		text = getTextColor(lightness, delta),
 		css = generateHSLGradient(hsl, gradientTop, gradientBottom, borderBottom, text),
-		embeddedCss = ".btn.custom {\n"+css+"}";		
-		$("button.custom").attr('style', css);
+		embeddedCss = ".btn.custom {\n"+css+"}";
+		$("button.custom").not('.sample').attr('style', css);
 		$(".ui-slider-range").css("background", hsl);
 		$('#embedded_css').html(embeddedCss);
+		$('.ui-slider-handle').each(function(){
+			var v = $(this).parents('div').slider("value");
+			var i = $(this).parents('div').attr('id');
+			$("#"+i+"_value").text(v);
+		});
 }
 
 function getTextColor(lightness, puffiness){
@@ -34,6 +39,7 @@ function shadowAlpha(puffiness){
 
 function generateHSLGradient(hsl, highlight, lowlight, superLowlight, text) {
 	return '  background-color: ' + lowlight + ';\n\
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="'+highlight+'", endColorstr="'+lowlight+'");\n\
   background-repeat: repeat-x;\n\
   background-image: -khtml-gradient(linear, left top, left bottom, from('+highlight+'), to('+lowlight+'));\n\
   background-image: -moz-linear-gradient(top, '+highlight+', '+lowlight+');\n\
@@ -78,3 +84,14 @@ $(function() {
 	});
 	$( "#lightness" ).slider( "value", 40 );
 });
+
+$('.sample').click(function(){
+	var h = $(this).data('h');
+	var s = $(this).data('s');
+	var l = $(this).data('l');
+	var p = $(this).data('p');
+	$("#hue").slider({value: h});
+	$("#saturation").slider({value: s});
+	$("#lightness").slider({value: l});
+	$("#delta").slider({value:p});
+})
