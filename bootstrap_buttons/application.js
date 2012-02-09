@@ -12,7 +12,7 @@ function refreshSwatch() {
 		hsl = "hsl("+hue+", "+saturation+"%, "+lightness+"%)",
 		text = getTextColor(lightness, delta),
 		css = generateHSLGradient(hsl, gradientTop, gradientBottom, borderBottom, text),
-		embeddedCss = ".btn.custom {\n"+css+"}";
+		embeddedCss = ".btn-custom {\n"+css+"}";
 		$("button.custom").not('.sample').attr('style', css);
 		$(".ui-slider-range").css("background", hsl);
 		$('#embedded_css').html(embeddedCss);
@@ -25,9 +25,9 @@ function refreshSwatch() {
 
 function getTextColor(lightness, puffiness){
 	if(parseInt(lightness) < 50){
-		return "color: #fff;\n  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0."+shadowAlpha(puffiness)+");\n  -webkit-font-smoothing: antialiased;"
+		return "color: #fff !important;\n  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0."+shadowAlpha(puffiness)+");\n  -webkit-font-smoothing: antialiased;"
 	} else {
-		return "color: #333;\n  text-shadow: 0 1px 1px rgba(255, 255, 255, 0."+shadowAlpha(puffiness)+");\n  -webkit-font-smoothing: antialiased;"
+		return "color: #333 !important;\n  text-shadow: 0 1px 1px rgba(255, 255, 255, 0."+shadowAlpha(puffiness)+");\n  -webkit-font-smoothing: antialiased;"
 	};
 }
 
@@ -38,8 +38,8 @@ function shadowAlpha(puffiness){
 }
 
 function generateHSLGradient(hsl, highlight, lowlight, superLowlight, text) {
-	return '  background-color: ' + lowlight + ';\n\
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="'+highlight+'", endColorstr="'+lowlight+'");\n\
+	return '  background-color: ' + lowlight + ' !important;\n\
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="'+highlight+'", endColorStr="'+lowlight+'");\n\
   background-repeat: repeat-x;\n\
   background-image: -khtml-gradient(linear, left top, left bottom, from('+highlight+'), to('+lowlight+'));\n\
   background-image: -moz-linear-gradient(top, '+highlight+', '+lowlight+');\n\
