@@ -39,7 +39,6 @@ function shadowAlpha(puffiness){
 
 function generateHSLGradient(hsl, highlight, lowlight, superLowlight, text) {
 	return '  background-color: ' + lowlight + ' !important;\n\
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="'+highlight+'", endColorStr="'+lowlight+'");\n\
   background-repeat: repeat-x;\n\
   background-image: -khtml-gradient(linear, left top, left bottom, from('+highlight+'), to('+lowlight+'));\n\
   background-image: -moz-linear-gradient(top, '+highlight+', '+lowlight+');\n\
@@ -51,6 +50,9 @@ function generateHSLGradient(hsl, highlight, lowlight, superLowlight, text) {
   border-color: '+lowlight+' '+lowlight+' '+superLowlight+';\n\
   '+text+'\n';
 }
+
+// removed from above code: filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="'+highlight+'", endColorStr="'+lowlight+'");\n\
+
 
 $(function() {
 	refreshSwatch();
