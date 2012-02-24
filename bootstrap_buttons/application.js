@@ -52,9 +52,10 @@ function generateHSLGradient(hsl, highlight, lowlight, superLowlight, text, high
   //   background-image: linear-gradient('+highlight+', '+lowlight+');\n\
   //   border-color: '+lowlight+' '+lowlight+' '+superLowlight+';\n\
   //   '+text+'\n';
+  //  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="'+highhex+'", endColorStr="'+lowhex+'");\n\ // replaced with hack below
 	return '  background-color: ' + lowlight + ' !important;\n\
   background-repeat: repeat-x;\n\
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="'+highhex+'", endColorStr="'+lowhex+'");\n\
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr=\'%d\', endColorstr=\'%d\', GradientType=0)", '+highhex+', '+lowhex+'));\n\
   background-image: -khtml-gradient(linear, left top, left bottom, from('+highhex+'), to('+lowhex+'));\n\
   background-image: -moz-linear-gradient(top, '+highhex+', '+lowhex+');\n\
   background-image: -ms-linear-gradient(top, '+highhex+', '+lowhex+');\n\
