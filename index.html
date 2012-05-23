@@ -19,6 +19,50 @@
 	<section>
 	
 <article>
+	<h2 class="post_title"><a href='/css-bookmarks'>CSS Bookmarks</a></h2>
+	<div class="meta_wrapper"><time datetime='2012-05-23'>May 23, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/css">css</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/front-end stuff">front-end stuff</a></li></ul></div>
+	<p>Just wanted to share an easy way to make &#8220;bookmarks&#8221; using CSS. I&#8217;m guessing others have written about this before, but it took me less time to write this up than to search for it and get sidetracked by other stuff. So here you go.</p>
+
+<p>Here&#8217;s what it&#8217;ll look like:</p>
+<img src='/images/css_bookmarks/bookmark.png' style='margin:0 auto;' />
+<p>It&#8217;s really, really easy.</p>
+
+<p>First, in your HTML, you need a DOM element that&#8217;ll act as the bookmark. You could just go with a <code>&lt;b&gt;&lt;/b&gt;</code>, but most folks will want something a little more semantically-rich. So let&#8217;s go with <code>&lt;div class=&quot;bookmark&quot;&gt;&lt;/div&gt;</code>. Also, it&#8217;ll need to be sitting inside a <code>&lt;div&gt;</code> or other parent element that A) has a set background color (in this case, #eee), and B) that has a declared position. (You&#8217;ll probably have either position:absolute or position:relative. &#8220;Fixed&#8221; probably works as well.)</p>
+
+<p>So here&#8217;s the HTML:</p>
+
+<pre><code>&lt;div&gt;
+  &lt;div class=&quot;bookmark&quot;&gt;&lt;/div&gt;
+  &lt;h3&gt;Title of section or whatever&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+
+<p>And then we&#8217;ll have some CSS. (I haven&#8217;t included the parent div&#8217;s CSS; just the CSS for the bookmark.) Here&#8217;s what I used:</p>
+
+<pre><code>.bookmark{
+  background: #b00;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b00), color-stop(100%,#900));
+  background-image: -webkit-linear-gradient(top, #b00 0%, #900 100%);
+  background-image: -moz-linear-gradient(top, #b00 0%, #900 100%);
+  background-image: -o-linear-gradient(top, #b00 0%, #900 100%);
+  background-image: -ms-linear-gradient(top, #b00 0%, #b00 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#b00&#39;, endColorstr=&#39;#900&#39;,GradientType=0 );
+  background-image: linear-gradient(top, #b00 0%, #900 100%);
+  
+  height:30px;
+  position:absolute;top:0;right:20px;
+  width:20px;
+}
+
+.bookmark:after{content:&#39;&#39;;display:block;border:10px solid transparent;border-bottom-color:#eee;position:absolute;bottom:0;}</code></pre>
+
+<p>Feel free to lift my CSS and use it for your own projects.</p>
+
+<p>You can use whatever gradient you want to, of course. (Or no gradient.) Mine runs from a light-deep red (#b00) to a medium-deep red (#900). And you&#8217;ll want the bottom-border color on that :after element to be the same color as the parent div (again, in this case, #eee). If you want the bookmark to stick above the parent element (that is, as though it were &#8220;folding over the page&#8221;), make the &#8220;top&#8221; value &#8220;-1px&#8221; on the .bookmark CSS.</p>
+
+<p>Have fun, and if you use it, let me know what you make with it.</p>
+</article>
+
+<article>
 	<h2 class="post_title"><a href='/macbooks'>The Middle Way, and Why Apple Will Reboot the MacBook</a></h2>
 	<div class="meta_wrapper"><time datetime='2012-04-10'>April 10, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/apple">apple</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/macbooks">macbooks</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/strategy">strategy</a></li></ul></div>
 	<div class='update_box'><p><strong>Update:</strong> So, shocker, this ended up having no basis in reality &hellip; yet. Just about everyone who commented (e.g. <a href='http://news.ycombinator.com/item?id=3823084'>at Hacker News</a>) decided I was way off-base. Most suggested that Apple would be more likely to simply come out with a 15&Prime; MacBook Air and also slim down their Pro line to have an Air-style profile. I still think 3 levels of tiering would make sense from a business perspective, but I can totally see why that might never happen.</p>
