@@ -67,16 +67,18 @@
 <pre><code>---
 layout: default
 ---
-&lt;h2 class=&quot;post_title&quot;&gt;Tags In Jekyll&lt;/h2&gt;
+&lt;h2 class=&quot;post_title&quot;&gt;{.{page.title}}&lt;/h2&gt;
 &lt;ul&gt;
   {.% for post in site.posts %}
   {.% for tag in post.tags %}
   {.% if tag == page.tag %}
   &lt;li class=&quot;archive_list&quot;&gt;
-    &lt;time style=&quot;color:#666;font-size:11px;&quot; datetime=&#39;&#39;&gt;&lt;/time&gt; &lt;a class=&quot;archive_list_article_link&quot; href=&#39;&#39;&gt;&lt;/a&gt;
-    &lt;p class=&quot;summary&quot;&gt;
+    &lt;time style=&quot;color:#666;font-size:11px;&quot; datetime=&#39;{.{post.date | date: &quot;%Y-%m-%d&quot;}}&#39;&gt;{.{post.date | date: &quot;%m/%d/%y&quot;}}&lt;/time&gt; &lt;a class=&quot;archive_list_article_link&quot; href=&#39;{.{post.url}}&#39;&gt;{.{post.title}}&lt;/a&gt;
+    &lt;p class=&quot;summary&quot;&gt;{.{post.summary}}
     &lt;ul class=&quot;tag_list&quot;&gt;
-      
+      {.% for tag in post.tags %}
+      &lt;li class=&quot;inline archive_list&quot;&gt;&lt;a class=&quot;tag_list_link&quot; href=&quot;/tag/{.{ tag }}&quot;&gt;{.{ tag }}&lt;/a&gt;&lt;/li&gt;
+      {.% endfor %}
     &lt;/ul&gt;
   &lt;/li&gt;
   {.% endif %}
@@ -84,7 +86,7 @@ layout: default
   {.% endfor %}
 &lt;/ul&gt;</code></pre>
 
-<p><em>Note: In some of the lines up there, it has a &#8220;{.%&#8221; &#8230; get rid of that period between the curly bracket and the percent sign.</em></p>
+<p><em>Note: In some of the lines up there, it has a &#8220;{.%&#8221; &#8230; get rid of that period between the curly bracket and the percent sign or between the two curly brackets.</em></p>
 
 <p><strong>What that does:</strong> When this page is created (more on that in a sec), it&#8217;ll have a specific tag assigned to it. That is, multiple pages will be created, each with their own official tag. This goes through every post in the site, and if the post has a tag that matches the tag for the page that&#8217;s being generated, the post is then listed, along with its publication date and summary. Obviously, if your posts don&#8217;t include a summary, you can leave that line off. Or, if there&#8217;s some other bit of metadata you want to include, you can add it into the layout.</p>
 
