@@ -19,6 +19,52 @@
 	<section>
 	
 <article>
+	<h2 class="post_title"><a href='/fat-fingers'>Fat Fingers (a regex for web app developers)</a></h2>
+	<div class="meta_wrapper"><time datetime='2012-08-04'>August  4, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/web apps">web apps</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/user experience">user experience</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/ruby">ruby</a></li></ul></div>
+	<p>This is about a regex I wrote for fixing e-mail typos. (When &#8220;joe@gmail.com&#8221; enters in &#8220;joe@gmai.cm&#8221;, fix it for him.) You can see it here: <a href='https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb'>fat_fingers.rb</a>.</p>
+
+<h3 id='lets_help_our_users'>Let&#8217;s help our users!</h3>
+
+<p>Just a few minutes ago, I got a &#8220;message failed to deliver&#8221; e-mail. Why? The user had entered in their e-mail address incorrectly. something@something.cm. So, now there&#8217;s a bit of a hassle, where I have to fix their e-mail in the system, then re-initiate whatever process sent them that e-mail.</p>
+
+<p>That&#8217;s needless work.</p>
+
+<p><strong>Fat Fingers is simply a Ruby method for cleaning up e-mail typos.</strong></p>
+
+<p>It extends String objects with a method called <code>clean_up_typoed_email</code>.</p>
+
+<p>All you need to do is attach that method to the user&#8217;s e-mail address before you save them in the system.</p>
+
+<p>There are some more instructions in the file itself, but it&#8217;s really straightforward.</p>
+
+<h3 id='so_this_isnt_a_library__plugin'>So this isn&#8217;t a library / plugin?</h3>
+
+<p>Nope! It&#8217;s just a regex. Eight lines of code, and we tell you where you can stick &#8217;em!</p>
+
+<h3 id='arent_we_disenfranchising_users_with_this'>Aren&#8217;t we disenfranchising users with this?</h3>
+
+<p>There&#8217;s a similar tool, called <a href='https://github.com/Kicksend/mailcheck'>Mailcheck.js</a>. It offers suggestions to the user, to check the e-mail they entered to make sure it&#8217;s legit.</p>
+
+<p>Fat Fingers is different, in that it does the work silently, without checking with the user.</p>
+
+<p>Perhaps you want to roll with their approach. That&#8217;s cool, and you&#8217;d be in good company. For my own projects, I&#8217;d rather not bother the user with something that&#8217;s obviously wrong, if I can fix it on my own.</p>
+
+<h3 id='a_quick_note_for_users_running_this_on_ruby__19'>A quick note for users running this on Ruby &lt; 1.9</h3>
+
+<p>Our multi-line chaining in this regex features the dots at the beginning of each line. Just move them to the end of the previous line if you&#8217;re on Ruby 1.8.x.</p>
+
+<h3 id='testing'>Testing!</h3>
+
+<p>Fat Fingers has its own tests.</p>
+
+<p>Once you&#8217;ve cloned it to your system, just run <code>ruby fat_fingers.rb</code> and you&#8217;ll see the output of the tests.</p>
+
+<h3 id='make_it_better'>Make it better!</h3>
+
+<p>I&#8217;d love to hear suggestions, critiques, and improvements. Feel free to fork it, ask me to pull in changes, and so on. I&#8217;d also love any test improvements.</p>
+</article>
+
+<article>
 	<h2 class="post_title"><a href='/wwdc'>Livestreams of WWDC</a></h2>
 	<div class="meta_wrapper"><time datetime='2012-06-09'>June  9, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/apple">apple</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/wwdc">wwdc</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/live">live</a></li></ul></div>
 	I've created <a href="http://charliepark.org/wwdc">a page that aggregates the 2012 Apple WWDC livestreams from The Verge, Engadget, and MacRumors, all in one view</a>.
@@ -974,14 +1020,6 @@ Benchmark.ms { 1000.times { month_name_d } }</code></pre>
 <h3 id='the_conclusion'>The Conclusion</h3>
 
 <p><strong>When you&#8217;re processing Times and Dates in your app, and you don&#8217;t <em>need</em> to use the Date object for some reason, use Time.</strong></p>
-</article>
-
-<article>
-	<h2 class="post_title"><a href='/the-old-homepage'>The old homepage</a></h2>
-	<div class="meta_wrapper"><time datetime='2011-06-08'>June  8, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/pages">pages</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/archives">archives</a></li></ul></div>
-	<p>Just for posterity, I wanted to save / link to a copy of the old <a href='http://charliepark.org'>charliepark.org</a>.</p>
-
-<p>So it&#8217;s now here: <a href='http://charliepark.org/oldindex.html'>oldindex.html</a>.</p>
 </article>
 
 <footer>
