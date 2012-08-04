@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="A simple tool for reducing bounces in web apps. (from Charlie Park)">
+	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
+  <!--  old OpenID credentials; keep around for a bit longer <link rel="openid.server" href="http://charliepark.mp/server" /> <link rel="openid.delegate" href="http://charliepark.mp/"> -->
+	<title>Fat Fingers (a regex for web app developers)</title>
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
+		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
+	</header>
+	<section>
+		<h1 class="post_title">Fat Fingers (a regex for web app developers)</h1>
+	<div class="meta_wrapper"><time datetime="2012-08-03">August  3, 2012</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/web apps">web apps</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/user experience">user experience</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/ruby">ruby</a></li></ul></div>
+	<p>This is about a regex I wrote for fixing e-mail typos. (When &#8220;joe@gmail.com&#8221; enters in &#8220;joe@gmai.cm&#8221;, fix it for him.) You can see it here: <a href='https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb'>fat_fingers.rb</a>.</p>
+
+<h3 id='lets_help_our_users'>Let&#8217;s help our users!</h3>
+
+<p>Just a few minutes ago, I got a &#8220;message failed to deliver&#8221; e-mail. Why? The user had entered in their e-mail address incorrectly. something@something.cm. So, now there&#8217;s a bit of a hassle, where I have to fix their e-mail in the system, then re-initiate whatever process sent them that e-mail.</p>
+
+<p>That&#8217;s needless work.</p>
+
+<p><strong>Fat Fingers is simply a Ruby method for cleaning up e-mail typos.</strong></p>
+
+<p>It extends String objects with a method called <code>clean_up_typoed_email</code>.</p>
+
+<p>All you need to do is attach that method to the user&#8217;s e-mail address before you save them in the system.</p>
+
+<p>There are some more instructions in the file itself, but it&#8217;s really straightforward.</p>
+
+<h3 id='so_this_isnt_a_library__plugin'>So this isn&#8217;t a library / plugin?</h3>
+
+<p>Nope! It&#8217;s just a regex. Eight lines of code, and we tell you where you can stick &#8217;em!</p>
+
+<h3 id='arent_we_disenfranchising_users_with_this'>Aren&#8217;t we disenfranchising users with this?</h3>
+
+<p>There&#8217;s a similar tool, called <a href='https://github.com/Kicksend/mailcheck'>Mailcheck.js</a>. It offers suggestions to the user, to check the e-mail they entered to make sure it&#8217;s legit.</p>
+
+<p>Fat Fingers is different, in that it does the work silently, without checking with the user.</p>
+
+<p>Perhaps you want to roll with their approach. That&#8217;s cool, and you&#8217;d be in good company. For my own projects, I&#8217;d rather not bother the user with something that&#8217;s obviously wrong, if I can fix it on my own.</p>
+
+<h3 id='a_quick_note_for_users_running_this_on_ruby__19'>A quick note for users running this on Ruby &lt; 1.9</h3>
+
+<p>Our multi-line chaining in this regex features the dots at the beginning of each line. Just move them to the end of the previous line if you&#8217;re on Ruby 1.8.x.</p>
+
+<h3 id='testing'>Testing!</h3>
+
+<p>Fat Fingers has its own tests.</p>
+
+<p>Once you&#8217;ve cloned it to your system, just run <code>ruby fat_fingers.rb</code> and you&#8217;ll see the output of the tests.</p>
+
+<h3 id='make_it_better'>Make it better!</h3>
+
+<p>I&#8217;d love to hear suggestions, critiques, and improvements. Feel free to fork it, ask me to pull in changes, and so on. I&#8217;d also love any test improvements.</p>
+	<footer>
+	<p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
+	</footer>
+	</section>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div></div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-15921981-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>
