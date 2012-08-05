@@ -25,7 +25,7 @@
 
 <h3 id='lets_help_our_users'>Let&#8217;s help our users!</h3>
 
-<p>Just a few minutes ago, I got a &#8220;message failed to deliver&#8221; e-mail. Why? The user had entered in their e-mail address incorrectly. something@something.cm. So, now there&#8217;s a bit of a hassle, where I have to fix their e-mail in the system, then re-initiate whatever process sent them that e-mail.</p>
+<p>Just a few minutes ago, I got a &#8220;message failed to deliver&#8221; e-mail. Why? The user had entered in their e-mail address incorrectly. something@something.cm (note the lack of an &#8220;o&#8221; in &#8220;.cm&#8221;). So, now there&#8217;s a bit of a hassle, where I have to fix their e-mail in the system, then re-initiate whatever process sent them that e-mail.</p>
 
 <p>That&#8217;s needless work.</p>
 
@@ -33,7 +33,7 @@
 
 <p>It extends String objects with a method called <code>clean_up_typoed_email</code>.</p>
 
-<p>All you need to do is attach that method to the user&#8217;s e-mail address before you save them in the system.</p>
+<p>All you need to do is attach that method to the user&#8217;s e-mail address before you save them in the system. Like <code>@user.email.clean_up_typoed_email</code>.</p>
 
 <p>There are some more instructions in the file itself, but it&#8217;s really straightforward.</p>
 
@@ -45,7 +45,7 @@
 
 <p>There&#8217;s a similar tool, called <a href='https://github.com/Kicksend/mailcheck'>Mailcheck.js</a>. It offers suggestions to the user, to check the e-mail they entered to make sure it&#8217;s legit.</p>
 
-<p>Fat Fingers is different, in that it does the work silently, without checking with the user.</p>
+<p><a href='https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb'>Fat Fingers</a> is different, in that it does the work silently, without checking with the user.</p>
 
 <p>Perhaps you want to roll with their approach. That&#8217;s cool, and you&#8217;d be in good company. For my own projects, I&#8217;d rather not bother the user with something that&#8217;s obviously wrong, if I can fix it on my own.</p>
 
@@ -57,7 +57,7 @@
 
 <p>Fat Fingers has its own tests.</p>
 
-<p>Once you&#8217;ve cloned it to your system, just run <code>ruby fat_fingers.rb</code> and you&#8217;ll see the output of the tests.</p>
+<p>Once you&#8217;ve cloned it to your system, just run <code>ruby fat_fingers.rb</code> and you&#8217;ll see the output of the tests. Unless something&#8217;s gone horribly wrong, they should all pass.</p>
 
 <h3 id='make_it_better'>Make it better!</h3>
 
