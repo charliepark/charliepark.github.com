@@ -16,54 +16,65 @@
 		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
 		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
 	</header>
-	<section>
+	<section id="main_content">
 		<h1 class="post_title">Fat Fingers (a regex for fixing typoed e-mail addresses)</h1>
 	<div class="meta_wrapper"><time datetime="2012-08-04">August  4, 2012</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/web apps">web apps</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/user experience">user experience</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/ruby">ruby</a></li></ul></div>
-	<p>This is about a regex I wrote for fixing e-mail typos. (When &#8220;joe@gmail.com&#8221; enters in &#8220;joe@gmai.cm&#8221;, fix it for him.) <strong>You can see it here: <a href='https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb'>fat_fingers.rb</a>.</strong></p>
+	<p>This is about a regex I wrote for fixing e-mail typos. (When “joe@gmail.com” enters in “joe@gmai.cm”, fix it for him.) <strong>You can see it here: <a href="https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb">fat_fingers.rb</a>.</strong></p>
 
-<h3 id='lets_help_our_users'>Let&#8217;s help our users!</h3>
+<h3 id="lets-help-our-users">Let’s help our users!</h3>
 
-<p>Just a few minutes ago, I got a &#8220;message failed to deliver&#8221; e-mail. Why? The user had entered in their e-mail address incorrectly. something@something.cm (note the lack of an &#8220;o&#8221; in &#8220;.cm&#8221;). So, now there&#8217;s a bit of a hassle, where I have to fix their e-mail in the system, then re-initiate whatever process sent them that e-mail.</p>
+<p>Just a few minutes ago, I got a “message failed to deliver” e-mail. Why? The user had entered in their e-mail address incorrectly. something@something.cm (note the lack of an “o” in “.cm”). So, now there’s a bit of a hassle, where I have to fix their e-mail in the system, then re-initiate whatever process sent them that e-mail.</p>
 
-<p>That&#8217;s needless work.</p>
+<p>That’s needless work.</p>
 
-<p><strong><a href='https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb'>Fat Fingers</a> is simply a Ruby method for cleaning up e-mail typos.</strong></p>
+<p><strong><a href="https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb">Fat Fingers</a> is simply a Ruby method for cleaning up e-mail typos.</strong></p>
 
 <p>It extends String objects with a method called <code>clean_up_typoed_email</code>.</p>
 
-<p>All you need to do is attach that method to the user&#8217;s e-mail address before you save them in the system. Like <code>@user.email.clean_up_typoed_email</code>.</p>
+<p>All you need to do is attach that method to the user’s e-mail address before you save them in the system. Like <code>@user.email.clean_up_typoed_email</code>.</p>
 
-<p>There are some more instructions in the file itself, but it&#8217;s really straightforward.</p>
+<p>There are some more instructions in the file itself, but it’s really straightforward.</p>
 
-<h3 id='so_this_isnt_a_library__plugin'>So this isn&#8217;t a library / plugin?</h3>
+<h3 id="so-this-isnt-a-library--plugin">So this isn’t a library / plugin?</h3>
 
-<p>Nope! It&#8217;s just a regex. Eight lines of code, and we tell you where you can stick &#8217;em!</p>
+<p>Nope! It’s just a regex. Eight lines of code, and we tell you where you can stick ’em!</p>
 
-<h3 id='arent_we_disenfranchising_users_with_this'>Aren&#8217;t we disenfranchising users with this?</h3>
+<h3 id="arent-we-disenfranchising-users-with-this">Aren’t we disenfranchising users with this?</h3>
 
-<p>There&#8217;s a similar tool, called <a href='https://github.com/Kicksend/mailcheck'>Mailcheck.js</a>. It offers suggestions to the user, to check the e-mail they entered to make sure it&#8217;s legit.</p>
+<p>There’s a similar tool, called <a href="https://github.com/Kicksend/mailcheck">Mailcheck.js</a>. It offers suggestions to the user, to check the e-mail they entered to make sure it’s legit.</p>
 
-<p><a href='https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb'>Fat Fingers</a> is different, in that it does the work silently, without checking with the user.</p>
+<p><a href="https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb">Fat Fingers</a> is different, in that it does the work silently, without checking with the user.</p>
 
-<p>Perhaps you want to roll with their approach. That&#8217;s cool, and you&#8217;d be in good company. For my own projects, I&#8217;d rather not bother the user with something that&#8217;s obviously wrong, if I can fix it on my own.</p>
+<p>Perhaps you want to roll with their approach. That’s cool, and you’d be in good company. For my own projects, I’d rather not bother the user with something that’s obviously wrong, if I can fix it on my own.</p>
 
-<h3 id='a_quick_note_for_users_running_this_on_ruby__19'>A quick note for users running this on Ruby &lt; 1.9</h3>
+<h3 id="a-quick-note-for-users-running-this-on-ruby--19">A quick note for users running this on Ruby &lt; 1.9</h3>
 
-<p>Our multi-line chaining in this regex features the dots at the beginning of each line. Just move them to the end of the previous line if you&#8217;re on Ruby 1.8.x.</p>
+<p>Our multi-line chaining in this regex features the dots at the beginning of each line. Just move them to the end of the previous line if you’re on Ruby 1.8.x.</p>
 
-<h3 id='testing'>Testing!</h3>
+<h3 id="testing">Testing!</h3>
 
 <p>Fat Fingers has its own tests.</p>
 
-<p>Once you&#8217;ve cloned it to your system, just run <code>ruby fat_fingers.rb</code> and you&#8217;ll see the output of the tests. Unless something&#8217;s gone horribly wrong, they should all pass.</p>
+<p>Once you’ve cloned it to your system, just run <code>ruby fat_fingers.rb</code> and you’ll see the output of the tests. Unless something’s gone horribly wrong, they should all pass.</p>
 
-<h3 id='make_it_better'>Make it better!</h3>
+<h3 id="make-it-better">Make it better!</h3>
 
-<p>I&#8217;d love to hear suggestions, critiques, and improvements. Feel free to fork it, ask me to pull in changes, and so on. I&#8217;d also love any test improvements.</p>
+<p>I’d love to hear suggestions, critiques, and improvements. Feel free to fork it, ask me to pull in changes, and so on. I’d also love any test improvements.</p>
+
 	<footer>
 	<p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
 	</footer>
 	</section>
+	<aside id="sidebar">
+	 <h3>My Most Popular Posts</h3>
+	 <p>You&rsquo;ll like these.</p>
+	 <ul>
+	   <li><a href="/slopegraphs">Slopegraphs</a></li>
+	   <li><a href="/a-slopegraph-update">A Slopegraph Update</a></li>
+	   <li><a href="/beautiful-buttons-for-twitter-bootstrappers">Beautiful Buttons for Twitter Bootstrappers</a></li>
+	   <li><a href="/tags-in-jekyll">Tags in Jekyll</a></li>
+	 </ul>
+	</aside>
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

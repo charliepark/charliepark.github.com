@@ -16,25 +16,28 @@
 		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
 		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
 	</header>
-	<section>
+	<section id="main_content">
 		<h1 class="post_title">CSS-only Bookmarks</h1>
 	<div class="meta_wrapper"><time datetime="2012-05-23">May 23, 2012</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/css">css</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/front-end stuff">front-end stuff</a></li></ul></div>
-	<p>Just wanted to share an easy way to make &#8220;bookmarks&#8221; using CSS. I&#8217;m guessing others have written about this before, but it took me less time to write this up than to search for it and get sidetracked by other stuff. So here you go.</p>
+	<p>Just wanted to share an easy way to make “bookmarks” using CSS. I’m guessing others have written about this before, but it took me less time to write this up than to search for it and get sidetracked by other stuff. So here you go.</p>
 
-<p>Here&#8217;s what it&#8217;ll look like:</p>
-<img src='/images/css_bookmarks/bookmark.png' style='margin:0 auto;' />
-<p>It&#8217;s really, really easy.</p>
+<p>Here’s what it’ll look like:</p>
 
-<p>First, in your HTML, you need a DOM element that&#8217;ll act as the bookmark. You could just go with a <code>&lt;b&gt;&lt;/b&gt;</code>, but most folks will want something a little more semantically-rich. So let&#8217;s go with <code>&lt;div class=&quot;bookmark&quot;&gt;&lt;/div&gt;</code>. Also, it&#8217;ll need to be sitting inside a <code>&lt;div&gt;</code> or other parent element that A) has a set background color (in this case, #eee), and B) that has a declared position. (You&#8217;ll probably have either position:absolute or position:relative. &#8220;Fixed&#8221; probably works as well.)</p>
+<p><img src="/images/css_bookmarks/bookmark.png" style="margin:0 auto;" /></p>
 
-<p>So here&#8217;s the HTML:</p>
+<p>It’s really, really easy.</p>
+
+<p>First, in your HTML, you need a DOM element that’ll act as the bookmark. You could just go with a <code>&lt;b&gt;&lt;/b&gt;</code>, but most folks will want something a little more semantically-rich. So let’s go with <code>&lt;div class="bookmark"&gt;&lt;/div&gt;</code>. Also, it’ll need to be sitting inside a <code>&lt;div&gt;</code> or other parent element that A) has a set background color (in this case, #eee), and B) that has a declared position. (You’ll probably have either position:absolute or position:relative. “Fixed” probably works as well.)</p>
+
+<p>So here’s the HTML:</p>
 
 <pre><code>&lt;div&gt;
-  &lt;div class=&quot;bookmark&quot;&gt;&lt;/div&gt;
+  &lt;div class="bookmark"&gt;&lt;/div&gt;
   &lt;h3&gt;Title of section or whatever&lt;/h3&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 
-<p>And then we&#8217;ll have some CSS. (I haven&#8217;t included the parent div&#8217;s CSS; just the CSS for the bookmark.) Here&#8217;s what I used:</p>
+<p>And then we’ll have some CSS. (I haven’t included the parent div’s CSS; just the CSS for the bookmark.) Here’s what I used:</p>
 
 <pre><code>.bookmark{
   background: #b00;
@@ -43,7 +46,7 @@
   background-image: -moz-linear-gradient(top, #b00 0%, #900 100%);
   background-image: -o-linear-gradient(top, #b00 0%, #900 100%);
   background-image: -ms-linear-gradient(top, #b00 0%, #b00 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#b00&#39;, endColorstr=&#39;#900&#39;,GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b00', endColorstr='#900',GradientType=0 );
   background-image: linear-gradient(top, #b00 0%, #900 100%);
   
   height:30px;
@@ -51,17 +54,29 @@
   width:20px;
 }
 
-.bookmark:after{content:&#39;&#39;;display:block;border:10px solid transparent;border-bottom-color:#eee;position:absolute;bottom:0;}</code></pre>
+.bookmark:after{content:'';display:block;border:10px solid transparent;border-bottom-color:#eee;position:absolute;bottom:0;}
+</code></pre>
 
 <p>Feel free to lift my CSS and use it for your own projects.</p>
 
-<p>You can use whatever gradient you want to, of course. (Or no gradient.) Mine runs from a light-deep red (#b00) to a medium-deep red (#900). And you&#8217;ll want the bottom-border color on that :after element to be the same color as the parent div (again, in this case, #eee). If you want the bookmark to stick above the parent element (that is, as though it were &#8220;folding over the page&#8221;), make the &#8220;top&#8221; value &#8220;-1px&#8221; on the .bookmark CSS.</p>
+<p>You can use whatever gradient you want to, of course. (Or no gradient.) Mine runs from a light-deep red (#b00) to a medium-deep red (#900). And you’ll want the bottom-border color on that :after element to be the same color as the parent div (again, in this case, #eee). If you want the bookmark to stick above the parent element (that is, as though it were “folding over the page”), make the “top” value “-1px” on the .bookmark CSS.</p>
 
 <p>Have fun, and if you use it, let me know what you make with it.</p>
+
 	<footer>
 	<p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
 	</footer>
 	</section>
+	<aside id="sidebar">
+	 <h3>My Most Popular Posts</h3>
+	 <p>You&rsquo;ll like these.</p>
+	 <ul>
+	   <li><a href="/slopegraphs">Slopegraphs</a></li>
+	   <li><a href="/a-slopegraph-update">A Slopegraph Update</a></li>
+	   <li><a href="/beautiful-buttons-for-twitter-bootstrappers">Beautiful Buttons for Twitter Bootstrappers</a></li>
+	   <li><a href="/tags-in-jekyll">Tags in Jekyll</a></li>
+	 </ul>
+	</aside>
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

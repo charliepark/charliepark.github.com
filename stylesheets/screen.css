@@ -122,6 +122,7 @@ p.summary{color:#444;line-height:1.2;padding:5px 0 5px 58px;}
 blockquote p{padding:0}
 blockquote p+p{padding-top:1em}
 p+pre{margin:-1em 0 1em}
+#sidebar p{padding-bottom:3px}
 
 s, strike{text-decoration:line-through}
 
@@ -155,4 +156,8 @@ ul.tag_list{margin-left:52px;padding-bottom:20px;}
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape){
 	.site_title{font-size:100px}
+}
+@media screen and (min-width: 960px) {	
+  #main_content{position:relative;left:-50px}
+  #sidebar{position:absolute;top:332px;left:50%;margin-left:240px;width:300px}
 }
