@@ -19,6 +19,532 @@
 	<section id="main_content">
 	
 <article>
+	<h2 class="post_title"><a href='/css-only-sticky-headers'>CSS-Only Sticky Headers for Tables, Using &lsquo;position&colon; sticky&rsquo;</a></h2>
+	<div class="meta_wrapper"><time datetime='2012-09-07'>September  7, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/css">css</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/front-end stuff">front-end stuff</a></li></ul></div>
+	<style type="text/css" media="screen">
+  #example_sticky_header_container table{height:200px;overflow:auto;width:100%}
+  #example_sticky_header_container td{text-align:center;padding:4px 20px}
+  #example_sticky_header_container tr{border-bottom:1px solid #eee;}
+  #example_sticky_header_container thead{background: #eee; padding:2px 6px; position: -webkit-sticky; position: -moz-sticky; position: -ms-sticky; position: -o-sticky; position: sticky; top: 0;}
+  #example_sticky_header_container tbody{height:400px;overflow:auto}
+  #example_sticky_header_container td + td + td + td,
+  #example_sticky_header_container th + th + th + th{display:none}
+  #example_sticky_header_container td + td + td + td + td + td + td + td + td,
+  #example_sticky_header_container th + th + th + th + th + th + th + th + th {display:table-cell}
+</style>
+
+<p>In the last few days, I’ve seen a few people talking about a new <acronym>CSS</acronym> property, <code>position: sticky</code>. The idea is straightforward, and neat: If an object has “position:sticky”, treat it as a normal position:relative block, as long as it’s on screen. If the user scrolls far enough that the object (let’s say it’s an h3) would be scrolled off the screen, but the h3’s parent div is still visible onscreen, treat the object as though it were position:fixed (at whatever <code>top</code> or <code>left</code> or <code>right</code> or <code>bottom</code> parameters you give it).</p>
+
+<p>That explanation gets a little complicated, but it’s a principle you’ve seen before. Basically, if the parent div containing the headline (or whatever) is still on-screen, the headline should remain on-screen as well. Scroll down a bit to see an example (look for a table titled “The First 40 Elements”).</p>
+
+<h3 id="why-is-this-new-implementation-interesting">Why is this new implementation interesting?</h3>
+
+<p>What’s neat about this is that you get the effect of the static table headers by introducing a few lines of <acronym>CSS</acronym>. No  jQuery, no weird <acronym>CSS</acronym> that breaks the semantic intent of the content, and no javascript handlers built off scroll events.</p>
+
+<h3 id="so-tables">So, tables?</h3>
+
+<p>One of the best use-cases for this is with really long tables. That is, tables where you want to see the different columns’ headers, as well as the data in the table. Tables like we sometimes have in <a href="https://pearbudget.com/">PearBudget</a>.</p>
+
+<p>This is a use-case that, so far, has been served by javascript. A great front-end dev (and friend), Russell Heimlich, built a great implementation of it as a plugin for jQuery, Prototype, MooTools, and Dojo: <a href="https://github.com/kingkool68/stickyHeader">Sticky Header</a>. And <strong>his plugin is probably the best way to implement this effect for now</strong>, since browser support for this <acronym>CSS</acronym> property is currently almost non-existent.</p>
+
+<h3 id="but-how-do-you-make-sticky-headers-with-just-acronymcssacronym">But how do you make sticky headers with just <acronym>CSS</acronym>?</h3>
+
+<p>It’s super-easy. All you do is add</p>
+
+<pre><code>position: -webkit-sticky;
+position: -moz-sticky;
+position: -ms-sticky;
+position: -o-sticky;
+position: sticky;
+top: 0;
+</code></pre>
+
+<p>to the <acronym>CSS</acronym> for whatever object you want to stay on-screen. <strong>In the “elements” example below, I’ve applied that <acronym>CSS</acronym> to the &lt;thead&gt;.</strong></p>
+
+<h3 id="can-i-see-an-example">Can I see an example?</h3>
+
+<p>Sure thing. <em>If you’re using the latest version of Chrome Canary</em> (or, in the future, if other browsers are supporting this and you’re on one of those), the following table will show sticky headers. The thing to look for: the gray bar with the columns’ headers will remain visible, even when you’re scrolling far down the table.</p>
+
+<p>Revisiting the description above of what’s going on, as long as the parent element (<code>&lt;table&gt;&lt;/table&gt;</code>) is visible on-screen, the <code>&lt;thead&gt;</code> (and everything in it) should be visible as well.</p>
+
+<p>If you aren’t using Chrome Canary, it’ll just look like a normal table, and the header row will scroll offscreen like any other <code>position: relative</code> element. Again, there’s no javascript in play here.</p>
+
+<div id="example_sticky_header_container">
+  <table>
+  <caption><h4 style="text-align:center">The First 40 Elements</h4></caption>
+  <thead><tr>
+  <th><a href="http://en.wikipedia.org/wiki/Atomic_number" title="Atomic number">Atomic no.</a></th>
+  <th>Name</th>
+  <th><a href="http://en.wikipedia.org/wiki/Chemical_symbol" title="Chemical symbol">Symbol</a></th>
+  <th><a href="http://en.wikipedia.org/wiki/Group_(periodic_table)" title="Group (periodic table)">Group</a></th>
+  <th><a href="http://en.wikipedia.org/wiki/Period_(periodic_table)" title="Period (periodic table)">Period</a></th>
+  <th><a href="http://en.wikipedia.org/wiki/Periodic_table_block" title="Periodic table block">Block</a></th>
+  <th><a href="http://en.wikipedia.org/wiki/State_of_matter" title="State of matter">State</a> at <a href="http://en.wikipedia.org/wiki/Standard_temperature_and_pressure" title="Standard temperature and pressure">STP</a></th>
+  <th>Occurrence</th>
+  <th>Description</th>
+  </tr></thead><tbody>
+  <tr>
+  <td>1</td>
+  <td><a href="http://en.wikipedia.org/wiki/Hydrogen" title="Hydrogen">Hydrogen</a></td>
+  <td>H</td>
+  <td>1</td>
+  <td>1</td>
+  <td>s</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>2</td>
+  <td><a href="http://en.wikipedia.org/wiki/Helium" title="Helium">Helium</a></td>
+  <td>He</td>
+  <td>18</td>
+  <td>1</td>
+  <td>s</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Noble gas</td>
+  </tr>
+  <tr>
+  <td>3</td>
+  <td><a href="http://en.wikipedia.org/wiki/Lithium" title="Lithium">Lithium</a></td>
+  <td>Li</td>
+  <td>1</td>
+  <td>2</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkali metal</td>
+  </tr>
+  <tr>
+  <td>4</td>
+  <td><a href="http://en.wikipedia.org/wiki/Beryllium" title="Beryllium">Beryllium</a></td>
+  <td>Be</td>
+  <td>2</td>
+  <td>2</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkaline earth metal</td>
+  </tr>
+  <tr>
+  <td>5</td>
+  <td><a href="http://en.wikipedia.org/wiki/Boron" title="Boron">Boron</a></td>
+  <td>B</td>
+  <td>13</td>
+  <td>2</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Metalloid</td>
+  </tr>
+  <tr>
+  <td>6</td>
+  <td><a href="http://en.wikipedia.org/wiki/Carbon" title="Carbon">Carbon</a></td>
+  <td>C</td>
+  <td>14</td>
+  <td>2</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>7</td>
+  <td><a href="http://en.wikipedia.org/wiki/Nitrogen" title="Nitrogen">Nitrogen</a></td>
+  <td>N</td>
+  <td>15</td>
+  <td>2</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>8</td>
+  <td><a href="http://en.wikipedia.org/wiki/Oxygen" title="Oxygen">Oxygen</a></td>
+  <td>O</td>
+  <td>16</td>
+  <td>2</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>9</td>
+  <td><a href="http://en.wikipedia.org/wiki/Fluorine" title="Fluorine">Fluorine</a></td>
+  <td>F</td>
+  <td>17</td>
+  <td>2</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Halogen</td>
+  </tr>
+  <tr>
+  <td>10</td>
+  <td><a href="http://en.wikipedia.org/wiki/Neon" title="Neon">Neon</a></td>
+  <td>Ne</td>
+  <td>18</td>
+  <td>2</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Noble gas</td>
+  </tr>
+  <tr>
+  <td>11</td>
+  <td><a href="http://en.wikipedia.org/wiki/Sodium" title="Sodium">Sodium</a></td>
+  <td>Na</td>
+  <td>1</td>
+  <td>3</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkali metal</td>
+  </tr>
+  <tr>
+  <td>12</td>
+  <td><a href="http://en.wikipedia.org/wiki/Magnesium" title="Magnesium">Magnesium</a></td>
+  <td>Mg</td>
+  <td>2</td>
+  <td>3</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkaline earth metal</td>
+  </tr>
+  <tr>
+  <td>13</td>
+  <td><a href="http://en.wikipedia.org/wiki/Aluminium" title="Aluminium">Aluminium</a></td>
+  <td>Al</td>
+  <td>13</td>
+  <td>3</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Metal</td>
+  </tr>
+  <tr>
+  <td>14</td>
+  <td><a href="http://en.wikipedia.org/wiki/Silicon" title="Silicon">Silicon</a></td>
+  <td>Si</td>
+  <td>14</td>
+  <td>3</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Metalloid</td>
+  </tr>
+  <tr>
+  <td>15</td>
+  <td><a href="http://en.wikipedia.org/wiki/Phosphorus" title="Phosphorus">Phosphorus</a></td>
+  <td>P</td>
+  <td>15</td>
+  <td>3</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>16</td>
+  <td><a href="http://en.wikipedia.org/wiki/Sulfur" title="Sulfur">Sulfur</a></td>
+  <td>S</td>
+  <td>16</td>
+  <td>3</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>17</td>
+  <td><a href="http://en.wikipedia.org/wiki/Chlorine" title="Chlorine">Chlorine</a></td>
+  <td>Cl</td>
+  <td>17</td>
+  <td>3</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Halogen</td>
+  </tr>
+  <tr>
+  <td>18</td>
+  <td><a href="http://en.wikipedia.org/wiki/Argon" title="Argon">Argon</a></td>
+  <td>Ar</td>
+  <td>18</td>
+  <td>3</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Noble gas</td>
+  </tr>
+  <tr>
+  <td>19</td>
+  <td><a href="http://en.wikipedia.org/wiki/Potassium" title="Potassium">Potassium</a></td>
+  <td>K</td>
+  <td>1</td>
+  <td>4</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkali metal</td>
+  </tr>
+  <tr>
+  <td>20</td>
+  <td><a href="http://en.wikipedia.org/wiki/Calcium" title="Calcium">Calcium</a></td>
+  <td>Ca</td>
+  <td>2</td>
+  <td>4</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkaline earth metal</td>
+  </tr>
+  <tr>
+  <td>21</td>
+  <td><a href="http://en.wikipedia.org/wiki/Scandium" title="Scandium">Scandium</a></td>
+  <td>Sc</td>
+  <td>3</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>22</td>
+  <td><a href="http://en.wikipedia.org/wiki/Titanium" title="Titanium">Titanium</a></td>
+  <td>Ti</td>
+  <td>4</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>23</td>
+  <td><a href="http://en.wikipedia.org/wiki/Vanadium" title="Vanadium">Vanadium</a></td>
+  <td>V</td>
+  <td>5</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>24</td>
+  <td><a href="http://en.wikipedia.org/wiki/Chromium" title="Chromium">Chromium</a></td>
+  <td>Cr</td>
+  <td>6</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>25</td>
+  <td><a href="http://en.wikipedia.org/wiki/Manganese" title="Manganese">Manganese</a></td>
+  <td>Mn</td>
+  <td>7</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>26</td>
+  <td><a href="http://en.wikipedia.org/wiki/Iron" title="Iron">Iron</a></td>
+  <td>Fe</td>
+  <td>8</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>27</td>
+  <td><a href="http://en.wikipedia.org/wiki/Cobalt" title="Cobalt">Cobalt</a></td>
+  <td>Co</td>
+  <td>9</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>28</td>
+  <td><a href="http://en.wikipedia.org/wiki/Nickel" title="Nickel">Nickel</a></td>
+  <td>Ni</td>
+  <td>10</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>29</td>
+  <td><a href="http://en.wikipedia.org/wiki/Copper" title="Copper">Copper</a></td>
+  <td>Cu</td>
+  <td>11</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>30</td>
+  <td><a href="http://en.wikipedia.org/wiki/Zinc" title="Zinc">Zinc</a></td>
+  <td>Zn</td>
+  <td>12</td>
+  <td>4</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>31</td>
+  <td><a href="http://en.wikipedia.org/wiki/Gallium" title="Gallium">Gallium</a></td>
+  <td>Ga</td>
+  <td>13</td>
+  <td>4</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Metal</td>
+  </tr>
+  <tr>
+  <td>32</td>
+  <td><a href="http://en.wikipedia.org/wiki/Germanium" title="Germanium">Germanium</a></td>
+  <td>Ge</td>
+  <td>14</td>
+  <td>4</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Metalloid</td>
+  </tr>
+  <tr>
+  <td>33</td>
+  <td><a href="http://en.wikipedia.org/wiki/Arsenic" title="Arsenic">Arsenic</a></td>
+  <td>As</td>
+  <td>15</td>
+  <td>4</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Metalloid</td>
+  </tr>
+  <tr>
+  <td>34</td>
+  <td><a href="http://en.wikipedia.org/wiki/Selenium" title="Selenium">Selenium</a></td>
+  <td>Se</td>
+  <td>16</td>
+  <td>4</td>
+  <td>p</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Non-metal</td>
+  </tr>
+  <tr>
+  <td>35</td>
+  <td><a href="http://en.wikipedia.org/wiki/Bromine" title="Bromine">Bromine</a></td>
+  <td>Br</td>
+  <td>17</td>
+  <td>4</td>
+  <td>p</td>
+  <td>Liquid</td>
+  <td>Primordial</td>
+  <td>Halogen</td>
+  </tr>
+  <tr>
+  <td>36</td>
+  <td><a href="http://en.wikipedia.org/wiki/Krypton" title="Krypton">Krypton</a></td>
+  <td>Kr</td>
+  <td>18</td>
+  <td>4</td>
+  <td>p</td>
+  <td>Gas</td>
+  <td>Primordial</td>
+  <td>Noble gas</td>
+  </tr>
+  <tr>
+  <td>37</td>
+  <td><a href="http://en.wikipedia.org/wiki/Rubidium" title="Rubidium">Rubidium</a></td>
+  <td>Rb</td>
+  <td>1</td>
+  <td>5</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkali metal</td>
+  </tr>
+  <tr>
+  <td>38</td>
+  <td><a href="http://en.wikipedia.org/wiki/Strontium" title="Strontium">Strontium</a></td>
+  <td>Sr</td>
+  <td>2</td>
+  <td>5</td>
+  <td>s</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Alkaline earth metal</td>
+  </tr>
+  <tr>
+  <td>39</td>
+  <td><a href="http://en.wikipedia.org/wiki/Yttrium" title="Yttrium">Yttrium</a></td>
+  <td>Y</td>
+  <td>3</td>
+  <td>5</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  <tr>
+  <td>40</td>
+  <td><a href="http://en.wikipedia.org/wiki/Zirconium" title="Zirconium">Zirconium</a></td>
+  <td>Zr</td>
+  <td>4</td>
+  <td>5</td>
+  <td>d</td>
+  <td>Solid</td>
+  <td>Primordial</td>
+  <td>Transition metal</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+
+<p>You’ll notice that the effect degrades gracefully … if the user is <em>not</em> on a browser that supports position: sticky, the header just scrolls off-screen, like any other object on (read: off) the screen.</p>
+
+<p>One thing to try doing (if you’re on the main charliepark.org page and not just this post’s page) is to scroll down a ways, and then scroll back up so you can see the table. You’ll notice the headers show up as soon as the table is in view.</p>
+
+<h3 id="anything-to-be-careful-about">Anything to be careful about?</h3>
+
+<p>First, this property is new. It’s not supported at all, apart from the beta builds of Webkit-based browsers. So <em>caveat formator</em>. Again, if you really want for your users to benefit from sticky headers, go with <a href="https://github.com/kingkool68/stickyHeader">a javascript implementation</a>.</p>
+
+<p>Second, if you do use it, you’ll need to incorporate vendor prefixes. Perhaps <code>position: sticky</code> will work one day. For now, though, you need to use <code>position:-webkit-sticky</code> (and the others; check the block of <acronym>CSS</acronym> further up in this post).</p>
+
+<p>Third, there aren’t any positioning defaults at the moment, so you need to at least include <code>top: 0;</code> in the same <acronym>CSS</acronym> declaration as the <code>position:-webkit-sticky</code>. Otherwise, it’ll just scroll off-screen.</p>
+
+<p>Have fun, kids!</p>
+
+
+</article>
+
+<article>
 	<h2 class="post_title"><a href='/fat-fingers'>Fat Fingers (a regex for fixing typoed e-mail addresses)</a></h2>
 	<div class="meta_wrapper"><time datetime='2012-08-04'>August  4, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/web apps">web apps</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/user experience">user experience</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/ruby">ruby</a></li></ul></div>
 	<p>This is about a regex I wrote for fixing e-mail typos. (When “joe@gmail.com” enters in “joe@gmai.cm”, fix it for him.) <strong>You can see it here: <a href="https://github.com/charliepark/fat_fingers/blob/master/fat_fingers.rb">fat_fingers.rb</a>.</strong></p>
@@ -68,7 +594,8 @@
 <article>
 	<h2 class="post_title"><a href='/wwdc'>Livestreams of WWDC</a></h2>
 	<div class="meta_wrapper"><time datetime='2012-06-09'>June  9, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/apple">apple</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/wwdc">wwdc</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/live">live</a></li></ul></div>
-	I've created <a href="http://charliepark.org/wwdc">a page that aggregates the 2012 Apple WWDC livestreams from The Verge, Engadget, and MacRumors, all in one view</a>.
+	<p>I’ve created <a href="http://charliepark.org/wwdc">a page that aggregates the 2012 Apple WWDC livestreams from The Verge, Engadget, and MacRumors, all in one view</a>.</p>
+
 </article>
 
 <article>
@@ -1047,65 +1574,6 @@ alias bb="build_blog"
 <h3 id="corrections">Corrections?</h3>
 
 <p>I’m always half-expecting that some aspect of one of my writeups is totally broken. If you try this and have any issues, let me know (<a href="http://twitter.com/charliepark">@charliepark</a>). Similarly, if you try it and it works, let me know.</p>
-
-</article>
-
-<article>
-	<h2 class="post_title"><a href='/benchmarking-date.today-and-time.now-in-ruby'>Benchmarking Date.today and Time.now in Ruby</a></h2>
-	<div class="meta_wrapper"><time datetime='2011-06-15'>June 15, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/ruby">ruby</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li></ul></div>
-	<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
-
-<p>For example, if you want to know what day today is, you can either fetch Date.today.day or Time.now.day.</p>
-
-<p>In my head, Date is a much simpler concept than Time. After all, Time deals with things like milliseconds and Epochs and things like that, where Date … well, I woke up this morning, and it was today’s date. And when I get up tomorrow, it’ll be tomorrow’s date. “Date” seems much more tangible.</p>
-
-<p>I was curious, though, to know if there was a difference in how quickly Ruby could process the two. So I ran a test.</p>
-
-<h3 id="the-first-test">The First Test</h3>
-
-<p>I was in a Rails app, so I fired up script/console, and added the following code:</p>
-
-<pre><code>require 'benchmark'
-
-Benchmark.ms { 1000.times { puts Time.now } }
-
-Benchmark.ms { 1000.times { puts Date.today } }
-</code></pre>
-
-<h3 id="the-results">The Results</h3>
-
-<p>What I found was really interesting.</p>
-
-<p>I ran the test a couple of times, and the average processing time for Time.now was 104 ms. The average processing time for Date.today was 251 ms.</p>
-
-<p>That means it took Date.today about two and a half times as long to get processed than Time.now.</p>
-
-<h3 id="the-second-test">The Second Test</h3>
-
-<p>I was curious to see if those results would hold if I ran a more complicated test. So I made the processing a tiny bit trickier:</p>
-
-<pre><code>def month_name_t(month = Time.now.month)
-  Date::MONTHNAMES[month]
-end
-Benchmark.ms { 1000.times { month_name_t } }
-
-def month_name_d(month = Date.today.month)
-  Date::MONTHNAMES[month]
-end
-Benchmark.ms { 1000.times { month_name_d } }
-</code></pre>
-
-<h3 id="more-results">More Results</h3>
-
-<p>This time around, the difference was even more pronounced.</p>
-
-<p>On average, month_name_t (Time.now) took 2 ms. And month_name_d (Date.today) took 80 ms.</p>
-
-<p>So when we made the function just a bit more complex, it increased the processing time dramatically: <strong>Date.today took 40 times as long to process as Time.now.</strong></p>
-
-<h3 id="the-conclusion">The Conclusion</h3>
-
-<p><strong>When you’re processing Times and Dates in your app, and you don’t <em>need</em> to use the Date object for some reason, use Time.</strong></p>
 
 </article>
 
