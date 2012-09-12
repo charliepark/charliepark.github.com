@@ -27,6 +27,14 @@
   #example_sticky_header_container th + th + th + th + th + th + th + th + th {display:table-cell}
 </style>
 
+<div class="update_box">
+  <p>Two quick things to note:</p>
+  <ol>
+    <li>This only works (for now) on the latest versions of Chrome Canary. (I&rsquo;m on 23.0.1263.1). More browsers will hopefully support this before too long.</li>
+    <li>You probably want to see an example, yeah? <a href="#example_sticky_header_container">Jump down to the example.</a></li>
+  </ol>
+</div>
+
 <p>In the last few days, I’ve seen a few people talking about a new <acronym>CSS</acronym> property, <code>position: sticky</code>. The idea is straightforward, and neat: If an object has “position:sticky”, treat it as a normal position:relative block, as long as it’s on screen. If the user scrolls far enough that the object (let’s say it’s an h3) would be scrolled off the screen, but the h3’s parent div is still visible onscreen, treat the object as though it were position:fixed (at whatever <code>top</code> or <code>left</code> or <code>right</code> or <code>bottom</code> parameters you give it).</p>
 
 <p>That explanation gets a little complicated, but it’s a principle you’ve seen before. Basically, if the parent div containing the headline (or whatever) is still on-screen, the headline should remain on-screen as well. Scroll down a bit to see an example (look for a table titled “The First 40 Elements”).</p>
@@ -63,7 +71,7 @@ top: 0;
 
 <p>If you aren’t using Chrome Canary, it’ll just look like a normal table, and the header row will scroll offscreen like any other <code>position: relative</code> element. Again, there’s no javascript in play here.</p>
 
-<div id="example_sticky_header_container">
+<div name="example_sticky_header_container" id="example_sticky_header_container">
   <table>
   <caption><h4 style="text-align:center">The First 40 Elements</h4></caption>
   <thead><tr>
