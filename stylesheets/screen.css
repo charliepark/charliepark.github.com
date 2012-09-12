@@ -65,7 +65,7 @@ div.project{background:#f6f6f6;border:1px solid #eee;float:left;height:80px;marg
 div.project.col3{margin-right:0}
 div.update_box{background:#f6f6f6;border:1px solid #eee;font-size:13px;line-height:20px;margin-bottom:1em;padding:0}
 
-div.update_box p{padding:.5em .8em}
+div.update_box ol, div.update_box p, div.update_box ul{padding:.5em .8em}
 
 dl{}
 dt{font-size:14px;font-weight:bold;}
