@@ -30,7 +30,7 @@
 <div class="update_box">
   <p>Two quick things to note:</p>
   <ol>
-    <li>This only works (for now) on the latest versions of Chrome Canary. (I&rsquo;m on 23.0.1263.1). More browsers will hopefully support this before too long.</li>
+    <li>This only works (for now) on the latest versions of [Chrome Canary](https://tools.google.com/dlpage/chromesxs) or [WebKit's nightly build](http://nightly.webkit.org). (I&rsquo;m on Chrome 23.0.1263.1). More browsers will hopefully support this before too long.</li>
     <li>You probably want to see an example, yeah? <a href="#example_sticky_header">Jump down to the example.</a></li>
   </ol>
 </div>
@@ -67,11 +67,11 @@ top: 0;
 
 <h3 id="can-i-see-an-example">Can I see an example?</h3>
 
-<p>Sure thing. <em>If you’re using the latest version of Chrome Canary</em> (or, in the future, if other browsers are supporting this and you’re on one of those), the following table will show sticky headers. The thing to look for: the gray bar with the columns’ headers will remain visible, even when you’re scrolling far down the table.</p>
+<p>Sure thing. <em>If you’re using the latest version of a WebKit-based browser</em> (or, in the future, if other browsers are supporting this and you’re on one of those), the following table will show sticky headers. The thing to look for: the gray bar with the columns’ headers will remain visible, even when you’re scrolling far down the table.</p>
 
 <p>Revisiting the description above of what’s going on, as long as the parent element (<code>&lt;table&gt;&lt;/table&gt;</code>) is visible on-screen, the <code>&lt;thead&gt;</code> (and everything in it) should be visible as well.</p>
 
-<p>If you aren’t using Chrome Canary, it’ll just look like a normal table, and the header row will scroll offscreen like any other <code>position: relative</code> element. Again, there’s no javascript in play here.</p>
+<p>If you aren’t using a browser that can handle this, it’ll just look like a normal table, and the header row will scroll offscreen like any other <code>position: relative</code> element. Again, there’s no javascript in play here.</p>
 
 <div id="example_sticky_header_container">
   <table>
