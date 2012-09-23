@@ -19,6 +19,21 @@
 	<section id="main_content">
 	
 <article>
+	<h2 class="post_title"><a href='/a-new-approach-for-people-overwhelmed-by-email'>A New Approach to E-mail <br>(Volunteers Wanted)</a></h2>
+	<div class="meta_wrapper"><time datetime='2012-09-23'>September 23, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/e-mail">e-mail</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/productivity">productivity</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/inbox zero">inbox zero</a></li></ul></div>
+	<p>As you might know, one of the main things I think about is something called “<a href="http://attnmgmtblog.com">attention management</a>” — basically, <em>how do we focus on the things we need to be focusing on, and how to we put aside everything else</em>? It’s all tied up with productivity and motivation and habits and medicine and cognitive-behavioral therapy research. But that’s all somewhat theoretical and fuzzy. I have a practical approach to e-mail that I’ve been working on, and I’m eager to share it with you.</p>
+
+<p>This new system doesn’t require any new technology, or any herculean efforts at getting to Inbox Zero In 30 Minutes or anything like that. In fact, it’s kind of the opposite of all that. But the cool thing? <strong>It works.</strong> I’m more in control of my inbox than I have been at any point in my career. And the handful of people I’ve gotten to try this approach have said that it’s been working well for them, too.</p>
+
+<p>I’m not going to go into the specifics here, because it’s still in a testing phase and I’m refining it. So why am I writing about it here / now? Because I want more testers.</p>
+
+<p><strong>If you feel overwhelmed by your e-mail, and are interested in trying this new approach out, just e-mail me — <a href="mailto:charlie@charliepark.org">charlie@charliepark.org</a> — and I’ll send you the details.</strong> It’s free. It’s just that the approach takes a little bit of work, and the first hurdle you’ll face is simply e-mailing me. <em>To handle the volume of this, I’m sending out info e-mails to cohorts of 5 people a week, so the sooner you get in touch, the sooner you’ll be on the list, and the sooner your inbox will be under control.</em></p>
+
+<p>I look forward to hearing from you, and to helping you work down your inbox.</p>
+
+</article>
+
+<article>
 	<h2 class="post_title"><a href='/css-only-sticky-headers'>CSS-Only Sticky Headers for Tables, Using &lsquo;position&colon; sticky&rsquo;</a></h2>
 	<div class="meta_wrapper"><time datetime='2012-09-07'>September  7, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/css">css</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/front-end stuff">front-end stuff</a></li></ul></div>
 	<style type="text/css" media="screen">
@@ -1268,12 +1283,15 @@ Tool for a Local Congregation</a></em>, by Darryl Jinkerson (2003)</li>
 
 <p><cite>Tufte, Edward. <em>The Visual Display of Quantitative Information</em>.<br />Cheshire, Connecticut: Graphics Press; 1983; p. 158</cite></p>
 
-<p>As Tufte notes in his book, this type of chart is useful for seeing:
-* the hierarchy of the countries in both 1970 and 1979 [the order of the countries]
-* the specific numbers associated with each country in each of those years [the data value next to their names]
-* how each country’s numbers changed over time [each country’s slope]
-* <strong>how each country’s rate of change compares to the other countries’ rates of change</strong> [the slopes compared with one another]
-* any notable deviations in the general trend (notice Britain in the above example) [aberrant slopes]</p>
+<p>As Tufte notes in his book, this type of chart is useful for seeing:</p>
+
+<ul>
+  <li>the hierarchy of the countries in both 1970 and 1979 [the order of the countries]</li>
+  <li>the specific numbers associated with each country in each of those years [the data value next to their names]</li>
+  <li>how each country’s numbers changed over time [each country’s slope]</li>
+  <li><strong>how each country’s rate of change compares to the other countries’ rates of change</strong> [the slopes compared with one another]</li>
+  <li>any notable deviations in the general trend (notice Britain in the above example) [aberrant slopes]</li>
+</ul>
 
 <p>This chart does this in a remarkably minimalist way. <strong>There’s absolutely zero non-data ink.</strong></p>
 
@@ -1486,106 +1504,6 @@ Tool for a Local Congregation</a></em>, by Darryl Jinkerson (2003)</li>
 <p>I call it <strong>Fear-Driven Development</strong>.</p>
 
 <p>I wanted to write more, but I was afraid I’d just keep fiddling with it and wouldn’t actually get this posted. So here you go.</p>
-
-</article>
-
-<article>
-	<h2 class="post_title"><a href='/jekyll-with-plugins'>Jekyll + Plugins + Github + You</a></h2>
-	<div class="meta_wrapper"><time datetime='2011-06-15'>June 15, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/jekyll">jekyll</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/github">github</a></li></ul></div>
-	<p>Github’s <a href="http://pages.github.com/">Pages</a> is a great “it just works” resource.</p>
-
-<p>Except for when it doesn’t work.</p>
-
-<p>So, for some reason, tags aren’t fully-implemented in <a href="http://jekyllrb.com/">Jekyll</a>. They <em>kind of</em> work, but there’s no tag archive page. I went over this in my post on <a href="http://charliepark.org/tags-in-jekyll/">getting tags to work in Jekyll</a>. The problem with that, though, is that <strong>Github disables any plugins you’re using when it processes/creates your blog</strong> (that’s what the <code>--safe</code> tag does).</p>
-
-<p><strong>How, then, do you get your blog (with tags) to load up on Github?</strong></p>
-
-<p><em>(I’m operating under the assumption here that you already have a Jekyll-powered blog set up on Github Pages, such that when you push commits to Github, it regenerates your blog for you.)</em></p>
-
-<p>I’m going to lay out how to do this, and then how to automate the whole process so you can do it in just a few keystrokes.</p>
-
-<h3 id="split-your-blog-in-two">1. Split Your Blog in Two</h3>
-
-<p>The first step is to clone your repo into a duplicate local copy. In my case, I took my local copy <code>~/applications/charliepark.github.com</code> and cloned it to <code>~/applications/charliepark.github.com.raw</code>.</p>
-
-<p>This leaves you with the “raw” directory and the original directory (both identical).</p>
-
-<h3 id="remove-your-old-content">2. Remove Your Old Content</h3>
-
-<p>In Finder, go into your original directory (again, in my case: <code>~/applications/charliepark.github.com</code>) and delete all of the content. You do <em>not</em> want to do this via the command line, as it’ll either be tedious (you’d need to remove each directory / file) or it’ll be too aggressive, and you’ll lose your .git directory. The point here: <strong>You don’t want to lose your .git directory, as that’s how your local copy will talk to your repo at Github.</strong></p>
-
-<p>You should now have the “raw” directory (again, a clone of what you have at Github) and the now-empty (apart from your .git directory) original repo.</p>
-
-<h3 id="regenerate-your-blog-in-the-raw-directory">3. Regenerate Your Blog, in the “raw” Directory</h3>
-
-<p>This is pretty straightforward. Just <code>cd</code> to the raw directory … in my case:</p>
-
-<pre><code>cd ~/applications/charlie.github.com.raw
-</code></pre>
-
-<p>… and run the <code>jekyll</code> command.</p>
-
-<p>This will regenerate your blog, in the <code>~/applications/charlie.github.com.raw/_site</code> directory. You’ve probably already done this step once or twice before. (Note: You <em>don’t</em> want to run <code>jekyll --server</code>, as the point here is just to generate the blog, not to fire up a server.)</p>
-
-<h3 id="copy-the-site-directory-over-to-your-original-repo">4. Copy the <code>_site</code> Directory Over To Your Original Repo</h3>
-
-<p>This is simple.</p>
-
-<pre><code>cp -r ~/applications/charliepark.github.com.raw/_site/* ~/applications/charliepark.github.com
-</code></pre>
-
-<p>Once you’ve run that command, you’ll now have:
-1. Your “raw” directory
-2. A subdirectory within the “raw” directory (<code>_site</code>), with the generated <abbr>HTML</abbr>
-3. Your original directory, whose contents should now mirror the <code>_site</code> subdirectory of the “raw” directory</p>
-
-<h3 id="add-nojekyll">5. Add .nojekyll</h3>
-
-<p>When you add a file titled <code>.nojekyll</code> to your repo, Github won’t process your files as Jekyll files. I don’t think this step is strictly necessary, as we’re just sending the straight-up <abbr>HTML</abbr> files. But it can’t hurt. In your original directory (<code>~/applications/charliepark.github.com</code>), run:</p>
-
-<pre><code>touch .nojekyll
-</code></pre>
-
-<h3 id="commit-and-push-your-repo">6. Commit and Push Your Repo</h3>
-
-<p>Add the files to your original directory’s git repo:</p>
-
-<pre><code>git add .
-</code></pre>
-
-<p>Commit the new version of the repo:</p>
-
-<pre><code>git commit -am "Converts to flat HTML files."
-</code></pre>
-
-<p>(Note: Your commit flags (<code>-am</code>) might differ from mine.)</p>
-
-<p>Push the code to Github:</p>
-
-<pre><code>git push
-</code></pre>
-
-<h3 id="your-site-should-be-live">7. Your Site Should Be Live</h3>
-
-<p>You can now go to your site (http://yourusername.github.com) and see your site.</p>
-
-<h3 id="automate-the-whole-thing">8. Automate The Whole Thing</h3>
-
-<p>Once you’ve checked that it works, and that everything’s okay, it’s a good idea to automate the whole thing.</p>
-
-<p>I added a shortcut to my <code>~/.bash_profile</code> file:</p>
-
-<pre><code>alias build_blog="cd ~/applications/charliepark.github.com.raw; jekyll;cp -r ~/applications/charliepark.github.com.raw/_site/* ~/applications/charliepark.github.com;cd ~/applications/charliepark.github.com;git add .;git commit -am 'Latest build.';git push"
-alias bb="build_blog"
-</code></pre>
-
-<p>So, now, once I’ve written a new post, or edited a post, or just want to get the site refreshed for some other reason, all I have to do in my command line is type <code>bb</code>, and it’ll regenerate the site, copy it over, run the git commits, and push it live to Github. I can now finish my post and then push it live to the site in about a second.</p>
-
-<p>And it has <a href="http://charliepark.org/archives#tags">tags</a>.</p>
-
-<h3 id="corrections">Corrections?</h3>
-
-<p>I’m always half-expecting that some aspect of one of my writeups is totally broken. If you try this and have any issues, let me know (<a href="http://twitter.com/charliepark">@charliepark</a>). Similarly, if you try it and it works, let me know.</p>
 
 </article>
 
