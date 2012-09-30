@@ -1683,7 +1683,12 @@ alias bb="build_blog"
 		<updated>2011-06-15T00:00:00-04:00</updated>
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
+				<div class="update_box">
+  <p><strong>Update:</strong> Ruby 1.9.3 revamped the Date class, and the info in this post is now out of date. In fact, it&rsquo;s now totally wrong. <strong>If you&rsquo;re using Ruby 1.9.3, it&rsquo;s faster to call Date.today than Time.now.</strong></p>
+  <p>♪ ♫ The more you know.</p>
+</div>
+
+<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
 
 <p>For example, if you want to know what day today is, you can either fetch Date.today.day or Time.now.day.</p>
 
@@ -1735,7 +1740,12 @@ Benchmark.ms { 1000.times { month_name_d } }
 
 <h3 id="the-conclusion">The Conclusion</h3>
 
-<p><strong>When you’re processing Times and Dates in your app, and you don’t <em>need</em> to use the Date object for some reason, use Time.</strong></p>
+<p><strike>When you're processing Times and Dates in your app, and you don't *need* to use the Date object for some reason, use Time.</strike></p>
+
+<div class="update_box">
+  <p>In case you missed it up top &hellip;</p>
+  <p><strong>Update:</strong> Ruby 1.9.3 revamped the Date class, and the info in this post is now out of date. In fact, it&rsquo;s now totally wrong. <strong>If you&rsquo;re using Ruby 1.9.3, it&rsquo;s faster to call Date.today than Time.now.</strong></p>
+</div>
 
 			</div>
 		</content>

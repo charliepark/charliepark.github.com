@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="Time.now is much faster than Date.today. (from Charlie Park)">
+	<meta name="description" content="Time.now is much faster than Date.today. Whup. Nope. Strike that. Reverse it. (from Charlie Park)">
 	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
   <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,7 +19,12 @@
 	<section id="main_content">
 		<h1 class="post_title">Benchmarking Date.today and Time.now in Ruby</h1>
 	<div class="meta_wrapper"><time datetime="2011-06-15">June 15, 2011</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/ruby">ruby</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/code">code</a></li></ul></div>
-	<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
+	<div class="update_box">
+  <p><strong>Update:</strong> Ruby 1.9.3 revamped the Date class, and the info in this post is now out of date. In fact, it&rsquo;s now totally wrong. <strong>If you&rsquo;re using Ruby 1.9.3, it&rsquo;s faster to call Date.today than Time.now.</strong></p>
+  <p>♪ ♫ The more you know.</p>
+</div>
+
+<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
 
 <p>For example, if you want to know what day today is, you can either fetch Date.today.day or Time.now.day.</p>
 
@@ -71,7 +76,12 @@ Benchmark.ms { 1000.times { month_name_d } }
 
 <h3 id="the-conclusion">The Conclusion</h3>
 
-<p><strong>When you’re processing Times and Dates in your app, and you don’t <em>need</em> to use the Date object for some reason, use Time.</strong></p>
+<p><strike>When you're processing Times and Dates in your app, and you don't *need* to use the Date object for some reason, use Time.</strike></p>
+
+<div class="update_box">
+  <p>In case you missed it up top &hellip;</p>
+  <p><strong>Update:</strong> Ruby 1.9.3 revamped the Date class, and the info in this post is now out of date. In fact, it&rsquo;s now totally wrong. <strong>If you&rsquo;re using Ruby 1.9.3, it&rsquo;s faster to call Date.today than Time.now.</strong></p>
+</div>
 
 	<footer>
 	<p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
