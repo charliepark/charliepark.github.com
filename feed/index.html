@@ -4,8 +4,47 @@
 	<link href="http://charliepark.org" />
 	<link href="http://charliepark.org/feed/" rel="self" />
 	<id>http://charliepark.org</id>
-	<updated>2012-10-10T00:00:00-04:00</updated>
+	<updated>2012-10-22T00:00:00-04:00</updated>
 	<author><name>Charlie Park</name></author>
+	
+	<entry>
+		<title>Quick Git Tip ... Quickly Merging Changes From Your Local Branch</title>
+		<link href="/quick-git-tip" />
+		<id>/quick-git-tip</id>
+		<published>2012-10-22T00:00:00-04:00</published>
+		<updated>2012-10-22T00:00:00-04:00</updated>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p>For most of my work, I’m the only developer. That means that, up until now, I’ve mostly just worked in a master branch of my code, and haven’t utilized branches in Git.</p>
+
+<p>But I’m eager to get better at using Git, so I’ve started creating branches for feature pushes. I create the branch, jump into it, make my changes, commit them, jump back to ‘master’, merge the changes, push them to the main repo at GitHub, and jump back to my branch to make more changes.</p>
+
+<p>The problem? That’s a lot of steps.</p>
+
+<p>Just so the steps are clear: After you’ve made your commits (to, say, a branch called “popups”) and are ready to push your repo to GitHub you have to type:</p>
+
+<pre><code>git checkout master
+git merge popups
+git push
+git checkout popups
+</code></pre>
+
+<p>Even with shortcuts and aliases, it’s a number of unnecessary steps. They’re cumbersome, <em>especially</em> since nobody else is pushing code to this repository, so I don’t have to worry about conflicts with other peoples’ code. Apart from the branch name, my code to push it to GitHub looked identical every single time.</p>
+
+<p><strong>I wanted a way to reduce the process down to one simple shortcut.</strong> I asked for help on Twitter and got comments from <a href="https://twitter.com/ShepBook/status/260397069385220098">Jared</a> and <a href="https://twitter.com/metaskills/status/260399832252940288">Ken</a>, and was able to put together a quick bash script.</p>
+
+<p>If you add the following line to your .bash_profile, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
+
+<pre><code>alias gpm="temp=$(git branch 2&gt; /dev/null | grep '^\*' | sed 's/^\*\ //'); git checkout master; git merge $temp; git push; git checkout $temp;" # mnemonic: git push master
+</code></pre>
+
+<p>Obviously, if you’re on a team, you’ll want to make sure you’re up to date before you push to the remote origin/master, but if you’re working solo like me, this helps cut down the friction on using Git more efficiently.</p>
+
+<p>And if you want a bunch of other shortcuts that do far more than mine, check out Ken’s shell commands, <a href="https://gist.github.com/3932004">posted as a gist at GitHub</a>.</p>
+
+			</div>
+		</content>
+	</entry>
 	
 	<entry>
 		<title>The Mountain Goats at The National, Richmond, VA</title>
