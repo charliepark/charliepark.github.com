@@ -114,6 +114,8 @@ li.inline{display:inline}
 li.nav_list_item{display:inline-block;font-size:18px;margin:0;position:relative;width:90px;}
 li.tag_list_item{line-height:1;list-style:none;margin:0;}
 
+#main_content ol{padding-bottom:1em}
+
 p{padding:0 0 1em;}
 p.meta{border:1px solid #eee; border-width:1px 0;color:#888;font-size:12px;margin:0 0 10px;padding:2px 0 2px;}
 p.next_actions{background:#f6f6f6;border:1px solid #eee;font-size:11px;line-height:20px;margin:20px 0 20px;padding:5px 12px;text-align:center;text-transform:uppercase}
@@ -137,6 +139,8 @@ time.archive_list_post_date{color:#666;float:left;font-size:11px;padding-top:1px
 u{text-decoration:underline}
 
 ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 24px;text-align:center;text-transform:lowercase;width:270px;}
+
+#main_content ul{padding-bottom:1em}
 
 ul.tag_list_in_post{border-left:1px solid #bbb;display:inline;margin-left:15px;padding:0 0 0 10px;}
 ul.tags{float:right;width:280px}

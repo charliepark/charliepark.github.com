@@ -4,8 +4,68 @@
 	<link href="http://charliepark.org" />
 	<link href="http://charliepark.org/feed/" rel="self" />
 	<id>http://charliepark.org</id>
-	<updated>2012-10-22T00:00:00-04:00</updated>
+	<updated>2012-12-01T00:00:00-05:00</updated>
 	<author><name>Charlie Park</name></author>
+	
+	<entry>
+		<title>Santa Is A Game People Play</title>
+		<link href="/santa" />
+		<id>/santa</id>
+		<published>2012-12-01T00:00:00-05:00</published>
+		<updated>2012-12-01T00:00:00-05:00</updated>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p>Christmas in America is troubling, for a variety of reasons. Sarah and I are trying to be extremely intentional as we raise our children, and have wanted to bring that intentionality to Christmas.</p>
+
+<ul>
+  <li>We don’t want them developing an overly consumer-oriented worldview.</li>
+  <li>We don’t want them to think of their time with relatives — especially around the holidays — as, primarily, a vector for Stuff.</li>
+  <li>We have intentionally limited the number of toys they have in the house. We’ve seen a direct link between limiting toys and increased creativity in the kids.</li>
+</ul>
+
+<p>Also, we weren’t comfortable with the Santa narrative. Not the in-the-moment narrative — North Pole, sleigh, chimney, tree, presents, cookies — that’s … fine, I guess. What we had an issue with was the longitudinal narrative: “We’re going to create this story that isn’t true, that we’ll tell you is The Truth. In fact, if you question us on it, we’ll double-down, and show you proofs of why Santa is Real (after all, could Dad have <em>really</em> eaten those cookies? pffft; why else would everyone talk about him if he isn’t real?). Then, when you’re a little older, you’ll find out the <em>actual</em> truth from your classmates at school or will otherwise figure it out, won’t want to bring it up, and so we’ll pass into a state of unacknowledged silence on the matter, where you’ll kind of pretend to be into it, but mainly because you get More Stuff, but we kind of know that you’ve figured it out, but won’t bring it up. And then maybe Santa fades into the background over time.” <em>That</em> narrative was the one we weren’t comfortable with.</p>
+
+<p>So how do you balance the desire for a more intentional family with the standard Christmas narrative in the US? How do you deal with the mythos of Santa Claus and the presents he brings, which has become <em>the</em> key component of most people’s Christmas story? How do you remove Santa from the equation, but keep the kids from being total weirdos on the playground?</p>
+
+<p>Here’s what we’ve done.</p>
+
+<h3 id="a-new-narrative-santa-as-game">A new narrative: Santa as Game</h3>
+
+<p><strong>From the time the girls were young, we’ve told them that “Santa Claus” is a game that everyone around the world plays together.</strong> You <em>play</em> the game by pretending that he’s real. You <em>lose</em> the game if you break character and talk about him not being real. And you <em>definitely</em> don’t talk about Santa not being real at school (mainly said so they aren’t the ones who break the news to younger kids on the playground).</p>
+
+<p>And Santa, being just a character from the game, isn’t actually involved in Christmas at our house. So the kids get the idea of what Santa represents, and they can talk about him with other kids, or teachers at school, but don’t have any expectations that he’s real, or that he’s involved in the time we spend with our family.</p>
+
+<p>We didn’t come up with this approach on our own. I’m sure it’s been around for a while. We probably read about it on MetaFilter or somewhere back when Lucy was a toddler.</p>
+
+<p>It’s worked well.</p>
+
+<p>For one thing, it’s the truth, so we don’t feel like we have to come up with elaborate ruses to tell the girls.</p>
+
+<p>For another, it gives us something where our whole family is in it together — we’ve let the girls in on the secret rules of how the game is played. (Kids <em>love</em> being let in on Secret Knowledge.)</p>
+
+<p>And for a third thing — and I’m finding more and more as a parent that this is crucial — it appeals to the <em><a href="https://en.wikipedia.org/wiki/Homo_Ludens_(book)">homo ludens</a></em> part of our nature. In fact, the five characteristics of play (taken from the just-linked <a href="https://en.wikipedia.org/wiki/Homo_Ludens_(book)">Wikipedia page</a>) are important here:</p>
+
+<ol>
+  <li>Play is free.</li>
+  <li>Play is not “ordinary” or “real” life.</li>
+  <li>Play is distinct from “ordinary” life both as to locality and duration.</li>
+  <li>Play creates (and even demands) order.</li>
+  <li>Play is connected with no material interest.</li>
+</ol>
+
+<p>That all sounds like Christmas. But — wait a minute — what about that last one? No material interest? What about gifts?</p>
+
+<p>There’s a whole post I could write on this, but the gist of it is that we keep presents simple and intentional. And they’re all from members of the family (not Santa).</p>
+
+<p>I know there are factors that go into our being able to approach Christmas (and Santa) this way, and not every family can kill Santa. And I’m sure we’re warping our kids in our own unique ways.</p>
+
+<p>But if your kids are young enough that you haven’t set expectations around Christmas, or if you’re looking for an alternate gift-giving narrative for Santa and the Christmas season, or if you’re looking for a way to softly transition away from the “Santa is real” narrative, “Santa is a game people play” has worked really well for us.</p>
+
+<p>I’d love to hear how you handle Christmas and Santa. Shoot me a note on Twitter if you want to chat about it.</p>
+
+			</div>
+		</content>
+	</entry>
 	
 	<entry>
 		<title>Quick Git Tip ... Quickly Merging Changes From Your Local Branch</title>
@@ -33,10 +93,23 @@ git checkout popups
 
 <p><strong>I wanted a way to reduce the process down to one simple shortcut.</strong> I asked for help on Twitter and got comments from <a href="https://twitter.com/ShepBook/status/260397069385220098">Jared</a> and <a href="https://twitter.com/metaskills/status/260399832252940288">Ken</a>, and was able to put together a quick bash script.</p>
 
-<p>If you add the following line to your .bash_profile, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
+<p>If you add the following line to your <code>.bash_profile</code>, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
 
-<pre><code>alias gpm="temp=$(git branch 2&gt; /dev/null | grep '^\*' | sed 's/^\*\ //'); git checkout master; git merge $temp; git push; git checkout $temp;" # mnemonic: git push master
+<strike>alias gpm="temp=$(git branch 2&gt; /dev/null | grep '^\*' | sed 's/^\*\ //'); git checkout master; git merge $temp; git push; git checkout $temp;" # mnemonic: git push master</strike>
+
+<p>Update: Actually, I found <a href="http://reinh.com/blog/2008/08/27/hack-and-and-ship.html">a better option</a>. This puts the work into an external bash script, which looks like this:</p>
+
+<pre><code>ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || exit 0
+CURRENT="${ref#refs/heads/}"
+git checkout master
+git merge ${CURRENT}
+git push origin master
+git checkout ${CURRENT}
 </code></pre>
+
+<p>I save that in my root folder, as <code>.ship</code> (so total path: <code>~/.ship</code>).</p>
+
+<p>Then, I alias that in my <code>.bash_profile</code> as <code>alias gpm="sh ~/.ship"</code> and I’m good to go.</p>
 
 <p>Obviously, if you’re on a team, you’ll want to make sure you’re up to date before you push to the remote origin/master, but if you’re working solo like me, this helps cut down the friction on using Git more efficiently.</p>
 

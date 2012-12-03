@@ -37,10 +37,23 @@ git checkout popups
 
 <p><strong>I wanted a way to reduce the process down to one simple shortcut.</strong> I asked for help on Twitter and got comments from <a href="https://twitter.com/ShepBook/status/260397069385220098">Jared</a> and <a href="https://twitter.com/metaskills/status/260399832252940288">Ken</a>, and was able to put together a quick bash script.</p>
 
-<p>If you add the following line to your .bash_profile, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
+<p>If you add the following line to your <code>.bash_profile</code>, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
 
-<pre><code>alias gpm="temp=$(git branch 2&gt; /dev/null | grep '^\*' | sed 's/^\*\ //'); git checkout master; git merge $temp; git push; git checkout $temp;" # mnemonic: git push master
+<strike>alias gpm="temp=$(git branch 2&gt; /dev/null | grep '^\*' | sed 's/^\*\ //'); git checkout master; git merge $temp; git push; git checkout $temp;" # mnemonic: git push master</strike>
+
+<p>Update: Actually, I found <a href="http://reinh.com/blog/2008/08/27/hack-and-and-ship.html">a better option</a>. This puts the work into an external bash script, which looks like this:</p>
+
+<pre><code>ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || exit 0
+CURRENT="${ref#refs/heads/}"
+git checkout master
+git merge ${CURRENT}
+git push origin master
+git checkout ${CURRENT}
 </code></pre>
+
+<p>I save that in my root folder, as <code>.ship</code> (so total path: <code>~/.ship</code>).</p>
+
+<p>Then, I alias that in my <code>.bash_profile</code> as <code>alias gpm="sh ~/.ship"</code> and I’m good to go.</p>
 
 <p>Obviously, if you’re on a team, you’ll want to make sure you’re up to date before you push to the remote origin/master, but if you’re working solo like me, this helps cut down the friction on using Git more efficiently.</p>
 
