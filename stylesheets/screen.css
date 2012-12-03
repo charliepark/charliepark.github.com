@@ -143,7 +143,7 @@ ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-h
 #main_content ul{padding-bottom:1em}
 
 ul.tag_list_in_post{border-left:1px solid #bbb;display:inline;margin-left:15px;padding:0 0 0 10px;}
-#main_content ul.tag_list_in_post{padding-bottom:10px}
+  #main_content ul.tag_list_in_post{padding-bottom:0}
 ul.tags{float:right;width:280px}
 ul.tag_list{margin-left:52px;padding-bottom:20px;}
 
