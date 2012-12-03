@@ -138,11 +138,12 @@ time.archive_list_post_date{color:#666;float:left;font-size:11px;padding-top:1px
 
 u{text-decoration:underline}
 
-ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 24px;padding-bottom:0;text-align:center;text-transform:lowercase;width:270px;}
+ul#nav{float:left;font-size:16px;font-variant:small-caps;font-weight:bold;line-height:1;margin:-14px 0 0 24px;text-align:center;text-transform:lowercase;width:270px;}
 
 #main_content ul{padding-bottom:1em}
 
 ul.tag_list_in_post{border-left:1px solid #bbb;display:inline;margin-left:15px;padding:0 0 0 10px;}
+#main_content ul.tag_list_in_post{padding-bottom:10px}
 ul.tags{float:right;width:280px}
 ul.tag_list{margin-left:52px;padding-bottom:20px;}
 
