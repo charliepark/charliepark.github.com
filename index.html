@@ -1097,6 +1097,888 @@ top: 0;
 
 </article>
 
+<article>
+	<h2 class="post_title"><a href='/beautiful-buttons-for-twitter-bootstrappers'>Beautiful Buttons for Twitter Bootstrappers</a></h2>
+	<div class="meta_wrapper"><time datetime='2012-02-01'>February  1, 2012</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/a thing I made">a thing I made</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/front-end stuff">front-end stuff</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/Twitter Bootstrap">Twitter Bootstrap</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/jQuery">jQuery</a></li></ul></div>
+	<p>Six months ago, a small team at Twitter (<a href="http://twitter.com/mdo">Mark</a> and <a href="http://twitter.com/fat">Jacob</a>) made their front-end design framework — something they called “<a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>” — public. It’s a really nice piece of work, and I’ve been a big fan from day one.</p>
+
+<p>One issue I was having, though, was that I didn’t like the button colors. I mean, yeah, the blue was nice, but button colors should be a bit more flexible. And with the new Bootstrap 2.0, you can kind of set up some custom colors. But, even with the customizations, I thought it could be a bit more dynamic.</p>
+
+<p>So using jQuery and — of course — Twitter Bootstrap, I built a tool for building … <a href="http://charliepark.org/bootstrap_buttons">Beautiful Buttons for Twitter Bootstrappers</a>.</p>
+
+<p><a class="screenshot" href="http://charliepark.org/bootstrap_buttons" style="box-shadow:0 0 10px rgba(0,0,0,0.4)"><img src="../images/beautiful_buttons_for_twitter_bootstrappers/beautiful_buttons_screenshot.png" /></a></p>
+
+<p><strong>I’m actually really happy with how it turned out.</strong> It lets you use sliders to adjust the hue, the saturation, the lightness, and, um, the “puffiness” of your buttons. And it generates customized CSS for you to select, copy, and paste into your project. It works with Twitter Bootstrap 2.0 and with all earlier versions — I actually built it back on Twitter Bootstrap 1.1.1. (The only thing I’m not 100% thrilled with is how as you “puffify” the buttons, the colors sometimes desaturate. Also, I don’t think <em>all</em> of those browser-specific prefixes are necessary, but I figured I’d leave them in for now. If you have suggestions, as always, I’m open.)</p>
+
+<p>I’m not sure why I didn’t announce this or make it available before now. I first built it back in the fall. I think I was waiting until Monotask was a <em>leetle closer</em> to being publicly shareable. But with the Twitter Bootstrap team’s announcement of version 2.0, I figured I’d go ahead and roll this out. Here you go, kids. Have fun.</p>
+
+<p>I hope you enjoy it, and that it makes tons of pretty buttons for you. And — although it’s not <em>quite</em> public, if you <a href="https://monotask.com">sign up to be notified when we launch Monotask</a>, we’ll let you know when it’s available for checking out, and you can see how I used these buttons in the app.</p>
+
+<div class="update_box">
+  <p>Oh &hellip; if you like this, could you do me a big favor and upvote it at Hacker News (<a href="http://news.ycombinator.com/item?id=3538053">http://news.ycombinator.com/item?id=3538053</a>)? I&rsquo;d love for more folks to get to see (and use) these buttons. Thanks!</p>
+</div>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/a-slopegraph-update'>A Slopegraph Update</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-12-31'>December 31, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/data visualization">data visualization</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/graphs">graphs</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/Edward Tufte">Edward Tufte</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/slopegraphs">slopegraphs</a></li></ul></div>
+	<div class="update_box">
+  <p>Okay. A forewarning. This follow-up post gets lost in the weeds at several points. I wrote it shortly after <a href="http://charliepark.org/slopegraphs">my initial slopegraphs piece</a>, but didn&rsquo;t post it for some reason or another. If you haven&rsquo;t read the original piece, I&rsquo;d encourage you to check it out. It&rsquo;s more interesting, and more polished.</p>
+  <p>Honestly, I&rsquo;d prefer for you to think of this follow-up as a very rough draft that I&rsquo;m publishing simply so it&rsquo;ll be off my plate.</p>    
+  <p>But for those of you looking for more details, examples, and whatnot, here you go.</p>
+</div>
+
+<p>It’s clear there’s something here.</p>
+
+<p>The response to <a href="http://charliepark.org/slopegraphs">the original slopegraphs post</a> I published on Monday blew me away. You know how when line charts that zigzag within a range get new data that’s wildly out-of-sync with the existing data, and the chart for the existing data points totally flattens? That’s what happened here.</p>
+
+<p>The post was linked to by Edward Tufte himself, by John Gruber and Jason Kottke, was the #1 post on Hacker News for several hours, was on MetaFilter, and saw a massive amount of activity on Twitter. I’m humbled and amazed by the attention the post has gotten, and excited for what it might do to help slopegraphs see more widespread adoption.</p>
+
+<p>In posting it, I also learned a great deal from a lot of you, and I wanted to write a follow-up, to share that learning with you.</p>
+
+<p>We’re going to look at <a href="#charts_that_are_similar_to_slopegraphs">some charts that are similar to slopegraphs</a> (bumps charts and parallel-coordinate plots), at <a href="#some_new_slopegraph_examples">some new examples of slopegraphs</a> you all have shared with me, at <a href="#whiskerslopes">a new possible enhancement to drawing slopegraphs</a> that you might consider, at <a href="#percentages_or_absolute_values">percentage vs. absolute value comparisons</a>, at <a href="#more_best_practices">more best practices</a>, and at <a href="#new_slopegraph_software">some new software for drawing slopegraphs</a> (and a few old ones that I didn’t know about when I wrote the first piece).</p>
+
+<p>Whew. Let’s get started.</p>
+
+<h2 id="charts-that-are-similar-to-slopegraphs">Charts That Are Similar to Slopegraphs</h2>
+
+<h3 id="bumps-charts">Bumps Charts</h3>
+
+<p>Many of you were quick to note the similarity between slopegraphs and “Bumps Charts”.</p>
+
+<p>From <a href="http://www.cucbc.org/bumps">the Cambridge University Combined Boat Clubs</a> site:</p>
+
+<blockquote>
+  <p>Side-by-side racing is not possible over a long distance on the narrow and winding River Cam, so the bumps format was introduced in the early 19th century as an exciting alternative.</p>
+
+  <p>At the start of the bumping races, crews line up along the river with one and a half boat lengths of clear water between them. On the start signal (the firing of a cannon) they chase each other up the river. When a bump occurs (when one crew is hit by it’s chasing crew), they pull over to allow the other crews to continue racing.</p>
+
+  <p>The next day, all crews involved in a bump swap places and the race is run again.</p>
+</blockquote>
+
+<p>The manner of charting these “bumps” is with a “bumps chart”. It looks like this:</p>
+
+<p><img src="../images/a_slopegraph_update/bumps_chart_example.png" style="margin: 0 0 0 35px" />
+<cite><a href="http://www.cucbc.org/charts?year=2010&amp;event=M&amp;day=Fi&amp;sex=M">http://www.cucbc.org/charts?year=2010&amp;event=M&amp;day=Fi&amp;sex=M</a></cite></p>
+
+<p>(I should note that Tufte mentions bumps charts in <em><a href="http://www.amazon.com/gp/product/0961392118/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0961392118">Envisioning Information</a></em> (p. 111).) </p>
+
+<p>The bumps chart reveals the progression of the boats through the series of races. And, because of the forced rankings, the drama and tension of the races is carried through to the chart reader. Just look at the rivalry going on between Churchill III and Homerton II. Or the stunning rise of Caius III. Or poor Girton V.</p>
+
+<p>So are bumps charts slopegraphs? Absolutely. Are slopegraphs bumps charts? Not always. <strong>I would draw the Venn circle for bumps charts as completely contained within the larger Venn circle of slopegraphs.</strong></p>
+
+<p>If you’re interested in seeing more bumps charts, and several slopegraphs classified as bumps, <a href="http://junkcharts.typepad.com/junk_charts/bumps_chart/">Junk Charts</a> has a number of both good and bad examples. Several slopegraphs are at <a href="http://processtrends.com/toc_bumps_charts.htm">ProcessTrends.com</a> as well.</p>
+
+<p>It should be noted that sometimes, bumps charts can be a little too ambitious:</p>
+
+<p><img src="../images/a_slopegraph_update/tour_bumps.jpg" />
+<cite><a href="http://jeromedaksiewicz.com/images/stories/downloads/TdF/TdF_Standings-001a.jpg">http://jeromedaksiewicz.com/images/stories/downloads/TdF/TdF_Standings-001a.jpg</a></cite></p>
+
+<p>In the examples I gave the other day, we saw two charts (baseball and speed-per-dollar) that could be classified as bumps charts. Interestingly, although, by comparing different things along the two Y-axes, they both had flavors of Maurice d’Ocagne’s / Al Inselberg’s Parallel Coordinate Plots.</p>
+
+<h3 id="parallel-coordinate-plots">Parallel Coordinate Plots</h3>
+
+<p>I mentioned these in passing in the post the other day, but wanted to give a little more context on these.</p>
+
+<p>While I won’t go deep on PCPs, they’re basically a means of comparing different items across a range of criteria. The idea is that you have more than one vertical axis, and each vertical axis shows how the item performed according to that specific criterion.</p>
+
+<p>For example, <a href="http://peltiertech.com/">Jon Peltier</a> made this Parallel-Coordinates Plot comparing the performance of baseball players, measuring their on-base, power, base-running, and fielding percentages:</p>
+
+<p><img src="../images/a_slopegraph_update/pcp.png" />
+<cite><a href="http://peltiertech.com/WordPress/composite-baseball-player-evaluation/">http://peltiertech.com/WordPress/composite-baseball-player-evaluation/</a></cite></p>
+
+<p>If you’re new to PCPs, it’s important to note that even though there’s a line present, PCPs <em>aren’t</em> measuring performance over time.</p>
+
+<p>If you want to see a really good example of a parallel-coordinate plot, head over to the Juice Analytics <a href="http://www.juiceanalytics.com/nfl-visualization/">“spike chart” of NFL team performance</a>. In their words, “Our NFL stats ‘spike chart’ is an easy way to see who’s leading the league in passing, rushing, receiving, tackles, team offense, and team defense. By showing key metrics side by side, you get the full picture of a player or team performance–not just the highlights.” It’s a well-done tool. (Although it’s not trying to necessarily draw in the slopes of a normal PCP, which I think is a good thing. See the next paragraph for why.)</p>
+
+<p>So are parallel coordinate plots slopegraphs? Generally, I’d say they aren’t. Why? <strong>In most PCPs, the <em>slope across the entire chart</em> carries no meaning.</strong> The line is there only to aid your eye in tracking an individual agent’s values across the chart. Switching the order of the columns – and changing their slope – doesn’t change the general outcome of the chart.</p>
+
+<p>Look at the PCP above, comparing baseball performance. If you switched the order of the columns, so the slopes were different, would that change the information the chart carries? Not at all. If the order were “Power, On Base, Fielding, Running”, such that both lines angled downwards as you go from left-to-right, that wouldn’t be any different than if the order were reversed, and the slopes of both had an upward trend across the chart.</p>
+
+<p>I mentioned above that in my original slopegraph piece, the salary-per-dollar and speed-per-dollar charts both had aspects of PCPs. Do I still consider them slopegraphs? Yes and kind of. Both charts are a cross between a PCP and a Bumps Chart. For another example of this PCP/BC cross, check out <a href="http://visualization.geblogs.com/visualization/innovationdeepdive/">this interactive chart comparing different countries’ rankings in innovation</a> from GE, designed by Pentagram’s Lisa Strausfeld.</p>
+
+<p>For <a href="http://charliepark.org/slopegraphs#ben_frys_baseball_chart">Ben Fry’s Baseball Chart</a>, there are only two criteria: each team’s win-loss ratio and each team’s budget. As such, you can think of it as “a super-close zoom-in on a parallel-coordinates plot”. In this case, <strong>the slope <em>does</em> carry meaning</strong>. The gradient matters.</p>
+
+<p>So should I have included the <a href="http://charliepark.org/slopegraphs/#speed_per_dollar">Speed Per Dollar</a> example as a slopegraph? I’ve gone back and forth on this, and I think, ultimately, I <em>should</em> have included it, but I should have noted that <strong>rather than being <em>a</em> slopegraph, it’s actually <em>several</em> slopegraphs, pinned together.</strong> It’s horsepower vs. weight, and weight vs. price, and price vs. performance.</p>
+
+<p>And now that I think about it, seeing it in that light, it might be even better if it were presented as horsepower divided by weight, to get a “hypothetical speed value”, and then to use that new metric as the value to compare with the price. So you’d have a single slopegraph, of the “speed” (or whatever you’d call that metric) in one column and the “price” in another column. Then, you’d have steeper lines showing better (or worse) values. And once you do all that, you’d have (effectively) the same chart that Ben Fry had, with his win-ratio/budget chart.</p>
+
+<p>As a sidenote on the Speed Per Dollar example, one of you (Kyle Harr) astutely noted in an e-mail to me:</p>
+
+<blockquote>
+  <p>In the WindingRoad graph, all columns are arranged according to descending ‘value’: that is, lower weights and prices are better and therefore appear at the top of the column while higher horsepower is more desirable and also appears at the top of the column.</p>
+
+  <p>This does cause certain models to jump rather drastically between columns, adding some clutter, but that’s the point: a car like the Veyron may yield absolute best performance, but in the end, it’s not a very efficient way to get it. </p>
+
+  <p>While the WindingRoad graph is substantially more cluttered, the colored and patterned lines do make it relatively straight forward to read. Dave’s design was cleaner in other areas but reordering the columns obscures critical information in my opinion.</p>
+</blockquote>
+
+<p>I agree: I do still think it was smart of Dave to swap the weight and horsepower columns, but keeping “more horsepower at the top” would probably have been better.</p>
+
+<p>As a final note on PCPs, I just want to say that I’m not a huge fan of them overall. I can see some of their general utility, but I suspect that in many cases where PCPs are used, the data (and the reader) might be better served by chunking the data into multiple charts, each one highlighting certain pieces of information and answering specific questions.</p>
+
+<h3 id="ladder-graphs">Ladder Graphs</h3>
+
+<p>A term that’s occasionally been used for sloped graphs is the “ladder graph”. A ladder graph is actually <em>very</em> close to a slopegraph. Kurt Heisler, of the U.S. Department of Health and Human Services, e-mailed me with info on ladder graphs, and pointing to a few examples. He notes: “A common step in Concept Mapping is to ask participants to take a list of statements and rate them according to their importance, relevance, etc. to the “concept” being studied. The statement ratings are analyzed quantitatively with pattern matching, a process that groups statements into clusters based on similarities on how they were rated. Each cluster, then, has its own average rating. If you want compare how two groups rated each cluster, compare ratings between Time 1 and Time 2, or compare how clusters were rated using two different rating scales, you use a Ladder Graph. Because of the number of data points, you can also measure agreement with correlation statistics.”</p>
+
+<p><img src="../images/a_slopegraph_update/laddergraph.png" /></p>
+
+<p>Basically, if the group in the left column agrees with the group in the right column about priorities and whatnot, the slopes will all be 0°, and will all line up.</p>
+
+<p>So isn’t a ladder graph just another name for a slopegraph? Not quite.</p>
+
+<p>The key distinction between the two: A ladder graph compares the forced ranking of multiple variables among two groups. A slopegraph, though, would be a good candidate for showing “a progression of univariate data among multiple actors over time”.</p>
+
+<p>Kurt Heisler also pointed out a few more examples of ladder graphs, for those looking to drill a bit deeper:</p>
+
+<ul>
+  <li>Mary Kane and William Trochim’s book <em><a href="http://www.amazon.com/gp/product/B004AYD4C8/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B004AYD4C8">Concept Mapping for Planning and Evaluation</a></em> (<a href="http://books.google.com/books?id=Z_yZHb4hA78C&amp;printsec=frontcover&amp;dq=concept+mapping+for+planning+and+evaluation&amp;hl=en&amp;ei=t60dTuWLOsrq0QG9rf3JBw&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=1&amp;ved=0CDIQ6AEwAA#v=onepage&amp;q=ladder&amp;f=false">citations at Google Books</a>) (2007)</li>
+  <li>Page 17 of the academic paper <em><a href="http://www.cbfa.org/Jinkerson.pdf">Use of Concept Mapping/Pattern Matching as a Strategic Planning 
+Tool for a Local Congregation</a></em>, by Darryl Jinkerson (2003)</li>
+</ul>
+
+<h2 id="some-new-slopegraph-examples">Some New Slopegraph Examples</h2>
+
+<p>Happily, I’ve learned of several other slopegraphs that existed before the post earlier this week. Happily, too, several charts have been developed since then.</p>
+
+<h3 id="slopegraphs-from-before-the-article">Slopegraphs From Before The Article</h3>
+
+<p>I’ve tried to include these chronologically.</p>
+
+<h4 id="graphing-agreement-and-disagreement">Graphing Agreement and Disagreement</h4>
+
+<p>In 2004 and 2009, Nicholas Cox at the  University of Durham wrote “<a href="https://docs.google.com/viewer?a=v&amp;q=cache:2qp1IWzgX4kJ:www.stata-journal.com/sjpdf.html?articlenum%3Dgr0005+&amp;hl=en&amp;gl=us&amp;pid=bl&amp;srcid=ADGEESjoTK9El9UGdA_nxS07_-7dOPZPFtZwJC4LzV65g4vodjR-002sTphhTDZZ5vnnD3pLapCirbw7xAMCYJdmU4PK0uM0B2nLz5Cz2QrSsFAbhf524DWcw0HH4_alh1jqtzRERsPD&amp;sig=AHIEtbQK5YOz7o3UZTtAcKBWjYF-JRxdiw">Speaking Stata: Graphing agreement and disagreement</a>” (2004). He also wrote “Speaking Stata: Paired, parallel, or profile plots for changes, correlations, and other comparisons” (2009). Both appeared in <em>The Stata Journal</em>. He includes a number of examples of slopegraphs, and includes some alternative representations for when a chart’s rendering must be done by a computer (for example: avoiding label collision by plotting each item vertically or horizontally, each in its own column, in Tukey-style quasi-whiskerplot).</p>
+
+<h4 id="infant-mortality">Infant Mortality</h4>
+
+<p>In April of 2009, the <em>New York Times</em> showed a comparison of infant mortality rates from 1960 to 2004:</p>
+
+<p><img src="../images/a_slopegraph_update/infant_mortality.gif" />
+<cite><a href="http://www.nytimes.com/imagepages/2009/04/06/health/infant_stats.html">http://www.nytimes.com/imagepages/2009/04/06/health/infant_stats.html</a></cite></p>
+
+<p>A few things to note: They resolve the issue of tie-breaking by having the points converge, and listing the tied countries in order of their original ranking from the left side of the chart. Their labeling could have been made clearer by including the actual rank number next to each rank endpoint on the chart (there’s no way to tell at a glance how many places the US dropped, for example). By including the rank number, it would also eliminate the need for the “Lower infant death rates” and “Higher infant death rates” labels.</p>
+
+<p>Also, in an e-mail from <a href="http://www.vanderveer.org.nz/personnel/person.php?id=28">Dr. Michael MacAskill</a>, he notes: “The problem with this example is that it also departs from Tufte’s example by using ranks rather than the actual values. Ranks are unstable when dealing with values with little real variation (such as child mortality rates in developed countries), in this case giving the erroneous impression of a substantial change in US mortality rates.” I’ll discuss this a bit more down below, in the “relative vs. absolute” portion of the <a href="#more_best_practices">more best practices</a> section.</p>
+
+<h4 id="college-tuition-and-fees">College Tuition and Fees</h4>
+
+<p>In September of 2009, <a href="http://tomschenkjr.net/">Tom Schenk</a> developed this slopegraph, comparing Iowa’s tuition and fee changes with those of surrounding states:</p>
+
+<p><img src="../images/a_slopegraph_update/tuition.png" />
+<cite><a href="http://tomschenkjr.net/2010/11/10/not-everything-is-under-insert-non-traditional-basic-graphs/">http://tomschenkjr.net/2010/11/10/not-everything-is-under-insert-non-traditional-basic-graphs/</a></cite></p>
+
+<h4 id="jobs-in-the-netherlands">Jobs in the Netherlands</h4>
+
+<p>Also in 2009, while working for the Dutch province of Flevoland, Joshua de Haseth made a slopegraph showing economic data and job growth among different Dutch provinces.</p>
+
+<p><img src="../images/a_slopegraph_update/dehaseth.png" /></p>
+
+<p>He made the chart in Excel, and since he wrote it as “in Excel (!)”, I’m guessing it wasn’t the easiest chart to make. Maybe Microsoft will try to steal the term “slopegraph” as well as <a href="http://charliepark.tumblr.com/post/809003601/me-getting-annoyed-by-microsofts-abuse-of-copyright">sparkline</a>, and this will be a walk in the park in a few years.</p>
+
+<h4 id="brazilian-prison-population-change">Brazilian Prison Population Change</h4>
+
+<p>In November of 2010, Brazilian newsweekly <em>Época</em> showed a visualization of the increasing prison population across the country.</p>
+
+<p><img src="../images/a_slopegraph_update/br_prison_population.jpg" />
+<cite><a href="http://colunas.epoca.globo.com/fazcaber/2011/03/25/editora-globo-ganha-dois-premios-malofiej/">http://colunas.epoca.globo.com/fazcaber/2011/03/25/editora-globo-ganha-dois-premios-malofiej/</a></cite></p>
+
+<p>You can see a larger version of this at <a href="http://revistaepoca.globo.com/Revista/Epoca/0,,EMI182813-18049,00-DIAGRAMA+A+POPULACAO+BRASILEIRA+CRESCE+MAIS+NOS+PRESIDIOS.html">the Epoca website</a> (click on the large “2” at the top of the chart on that page).</p>
+
+<p>This chart won a Malofiej prize, an international contest described as “the infographics equivalent of the Pulitzer Prizes”, awarded by the Spanish chapter of the <a href="http://www.snd.org/">Society for News Design</a></p>
+
+<h4 id="medicare-adoption">Medicare Adoption</h4>
+
+<p>In April of 2011, Brent Jones at the <em>St. Louis Observer</em> created a chart showing <a href="http://www.stlbeacon.org/health-science/health/109896-medicare-changes-are-reassuring-and-worrisome">Medicare adoption rates in different states</a>. This is more of a PCP/Bumps cross than a slopegraph, but I wanted to link to it here anyway.</p>
+
+<h4 id="the-canadian-power-list">The Canadian Power List</h4>
+
+<p>Im May of 2010, Grant Hamilton at the <em>Brandon Sun</em> published a quasi-slopegraph/bumps chart looking at a listing of <a href="http://www.brandonsun.com/opinion/blogs/Power-surges-106791028.html?thx=y">power brokers in the Brandon area of Manitoba</a>. Like the Medicare Adoption link above, I won’t analyze this one too much here, but I wanted to mention it.</p>
+
+<h4 id="the-tablet-effect">The Tablet Effect</h4>
+
+<p>On July 11, 2011 …</p>
+
+<p><img src="../images/a_slopegraph_update/tablet_effect.jpg" />
+<cite><a href="http://www.resolvemr.com/">http://www.resolvemr.com/</a></cite></p>
+
+<p>Ironically, this one was published online on the same day as my original article. It comes from an industry report created by <a href="http://www.resolvemr.com/">Resolve Market Research</a>.</p>
+
+<p>I have a few quibbles with this one, but it’s a good example of a slopegraph.</p>
+
+<p>Apart from general eyecandy issues, two specific slopegraph concerns:
+* In the chart as it was originally presented, it isn’t clear at a glance whether the textual labels (the %s) are the comparison points, or whether the ends of the lines themselves are the comparison points. (Here, the chart’s been shrunken a bit, but you can see it at its full size by clicking <a href="http://localhost:4000/images/a_slopegraph_update/tablet_effect.jpg">here</a>.) After a second or two, you see that the percentage labels are simply giving a more complete picture of the data, and it’s the lines that carry the dominant data. But because the <em>labels</em> have a higher contrast from the black background than the <em>lines</em>, the eye is drawn to the percentages. One way to handle this would be to make the percentage labels less contrasting from the background, rather than white, so they stand out less.
+* Also, the legend should probably disappear altogether, and the names of the different readers could be appended to one (or both) of the percentage labels.</p>
+
+<h3 id="slopegraphs-since-the-article">Slopegraphs Since The Article</h3>
+
+<h4 id="final-cut-pro-price-changes">Final Cut Pro Price Changes</h4>
+
+<p>On July 14th, 2011, Alex Gollner posted this slopegraph comparing price changes of Apple’s Final Cut Pro X:</p>
+
+<p><img src="../images/a_slopegraph_update/final_cut_pro.gif" />
+<cite><a href="http://alex4d.wordpress.com/2011/07/14/fpx-july-2011-price-changes/">http://alex4d.wordpress.com/2011/07/14/fpx-july-2011-price-changes/</a></cite></p>
+
+<h4 id="defense-spending">Defense Spending</h4>
+
+<p>On July 15th, 2011, Gulliver posted slopegraphs of <acronym>NATO</acronym> defense spending as a percentage of <acronym>GDP</acronym>.</p>
+
+<p><img src="../images/a_slopegraph_update/nato.jpg" />
+<cite><a href="http://tachesdhuile.blogspot.com/2011/07/fun-with-slopegraphs-nato-defense.html">http://tachesdhuile.blogspot.com/2011/07/fun-with-slopegraphs-nato-defense.html</a></cite></p>
+
+<h4 id="military-expenditure-in-east-asia">Military Expenditure in East Asia</h4>
+
+<p>Also on July 15th, 2011, Per Henrik Johansen used David Ruaru’s <a href="https://github.com/bobthecat/codebox/blob/master/table.graph.r">slopegraphs in R</a> script to create a slopegraph showing military expenditures in 2000 and 2010:</p>
+
+<p><img src="../images/a_slopegraph_update/military_expenditures.png" />
+<cite><a href="http://blog.perhenrik.com/2011/07/military-expenditure-in-east-asia-as.html">http://blog.perhenrik.com/2011/07/military-expenditure-in-east-asia-as.html</a></cite></p>
+
+<p>He describes the creation of the chart as “a piece of cake”.</p>
+
+<h4 id="gdp-per-capita-among-the-worlds-poorest-countries">GDP Per Capita Among The World’s Poorest Countries</h4>
+
+<p><em>Also</em> on July 15th, 2011, <a href="http://amoondisaster.wordpress.com/">Jon Custer</a> developed a slopegraph comparing GDP per capita, from 1959 to 2009.</p>
+
+<p><img src="../images/a_slopegraph_update/gdp.png" />
+<cite><a href="http://amoondisaster.wordpress.com/2011/07/15/telling-stories-with-data-the-slopegraph/">http://amoondisaster.wordpress.com/2011/07/15/telling-stories-with-data-the-slopegraph/</a></cite></p>
+
+<p>He also goes in-depth on the process he went through in making the chart, what he liked about it, and where he would like to see it improve. If you have any interested in making slopegraphs, <a href="http://amoondisaster.wordpress.com/2011/07/15/telling-stories-with-data-the-slopegraph/">his post</a> is well worth a look. As a preview:</p>
+
+<blockquote>
+  <p>However, what I really like about this style of presentation is that it breaks the story down into discrete sub-narratives by country and decade. As I alluded to yesterday, I am somewhat skeptical of tendency in development economics to focus on large-scale trends — with the implication often being that this will allow us to devise ‘universal’ rules. Too often economists write off the outliers as uninteresting, unimportant, or even harmful to their analysis. But given the rarity of the outcome development economists are searching for — poor country becomes rich country — it seems like the outliers are exactly what they should be focusing on. Looking at this chart, the natural question for the uninitiated would be “What’s the deal with China?” not “Hey, what’s up with Burkina Faso, Ethiopia, and Malawi?”</p>
+
+  <p>This chart also helps to generate questions that would not be so obvious in a more granular presentation, especially to those not accustomed to reading charts, as the human brain is pretty good at recognizing and comparing the slopes of straight lines. Looking at the chart for a few minutes quickly reveals the important moments in the economic histories of these diverse countries: what happened in Uganda in the 70s? China in the 80s? Most countries in the 2000s? And what the hell is wrong with Zimbabwe? You can also discern other interesting pieces of data, such as the fact that economic dynamo India actually only surpassed economic basketcase Pakistan in per-capita GDP relatively recently. Some countries have been particularly volatile, like Malawi, while Morocco was a good, steady performer. You really lose surprisingly little meaning compared to the conventional line chart, especially considering the number of distractions which are eliminated.</p>
+</blockquote>
+
+<h2 id="whiskerslopes">Whiskerslopes</h2>
+
+<p>As I mentioned in the original piece, handling overlapping labels is tricky.</p>
+
+<p>One interesting approach to handling that was proposed by <a href="http://yawp.com/services.html">Mike Stone</a>. He added a version of Tufte’s “revised box plot” to each axis, showing the median value, the quartiles on each axis (the lines run from the 75% point to the 90% point (above the median) and the 25% point to the 10% point (below the median)).</p>
+
+<p><img src="../images/a_slopegraph_update/whisker.png" /></p>
+
+<p>Here’s how he described it, in an e-mail to me:</p>
+
+<blockquote>
+  <p><strong>The whisker diagrams have the same general effect as the hairline between rows of numbers in a table. They break the textual data into smaller chunks which are easier for the reader to process.</strong> By my estimation, there are fourteen easily resolved buckets for information on either side: top, middle, and bottom for each line, same for the spaces between the lines and the median dot, plus ‘everything above the top line’ and ‘everything below the bottom line’.</p>
+
+  <p>Grouping the textual information in those buckets released me from the problem of using the text as a data point per se. I was able to make the graphical information do what it does well – showing the relationships between values – while letting the text do what it does well – telling us the exact values associated with the lines nearby.</p>
+
+  <p>Given that slopegraphs are best suited to numerical data, the whisker diagrams do provide meaningful information. Best of all, they give a lot of bang for the buck while maintaining the ‘pure data ink’ character of the original chart.</p>
+</blockquote>
+
+<p>At first, I was thrown by the added lines, but I think he’s right, that by introducing the vertical lines, it isn’t as necessary for the text labels to line up as closely with the endpoints of the lines.</p>
+
+<p>I think the added vertical lines would need to be added carefully, but they do add to the chart. Mike continues:</p>
+
+<blockquote>
+  <p>[adding the whisker lines highlights] the oddball values. Britain skipped from the top quartile to just below average. Canada, Greece, and the US all dropped roughly half a bracket. Finland went from ‘a bit above average’ to ‘a bit below average’. Everyone else stayed about where they started, with France and Belgium moving from the high and low ends of their bracket toward the middle.</p>
+
+  <p>Thing is, that’s not obvious from the slopes of the lines. The lines for Greece and Spain are nearly parallel, but it’s Spain and Switzerland that more or less define the 10-25% bracket.</p>
+</blockquote>
+
+<p>I’m eager to see how you all take this enhancement and refine it and run with it. Again, it’s not always going to be practical or necessary to add it, but you might find that it enhances your charts, and frees you up from some of the problem of label collisions.</p>
+
+<h2 id="more-best-practices">More Best Practices</h2>
+
+<p>I wanted to point out three “best practices” that I’d neglected to mention the first time around.</p>
+
+<p>First, <strong>if you have multiple comparisons (as in the cancer slopegraph), maintain a consistent scale for the horizontal alignment of your columns</strong>. In the cancer scale, that was a 5-year period. In the NATO defense budgets example I linked to above, that was a 3-year period.</p>
+
+<p>If you have data that spans a 10-year gap as your first line of slopes, and then an update to the dataset only covers a five-year gap, you need to be careful how you place your columns. If they’re equidistant from one another, the relative gradients will be misrepresented.</p>
+
+<p>Second, <strong>be clear about whether the “comparison point” on the chart is <em>the end of the slope line</em> or <em>the data label itself</em>.</strong></p>
+
+<p>I touched on this a bit with my critiques of the “Tablet Effect” slopegraph above.</p>
+
+<p>Third, <strong>determine whether you want to highlight the <em>absolute</em> rate of change or the <em>fractional</em> rate of change</strong>.</p>
+
+<p>Earlier, I mentioned Michael MacAskill’s critique of the <em>Times</em>’ “Infant Mortality” chart. A similar point was made in an e-mail to me from <a href="http://new.oberlin.edu/arts-and-sciences/departments/chemistry/terry-s.-carlton.dot">Terry Carlton</a>, who noted:</p>
+
+<blockquote>
+  <p>A country’s slope in this graph is larger, the larger the increase in what is being graphed, namely, government receipts as a percentage of GDP. But comparing slopes could be misleading. Suppose that for country A, the increase is from 10% in 1970 to 20% in 1979, whereas for country B the increase is from 40% to 50%. The slope for both countries would be the same even though what is graphed doubles between 1970 and 1979 for country A, but increases by only a fourth (i.e., by 25% of the original 40%) for country B.</p>
+
+  <p>Next, consider country C, for which government receipts as a percentage of GDP increase from from 40% in 1970 to 60% in 1979. The slope for C would be twice that for A, yet the fractional increase in what is being graphed is twice as large for A as for C.</p>
+
+  <p>I suspect that many users of slopegraphs would be more interested in the fractional increase of what is being graphed rather than in the absolute increase. A slope graph that used a logarithmic vertical scale would have equal slopes for equal fractional changes, and the larger of two slopes would always be associated with the larger fractional change.</p>
+</blockquote>
+
+<p>It’s a good point. If the comparative rate-of-change is the most salient aspect of the data that you’re highlighting, consider making your slopegraph’s axes reflect the percentage of change. I suspect this would end up having a midpoint on the left-hand axis (0%), with the different slopes fanning out above and below the 0% line to the right hand axis, which would have positive percentage values above the mid-line, and negative values below.</p>
+
+<p>You might have two different slopegraphs: One showing the absolute change, and one showing the relative change. Alternately, include the secondary data point in parentheses, after the right-hand label (so, in the original GDP example, you could label Sweden’s right-hand datapoint “57.4 Sweden (22.4%)”; Britain’s would be “39.0 Britain (-4.2%)”.</p>
+
+<h2 id="new-slopegraph-software">New Slopegraph Software</h2>
+
+<p>It’s been neat seeing new software implementations developing. I’ll add these to the original post, but I wanted to call them out here, for people looking for the update.</p>
+
+<ul>
+  <li>The team at <a href="http://www.juiceanalytics.com/">Juice Analytics</a> has one of the oldest and best implementations of slopegraph rendering available, with software available for free for the <a href="http://www.juiceanalytics.com/writing/real-world-tufte-graphics/">Mac</a> and <a href="http://www.juiceanalytics.com/writing/tufte-style-comparison-chart-generator/">Excel on the PC</a>. A <em>lot</em> of you wrote in to tell me about Juice’s work. Thank you.</li>
+  <li><a href="http://log.tofias.net/?3330f900">Michael Tofias</a>, in <a href="http://pastie.org/private/no94bdylb2l14eo5myiaa">Stata</a></li>
+  <li>Pradeep Gowda, in <a href="http://pradeepgowda.com/programming/tuft-graphics-processingjs/">Processing</a></li>
+  <li>Hamilton Ulmer, in <a href="http://skedasis.com/d3/slopegraph/">Javascript/d3</a></li>
+  <li>a better fork of my own Javascript implementation, by Erik Solen, in <a href="https://github.com/solenoid/slopegraph">Javascript/d3</a></li>
+</ul>
+
+<h2 id="wrapping-up-again">Wrapping Up (Again)</h2>
+
+<p>So, yeah: I think slopegraphs have a promising future. It’s been exciting to see the activity surrounding them this week, and to be a part of it.</p>
+
+<p>I think the most succinct description I saw came from <a href="http://radar.oreilly.com/2011/07/four-short-links-12-july-2011.html">Nat Torkington at O’Reilly’s Radar</a>, who said “[slopegraphs convey] rank, value, and delta over time.” That’s a pretty high data-to-ink ratio right there. Far better than my blabbering.</p>
+
+<p>As you develop more slopegraphs in the future, I’d encourage you to post them at <a href="www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003nk&amp;topic_id=1">Edward Tufte’s forum thread on slopegraphs</a>. And, of course, let me know, on <a href="http://twitter.com/charliepark">Twitter</a> or by e-mail (<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#104;&#097;&#114;&#108;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#098;&#117;&#100;&#103;&#101;&#116;&#046;&#099;&#111;&#109;">&#099;&#104;&#097;&#114;&#108;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#098;&#117;&#100;&#103;&#101;&#116;&#046;&#099;&#111;&#109;</a>), what you come up with. I’m looking forward to it.</p>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/slopegraphs'>Edward Tufte&rsquo;s &ldquo;Slopegraphs&rdquo;</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-07-11'>July 11, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/data visualization">data visualization</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/graphs">graphs</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/Edward Tufte">Edward Tufte</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/slopegraphs">slopegraphs</a></li></ul></div>
+	<div class="update_box">
+  <p>After you read this post, you&rsquo;ll probably want to check out the follow-up, <a href="http://charliepark.org/a-slopegraph-update">A Slopegraph Update</a>.</p>
+</div>
+
+<p>Back in 2004, Edward Tufte defined and developed the concept of a “<a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR&amp;topic_id=1">sparkline</a>”. Odds are good that — if you’re reading this — you’re familiar with them and how popular they’ve become.</p>
+
+<p>What’s interesting is that <strong>over 20 years before sparklines came on the scene, Tufte developed a different type of data visualization that didn’t fare nearly as well</strong>. To date, in fact, I’ve only been able to find <em>three</em> examples of it, and even they aren’t completely in line with his vision.</p>
+
+<p>It’s curious that it hasn’t become more popular, as the chart type is quite elegant and aligns with all of Tufte’s best practices for data visualization, and was created by the master of information design. Why haven’t these charts (christened “slopegraphs” by Tufte about a month ago) taken off the way sparklines did?</p>
+
+<p>In this post, we’re going to look at slopegraphs — what they are, how they’re made, why they haven’t seen a massive uptake so far, and why I think they’re about to become much more popular in the near future.</p>
+
+<h2 id="the-table-graphic">The Table-Graphic</h2>
+
+<p>In his 1983 book <em><a href="http://www.amazon.com/gp/product/0961392142/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0961392142">The Visual Display of Quantitative Information</a></em>, Tufte displayed a new type of data graphic.</p>
+
+<p><img src="/images/slopegraphs/slopegraph.gif" style="width:500px" /></p>
+
+<p><cite>Tufte, Edward. <em>The Visual Display of Quantitative Information</em>.<br />Cheshire, Connecticut: Graphics Press; 1983; p. 158</cite></p>
+
+<p>As Tufte notes in his book, this type of chart is useful for seeing:</p>
+
+<ul>
+  <li>the hierarchy of the countries in both 1970 and 1979 [the order of the countries]</li>
+  <li>the specific numbers associated with each country in each of those years [the data value next to their names]</li>
+  <li>how each country’s numbers changed over time [each country’s slope]</li>
+  <li><strong>how each country’s rate of change compares to the other countries’ rates of change</strong> [the slopes compared with one another]</li>
+  <li>any notable deviations in the general trend (notice Britain in the above example) [aberrant slopes]</li>
+</ul>
+
+<p>This chart does this in a remarkably minimalist way. <strong>There’s absolutely zero non-data ink.</strong></p>
+
+<p>(One important thing to note is that this chart shows <strong>the same types of data on the left and right sides, using the same units of measurement.</strong> I’ll come back to this later.)</p>
+
+<p>So, anyway, Professor Tufte made this new kind of graph. Unlike sparklines, though, it didn’t really get picked up. Anywhere.</p>
+
+<p>My theory on this lack of response is three-fold:</p>
+
+<ol><li>It didn't have a name. (He just referenced it as a "table-graphic" at the time.)</li>
+<li>It was a totally new concept. (Where sparklines are easily understood as "an axis-less line chart, scaled down (and kind of cute)", this "table-graphic" is something new.)</li>
+<li>It's a <s>little</s> <u>good deal</u> more complicated to draw. (More on that at the end.)</li>
+</ol>
+
+<h3 id="a-super-close-zoom-in-on-a-line-chart">A Super-Close Zoom-In On A Line Chart</h3>
+
+<p>A quick aside: The best way I’ve found to describe these table-graphics is this: It’s like a super-close zoom-in on a line chart, with a little extra labeling.</p>
+
+<p>Imagine you have a line chart, showing the change in European countries’ population over time. Each country has a line, zigzagging from January (on the left) to December (on the right). Each country has 12 points across the chart. The lines zigzag up and down across the chart. Now, let’s say you zoomed in to <em>just</em> the June-July segment of the chart, and you labeled the left and right sides of each country’s June-July lines (with the country’s name, and the specific number at each data point).</p>
+
+<p>That’s it. Fundamentally, that’s all a table-graphic is.</p>
+
+<h2 id="hierarchical-table-graphics-in-the-wild">Hierarchical Table-Graphics In The Wild</h2>
+
+<p>Where sparklines found their way into products at Google (<a href="http://code.google.com/apis/chart/interactive/docs/gallery/imagesparkline.html">Google Charts</a> and Google Finance) and Microsoft (<a href="http://charliepark.tumblr.com/post/809003601/me-getting-annoyed-by-microsofts-abuse-of-copyright">grrr</a>), and even saw some action from a pre-jQuery John Resig (<a href="http://ejohn.org/projects/jspark/">jspark.js</a>), this table-graphic thing saw essentially zero uptake.</p>
+
+<p>At-present, Googling for “<a href="http://www.google.com/search?q=tufte+&quot;table-graphic&quot;">tufte “table-graphic”</a>” yields a whopping 83 results, most of which have nothing to do with this technique.</p>
+
+<p>Actually, since Tufte’s 1983 book, I’ve found <em>three</em> non-Tuftian examples (<em>total</em>). And even they don’t really do what Tufte laid out with his initial idea.</p>
+
+<p>Let’s look at each of them.</p>
+
+<h3 id="ben-frys-baseball-chart">Ben Fry’s Baseball Chart</h3>
+
+<p>The first we’ll look at came from Processing developer / data visualization designer <a href="http://benfry.com/">Ben Fry</a>, who developed a chart showing baseball <a href="http://benfry.com/salaryper/">team performance vs. total team spending</a>:</p>
+
+<p><img src="/images/slopegraphs/benfry_salaryper.png" style="width:500px" /></p>
+
+<p><cite><a href="http://benfry.com/salaryper/">http://benfry.com/salaryper/</a></cite></p>
+
+<p>A version of this graphic was included in his 2008 book <em><a href="http://www.amazon.com/gp/product/0596514557/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0596514557">Visualizing Data</a></em>, but I believe he shared it online before then.</p>
+
+<p>Anyway, you can see each major-league baseball team on the left, with their win/loss ratio on the left and their annual budget on the right. Between them is a sloped line showing how their ordering in each column compares. Lines angled up (red) suggest a team that is spending more than their win ratio suggests they should be, where blue lines suggest the team’s getting a good value for their dollars. The steeper the blue line, the more wins-per-dollar.</p>
+
+<p>There are two key distinctions between Tufte’s chart and Fry’s chart.</p>
+
+<p>First: Fry’s baseball chart is really just comparing <em>order</em>, not scale. The top-most item on the left is laid out with the same vertical position as the top-most item on the right, and so on down the list.</p>
+
+<p>Second: Fry’s is comparing two different variables: win ratio and team budget. Tufte’s looks at a single variable, over time. (To be fair, Fry’s <em>does</em> show the change over time, but only in a dynamic, online version, where the orders change over time as the season progresses. The static image above doesn’t concern itself with change-over-time.)</p>
+
+<p>If you want to get technical, Fry’s chart is essentially a “forced-rank <a href="http://www.b-eye-network.com/view/3355">parallel coordinates plot</a>” with just two metrics.</p>
+
+<p>Another difference I should note: This type of forced-rank chart doesn’t have any obvious allowance for ties. That is, if two items on the chart have the same datum value (as is the case in 11 of the 30 teams above), the designer (or the algorithm, if the process is automated) has to choose one item to place above the other. (For example, see the Reds and the Braves, at positions 6 and 7 on the left of the chart.) In Fry’s case, he uses the team with the lower salary as the “winner” of the tie. But this isn’t obvious to the reader.</p>
+
+<p>In <em><a href="http://www.amazon.com/gp/product/0596514557/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0596514557">Visualizing Data</a></em>, Fry touches on the “forcing a rank” question (p. 118), noting that at the end of the day, he <em>wants</em> a ranked list, so a scatterplot using the X and Y axes is less effective of a technique (as the main point with a scatterplot is simply to display a correlation, not to order the items). I’m not convinced, but I am glad he was intentional about it. I also suspect that — because the list is generated algorithmically — it was easier to do it and avoid label collisions this way.</p>
+
+<p>Nevertheless, I do think it’s a good visualization.</p>
+
+<h3 id="the-national-geographic-magazine-life-expectancy-chart">The <em>National Geographic Magazine</em> Life-Expectancy Chart</h3>
+
+<p>In 2009, <a href="http://oliveruberti.com/">Oliver Uberti</a> at <em>National Geographic Magazine</em> released a chart showing the average life expectancy at birth of citizens of different countries, comparing that with what each nation spends on health care per person:</p>
+
+<p><img src="/images/slopegraphs/natgeo.jpg" style="width:500px" />
+<cite><a href="http://blogs.ngm.com/blog_central/2009/12/the-cost-of-care.html">http://blogs.ngm.com/blog_central/2009/12/the-cost-of-care.html</a></cite></p>
+
+<p>Like Fry’s chart, Uberti’s chart uses two different variables. <em>Unlike</em> Fry’s chart, Uberti’s <em>does</em> use different scales. While that resolves the issue I noted about having to force-rank identical datapoints, it introduces a new issue: dual-scaled axes.</p>
+
+<p>By selecting the two scales used, the designer of the graph — whether intentionally or not — is introducing <em>meaning</em> where there might not actually be any.</p>
+
+<p>For example, should the right-side data points have been spread out so that the highest and lowest points were as high and low as the Switzerland and Mexico labels (the highest and lowest figures, apart from the US) on the left? Should the scale been adjusted so that the Switzerland and/or Mexico lines ran horizontally? Each of those options would have affected the layout of the chart. I’m not saying that Uberti <em>should</em> have done that — just that a designer needs to tread very carefully when using two different scales on the same axis.</p>
+
+<p>(Stephen Few discusses this concept of dual-scaled axes — although he isn’t talking about this chart type — in <a href="http://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf">his March 2008 newsletter</a>.)</p>
+
+<p>A few bloggers (<a href="http://peltiertech.com/WordPress/graphing-the-cost-of-health-care/">Jon Peltier</a>, for example) criticized the NatGeo chart, noting that, like the Fry chart above, it was an Inselberg-style parallel-coordinates plot, and that a better option would be a scatter plot. (I disagree that it’s <em>really</em> a parallel-coordinates plot, as parallel-coordinate plots usually compress everything into a unified vertical axis height, so the scale is somewhat pre-determined. I digress.)</p>
+
+<p>In <a href="http://blogs.ngm.com/blog_central/2010/01/the-other-health-care-debate-lines-vs-scatterplot.html">a great response on the NatGeo blog</a>, Uberti then re-drew the data in a scatter plot:</p>
+
+<p><img src="/images/slopegraphs/natgeo_scatter.jpg" style="width:500px" /></p>
+
+<p>Uberti also gave some good reasons for drawing the graph the way he did originally, with his first point being that “many people have difficulty reading scatter plots. When we produce graphics for our magazine, we consider a wide audience, many of whose members are not versed in visualization techniques. For most people, it’s considerably easier to understand an upward or downward line than relative spatial positioning.”</p>
+
+<p>I agree with him on that. Scatterplots reveal more data, and they reveal the relationships better (and Uberti’s scatterplot is really good, apart from a few quibbles I have about his legend placement). But <strong>scatterplots can be tricky to parse</strong>, especially for laymen.</p>
+
+<p>Note, for example, that in the scatter plot, it’s hard at first to see the cluster of bubbles in the bottom-left corner of the chart, and the eye’s initial “read” of the chart is that a best-fit line would run along that top-left-to-bottom-right string of bubbles from Japan to Luxembourg. In reality, though, that line would be absolutely wrong, and the best-fit would run from the bottom-left to the upper-right.</p>
+
+<p>Also, the entire <em>point</em> of the chart is to show the US’s deviant spending pattern, but in the scatter plot, the eye’s activity centers around that same cluster of bubbles, and the US’s bubble on the far right is lost.</p>
+
+<p>The “Above average spending / Below average life expectancy” labels on the quadrants are <em>really</em> helpful, but, again, it reinforces Uberti’s point, that scatter plots are tricky to read. Should those labels really be necessary? Without them, would someone be able to glance at the scatter chart and “get it”?</p>
+
+<p>For quick scanning, the original chart really does showcase the extraordinary amount the US spends on healthcare relative to other countries. And that’s the benefit of these table-graphics: <strong>Slopes are easy to read.</strong></p>
+
+<h3 id="speed-per-dollar">Speed Per Dollar</h3>
+
+<p>Back in July of 2007 (I know: we’re going back in time a bit, but this chart diverges even more from Tufte’s than the others, and I wanted to build up to it), a designer at online driving magazine <a href="http://windingroad.com">WindingRoad.com</a> developed the “Speed per Dollar” index:</p>
+
+<p><img src="/images/slopegraphs/spd_original.jpg" style="width:500px" /></p>
+
+<p>Again, what we have is, essentially, an Inselberg-style parallel-coordinates plot, with a Fry-style forced-rank. In this case, though, each step of the progression leads us through the math, to the conclusion at the right-side of the chart: dollar-for-dollar, your best bet is the <a href="http://www.arielatom.com/north-america/">Ariel Atom</a>.</p>
+
+<p><img src="/images/slopegraphs/ariel_atom.jpg" style="width:500px" /></p>
+
+<p>Homina homina homina.</p>
+
+<p>Anyway, this chart uses slopes to carry meaning, hence its inclusion here, but I think it’s different enough from the table-chart Tufte developed in 1983 that it isn’t <em>quite</em> in the same family.</p>
+
+<p>Dave Nash, a “kindly contributor” at Tufte’s forum then refined the chart, making aspects of it clearer and more Tuftian (original graphic on top, Nash’s on bottom):</p>
+
+<p><img src="/images/slopegraphs/spd_nash.png" style="width:500px" /></p>
+
+<p>(I like how the original included the math at the top of the chart, showing how the <acronym>SPD</acronym> value was derived, and I like how it highlights the final column, drawing the eye to the conclusions, but I do think Nash’s shows the data better.)</p>
+
+<h3 id="cancer-survival-rates">Cancer Survival Rates</h3>
+
+<p>We’ll close with the last example of these table-charts I’ve found (and I’ve looked for others; if you know any others, let me know: (<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#104;&#097;&#114;&#108;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#098;&#117;&#100;&#103;&#101;&#116;&#046;&#099;&#111;&#109;">&#099;&#104;&#097;&#114;&#108;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#098;&#117;&#100;&#103;&#101;&#116;&#046;&#099;&#111;&#109;</a>).</p>
+
+<p>This one’s from Tufte himself. It shows cancer survival rates over 5-, 10-, 15-, and 20-year periods.</p>
+
+<p><img src="/images/slopegraphs/cancer_survival_nash.gif" style="width:500px" />
+<cite><a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Jr">http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Jr</a></cite></p>
+
+<p>Actually, the chart above is a refinement of a Tufte original (2002), done (again) by Kindly Contributor Dave Nash (2003, 2006).</p>
+
+<p>Owing it to being a creation of the man himself, this is most in-line with the table-chart I showed at the very top, from 1983. We can clearly see each item’s standings on the chart, from one quinquennium to the next. In fact, this rendition of the data is a good illustration of my earlier simplification, that these table-charts are, essentially, minimalist versions of line charts with intra-line labels.</p>
+
+<h2 id="tufte-names-his-creation">Tufte Names His Creation</h2>
+
+<p>Although it’s possible that Tufte has used this term in his workshops, the first occasion I can find of the “table-chart” having an actual <em>name</em> is <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003nk&amp;topic_id=1">this post from Tufte’s forums</a> on June 1st, 2011. The name he gives the table-chart: “<strong>Slopegraphs</strong>”.</p>
+
+<p>I suspect that we’ll see more slopegraphs in the wild, simply because people will now have something they can use to refer to the table-chart besides “that slopey thing Tufte had in <em>Visual Design</em>.”</p>
+
+<p>But there’s still a technical problem: How do you <em>make</em> these damn things?</p>
+
+<h2 id="making-slopegraphs">Making Slopegraphs</h2>
+
+<p>At the moment, both of the canonical slopegraphs were made by hand, in Adobe Illustrator. A few people have made initial efforts at software that aids in creating slopegraphs. It’s hard, though. If the labels are too close together, they collide, making the chart less legible. A well-done piece of software, then, is going to include collision-detection and account for overlapping labels in some regard.</p>
+
+<p>Here are a few software tools that are currently being developed:</p>
+
+<ul>
+  <li>Dr. David Ruau has developed a working version of <a href="https://github.com/bobthecat/codebox/blob/master/table.graph.r">slopegraphs in R</a></li>
+  <li>Alex Kerin, <a href="http://www.datadrivenconsulting.com/2011/06/slopegraphs-in-tableau/">slopegraphs in Tableau</a></li>
+  <li>Coy Yonce, <a href="http://coyyonce.com/2011/06/my-adventure-in-creating-slopegraphs-with-crystal-reports-attempt-one/">slopegraphs in Crystal Reports</a> and <a href="http://coyyonce.com/2011/06/another-attempt-at-creating-slopegraphs-in-crystal-reports/">slopegraphs in Crystal Reports Enterprise</a></li>
+  <li>I started developing a <a href="https://github.com/charliepark/slopegraph/blob/master/slopegraph.html">slopegraphs in Javascript / Canvas</a> version, but probably won’t continue it, and will try to use the Google Charts’ <acronym>API</acronym> if I try again. The “jaggies” on the lines were too rough for me. (I only include it here in case anyone is interested in running with what I’ve stubbed out.)</li>
+</ul>
+
+<p>In each case, if you use the chart-making software to generate a slopegraph, attribute the software creator.</p>
+
+<p>With this many people working on software implementations of slopegraphs, I expect to see a large uptick in slopegraphs in the next few months and years. But … <em>when</em> should people use slopegraphs?</p>
+
+<h2 id="when-to-use-slopegraphs">When to Use Slopegraphs</h2>
+
+<p>In <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003nk&amp;topic_id=1">Tufte’s June 1st post</a>, he sums up the use of slopegraphs well: “Slopegraphs compare changes over time for a list of nouns located on an ordinal or interval scale.”</p>
+
+<p>Basically: <strong>Any time you’d use a line chart to show a progression of univariate data among multiple actors over time, you might have a good candidate for a slopegraph.</strong> There might be other occasions where it would work as well. Note that strictly by Tufte’s June 1st definition, none of the examples I gave (Baseball, Life Expectancy, Speed-per-Dollar) count as slopegraphs.</p>
+
+<p>But some situations clearly would benefit from using a slopegraph, and I think Tufte’s definition is a good one until more examples come along and expand it or confirm it.</p>
+
+<p><strong>An example of a good slopegraph candidate:</strong> In my personal finance webapp <a href="https://pearbudget.com">PearBudget</a>, we’ve relied far more on tables than on charts. (In fact, the only chart we include is a “sparkbar” under each category’s name, showing the amount of money available in the current month.) We’ve avoided charts in general (and pie charts in particular, unlike every other personal finance webapp), but I’m considering adding a visual means of comparing spending across years — how did my spending on different categories <em>this</em> June compare with my spending on those categories in June of 2010? Did they all go up? Did any go down? Which ones changed the most? <strong>This would be a great situation in which to use a slopegraph.</strong> (If I do implement them, I’ll be sure to post a follow-up with screenshots and an explanation of how I got them to work.)</p>
+
+<h2 id="slopegraph-best-practices">Slopegraph Best Practices</h2>
+
+<p>Because slopegraphs don’t have a lot of uses in place, best practices will have to emerge over time. For now, though …</p>
+
+<ul>
+<li>Be clear &mdash; first to yourself, then to your reader &mdash; whether your numbers are displaying the items in order or whether they&rsquo;re on an actual scale.
+<ul>
+<li>Note how on Tufte&rsquo;s original chart, Belgium and Canada have the same left-side value (35.2), but are placed at different vertical positions (ordinal), but how the cancer survival chart positions Kidney and Colon cancers &mdash; both with the same left-side value (62) &mdash; at the same vertical point.</li>
+<li>An important consideration: is the primary purpose of the chart to show the relative rate of change for each item over time? The absolute values for each item? Both pieces of information? Knowing this will help you make decisions about scaling and labeling.</li>
+</ul>
+</li>
+<li>If the datapoints or labels are bunching up, expand the vertical scale as necessary.</li>
+<li>Left-align the names of the items on both the left-hand and right-hand axes, to make vertical scanning of the items&#8217; names easier.</li>
+<li>Include both the <em>names</em> of the items and their <em>values</em> on both the left-hand and right-hand axes.</li> 
+<li>Use a thin, light gray line to connect the data. A too-heavy line is unnecessary and will make the chart harder to read.</li>
+<li>But: When a chart features multiple slope intersections (like the baseball or speed-per-dollar charts above), judicious use of color can avoid what Ben Fry describes as the "pile of sticks" phenomenon (<em><a href="http://www.amazon.com/gp/product/0596514557/ref=as_li_ss_tl?ie=UTF8&amp;tag=charpark-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=0596514557">Visualizing Data</a></em>, 121).</li>
+<li>A table (with more statistical detail) might be a good complement to use alongside the slopegraph. As Tufte <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003nk&amp;topic_id=1">notes</a>: &#8220;The data table and the slopegraph are colleagues in explanation not competitors. One display can serve some but not all functions.&#8221;</li>
+<li>Defer to current best practices outlined by Tufte, Stephen Few, and others, including maximizing data-to-ink ratios, minimizing chartjunk, and so on.
+<ul>
+<li>The 45&deg; rule doesn't apply to slopegraphs, obviously.</li>
+<li>For a refresher on other data visualization best practices, the <a href="http://idmg.berkeley.edu/download/IDMG-SummerSeries-06-01-2010-TufteInTwentyMinutes.pdf">Tufte in Twenty</a> <acronym>PDF</acronym> by Pamela Brown and Russ Acker is particularly good. Other summarized resources are listed at the <a href="http://aaude.org/atd">Association of American Universities Data Exchange</a> site.</li>
+</ul>
+</li>
+</ul>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>That’s about it for now. I’ll try to update this post as more examples surface.</p>
+
+<p>I would like to thank Matt Frost, David Ruau, and Edward Tufte for reading drafts of this article, and to the commenters on <a href="http://www.edwardtufte.com/bboard/">the edwardtufte.com forums</a> for their enlightening posts over the years.</p>
+
+<p>If you see a slopegraph out in the wild, or if you have any feedback on this post, shoot me a note on Twitter (<a href="http://twitter.com/charliepark">@charliepark</a>) or by e-mail (<a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#104;&#097;&#114;&#108;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#098;&#117;&#100;&#103;&#101;&#116;&#046;&#099;&#111;&#109;">&#099;&#104;&#097;&#114;&#108;&#105;&#101;&#064;&#112;&#101;&#097;&#114;&#098;&#117;&#100;&#103;&#101;&#116;&#046;&#099;&#111;&#109;</a>). I look forward to learning more from you.</p>
+
+<div class="update_box">
+  <p>Now that you&rsquo;ve made it through this post, you&rsquo;ll probably want to check out the follow-up, <a href="http://charliepark.org/a-slopegraph-update">A Slopegraph Update</a>. There, we cover things like &ldquo;bumps charts&rdquo;, parallel coordinate plots, ladder charts, and we see a whole raft of examples of slopegraphs in the wild. Some from before the post you just read, some inspired by it. It&rsquo;s here: <a href="http://charliepark.org/a-slopegraph-update">http://charliepark.org/a-slopegraph-update</a>.</p>
+</div>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/fear-driven-development'>Fear-Driven Development</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-06-26'>June 26, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/development">development</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/strategy">strategy</a></li></ul></div>
+	<p>A useful heuristic I’ve been using lately for determining where I should focus my attention:</p>
+
+<blockquote>
+<p>What are you most afraid of?</p>
+<p>What would it take for that fear to be eliminated?</p>
+<p>That's what you should be working on.</p>
+</blockquote>
+
+<p>I call it <strong>Fear-Driven Development</strong>.</p>
+
+<p>I wanted to write more, but I was afraid I’d just keep fiddling with it and wouldn’t actually get this posted. So here you go.</p>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/jekyll-with-plugins'>Jekyll + Plugins + Github + You</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-06-15'>June 15, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/jekyll">jekyll</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/github">github</a></li></ul></div>
+	<p>Github’s <a href="http://pages.github.com/">Pages</a> is a great “it just works” resource.</p>
+
+<p>Except for when it doesn’t work.</p>
+
+<p>So, for some reason, tags aren’t fully-implemented in <a href="http://jekyllrb.com/">Jekyll</a>. They <em>kind of</em> work, but there’s no tag archive page. I went over this in my post on <a href="http://charliepark.org/tags-in-jekyll/">getting tags to work in Jekyll</a>. The problem with that, though, is that <strong>Github disables any plugins you’re using when it processes/creates your blog</strong> (that’s what the <code>--safe</code> tag does).</p>
+
+<p><strong>How, then, do you get your blog (with tags) to load up on Github?</strong></p>
+
+<p><em>(I’m operating under the assumption here that you already have a Jekyll-powered blog set up on Github Pages, such that when you push commits to Github, it regenerates your blog for you.)</em></p>
+
+<p>I’m going to lay out how to do this, and then how to automate the whole process so you can do it in just a few keystrokes.</p>
+
+<h3 id="split-your-blog-in-two">1. Split Your Blog in Two</h3>
+
+<p>The first step is to clone your repo into a duplicate local copy. In my case, I took my local copy <code>~/applications/charliepark.github.com</code> and cloned it to <code>~/applications/charliepark.github.com.raw</code>.</p>
+
+<p>This leaves you with the “raw” directory and the original directory (both identical).</p>
+
+<h3 id="remove-your-old-content">2. Remove Your Old Content</h3>
+
+<p>In Finder, go into your original directory (again, in my case: <code>~/applications/charliepark.github.com</code>) and delete all of the content. You do <em>not</em> want to do this via the command line, as it’ll either be tedious (you’d need to remove each directory / file) or it’ll be too aggressive, and you’ll lose your .git directory. The point here: <strong>You don’t want to lose your .git directory, as that’s how your local copy will talk to your repo at Github.</strong></p>
+
+<p>You should now have the “raw” directory (again, a clone of what you have at Github) and the now-empty (apart from your .git directory) original repo.</p>
+
+<h3 id="regenerate-your-blog-in-the-raw-directory">3. Regenerate Your Blog, in the “raw” Directory</h3>
+
+<p>This is pretty straightforward. Just <code>cd</code> to the raw directory … in my case:</p>
+
+<pre><code>cd ~/applications/charlie.github.com.raw
+</code></pre>
+
+<p>… and run the <code>jekyll</code> command.</p>
+
+<p>This will regenerate your blog, in the <code>~/applications/charlie.github.com.raw/_site</code> directory. You’ve probably already done this step once or twice before. (Note: You <em>don’t</em> want to run <code>jekyll --server</code>, as the point here is just to generate the blog, not to fire up a server.)</p>
+
+<h3 id="copy-the-site-directory-over-to-your-original-repo">4. Copy the <code>_site</code> Directory Over To Your Original Repo</h3>
+
+<p>This is simple.</p>
+
+<pre><code>cp -r ~/applications/charliepark.github.com.raw/_site/* ~/applications/charliepark.github.com
+</code></pre>
+
+<p>Once you’ve run that command, you’ll now have:
+1. Your “raw” directory
+2. A subdirectory within the “raw” directory (<code>_site</code>), with the generated <abbr>HTML</abbr>
+3. Your original directory, whose contents should now mirror the <code>_site</code> subdirectory of the “raw” directory</p>
+
+<h3 id="add-nojekyll">5. Add .nojekyll</h3>
+
+<p>When you add a file titled <code>.nojekyll</code> to your repo, Github won’t process your files as Jekyll files. I don’t think this step is strictly necessary, as we’re just sending the straight-up <abbr>HTML</abbr> files. But it can’t hurt. In your original directory (<code>~/applications/charliepark.github.com</code>), run:</p>
+
+<pre><code>touch .nojekyll
+</code></pre>
+
+<h3 id="commit-and-push-your-repo">6. Commit and Push Your Repo</h3>
+
+<p>Add the files to your original directory’s git repo:</p>
+
+<pre><code>git add .
+</code></pre>
+
+<p>Commit the new version of the repo:</p>
+
+<pre><code>git commit -am "Converts to flat HTML files."
+</code></pre>
+
+<p>(Note: Your commit flags (<code>-am</code>) might differ from mine.)</p>
+
+<p>Push the code to Github:</p>
+
+<pre><code>git push
+</code></pre>
+
+<h3 id="your-site-should-be-live">7. Your Site Should Be Live</h3>
+
+<p>You can now go to your site (http://yourusername.github.com) and see your site.</p>
+
+<h3 id="automate-the-whole-thing">8. Automate The Whole Thing</h3>
+
+<p>Once you’ve checked that it works, and that everything’s okay, it’s a good idea to automate the whole thing.</p>
+
+<p>I added a shortcut to my <code>~/.bash_profile</code> file:</p>
+
+<pre><code>alias build_blog="cd ~/applications/charliepark.github.com.raw; jekyll;cp -r ~/applications/charliepark.github.com.raw/_site/* ~/applications/charliepark.github.com;cd ~/applications/charliepark.github.com;git add .;git commit -am 'Latest build.';git push"
+alias bb="build_blog"
+</code></pre>
+
+<p>So, now, once I’ve written a new post, or edited a post, or just want to get the site refreshed for some other reason, all I have to do in my command line is type <code>bb</code>, and it’ll regenerate the site, copy it over, run the git commits, and push it live to Github. I can now finish my post and then push it live to the site in about a second.</p>
+
+<p>And it has <a href="http://charliepark.org/archives#tags">tags</a>.</p>
+
+<h3 id="corrections">Corrections?</h3>
+
+<p>I’m always half-expecting that some aspect of one of my writeups is totally broken. If you try this and have any issues, let me know (<a href="http://twitter.com/charliepark">@charliepark</a>). Similarly, if you try it and it works, let me know.</p>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/benchmarking-date.today-and-time.now-in-ruby'>Benchmarking Date.today and Time.now in Ruby</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-06-15'>June 15, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/ruby">ruby</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li></ul></div>
+	<div class="update_box">
+  <p><strong>Update:</strong> Ruby 1.9.3 revamped the Date class, and the info in this post is now out of date. In fact, it&rsquo;s now totally wrong. <strong>If you&rsquo;re using Ruby 1.9.3, it&rsquo;s faster to call Date.today than Time.now.</strong></p>
+  <p>♪ ♫ The more you know.</p>
+</div>
+
+<p>There are often times when I can handle a programming issue in one of two (or more) ways. Dealing with Time / Date objects is one of those situations.</p>
+
+<p>For example, if you want to know what day today is, you can either fetch Date.today.day or Time.now.day.</p>
+
+<p>In my head, Date is a much simpler concept than Time. After all, Time deals with things like milliseconds and Epochs and things like that, where Date … well, I woke up this morning, and it was today’s date. And when I get up tomorrow, it’ll be tomorrow’s date. “Date” seems much more tangible.</p>
+
+<p>I was curious, though, to know if there was a difference in how quickly Ruby could process the two. So I ran a test.</p>
+
+<h3 id="the-first-test">The First Test</h3>
+
+<p>I was in a Rails app, so I fired up script/console, and added the following code:</p>
+
+<pre><code>require 'benchmark'
+
+Benchmark.ms { 1000.times { puts Time.now } }
+
+Benchmark.ms { 1000.times { puts Date.today } }
+</code></pre>
+
+<h3 id="the-results">The Results</h3>
+
+<p>What I found was really interesting.</p>
+
+<p>I ran the test a couple of times, and the average processing time for Time.now was 104 ms. The average processing time for Date.today was 251 ms.</p>
+
+<p>That means it took Date.today about two and a half times as long to get processed than Time.now.</p>
+
+<h3 id="the-second-test">The Second Test</h3>
+
+<p>I was curious to see if those results would hold if I ran a more complicated test. So I made the processing a tiny bit trickier:</p>
+
+<pre><code>def month_name_t(month = Time.now.month)
+  Date::MONTHNAMES[month]
+end
+Benchmark.ms { 1000.times { month_name_t } }
+
+def month_name_d(month = Date.today.month)
+  Date::MONTHNAMES[month]
+end
+Benchmark.ms { 1000.times { month_name_d } }
+</code></pre>
+
+<h3 id="more-results">More Results</h3>
+
+<p>This time around, the difference was even more pronounced.</p>
+
+<p>On average, month_name_t (Time.now) took 2 ms. And month_name_d (Date.today) took 80 ms.</p>
+
+<p>So when we made the function just a bit more complex, it increased the processing time dramatically: <strong>Date.today took 40 times as long to process as Time.now.</strong></p>
+
+<h3 id="the-conclusion">The Conclusion</h3>
+
+<p><strike>When you're processing Times and Dates in your app, and you don't *need* to use the Date object for some reason, use Time.</strike></p>
+
+<div class="update_box">
+  <p>In case you missed it up top &hellip;</p>
+  <p><strong>Update:</strong> Ruby 1.9.3 revamped the Date class, and the info in this post is now out of date. In fact, it&rsquo;s now totally wrong. <strong>If you&rsquo;re using Ruby 1.9.3, it&rsquo;s faster to call Date.today than Time.now.</strong></p>
+</div>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/the-old-homepage'>The old homepage</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-06-08'>June  8, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/pages">pages</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/archives">archives</a></li></ul></div>
+	<p>Just for posterity, I wanted to save / link to a copy of the old <a href="http://charliepark.org">charliepark.org</a>.</p>
+
+<p>So it’s now here: <a href="http://charliepark.org/oldindex.html">oldindex.html</a>.</p>
+
+</article>
+
+<article>
+	<h2 class="post_title"><a href='/tags-in-jekyll'>Tags In Jekyll</a></h2>
+	<div class="meta_wrapper"><time datetime='2011-06-07'>June  7, 2011</time><ul class="tag_list_in_post"><li class="inline archive_list"><a class="tag_list_link" href="/tag/jekyll">jekyll</a></li><li class="inline archive_list"><a class="tag_list_link" href="/tag/code">code</a></li></ul></div>
+	<div class="update_box">
+<p><strong>Update:</strong> Using Github Pages to serve up your blog? Me, too! Even though <a href="https://github.com/mojombo/jekyll/issues/325">plugins won&rsquo;t work on Github Pages</a>, you can still have tags on your site. You just need to generate the site locally, commit it to your repo, and Github will serve it up. (That&rsquo;s what I&rsquo;m doing here.) I explain exactly how I do it (and how I automated the whole process) in another post, <a href="/jekyll-with-plugins">Jekyll + Plugins + Github + You</a>.</p>
+</div>
+
+<p>When I decided to convert my blog over to Jekyll, I was pretty excited about it. It seemed to offer the right balance between power and simplicity.</p>
+
+<p>I realized pretty soon, though, that one of the main features I wanted to implement – tagging – isn’t well-supported in Jekyll.</p>
+
+<p>I figured out how to get it working, though, and wanted to share what I came up with.</p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>I shouldn’t say that Jekyll doesn’t support tagging. It does. In the sense that you can add tags to a post.</p>
+
+<p>But one of the necessary pages on a blog with tags is the tag archive page, where the blog automatically collects all posts tagged with “rails” or “experiments” or “recipes” or whatever.</p>
+
+<p>For some reason, Jekyll doesn’t automatically produce those pages.</p>
+
+<h2 id="the-process">The Process</h2>
+
+<p>I looked at a number of different blogs, and at the source code for a number of different Jekyll-powered blogs. I also poked around at Stack Overflow and Google Groups. They were useful in that they pointed me in the right direction. But all assumed more familiarity with Jekyll than I have, or they had some other issue that prevented my “getting it”.</p>
+
+<p>Eventually, I figured out how to make it work, mainly by abusing some “Categories in Jekyll” code that others had put online. My approach ended up being almost identical to some code I found at <a href="http://brizzled.clapper.org/id/105/index.html">http://brizzled.clapper.org/id/105/index.html</a>. In fact, I might have inadvertently lifted his code wholesale.</p>
+
+<p>But nowhere in my escapades of ignorance did I find anyone who had written up an explanation of exactly what to do, where. So here you go.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>Jekyll recognizes tags out of the box. In your post’s <abbr>YAML</abbr> frontmatter, add tags like this:</p>
+
+<pre><code>tags:
+- jekyll
+- code
+</code></pre>
+
+<p>That sets up the post to have tags. To get the tags pulled onto a page, create two files:</p>
+
+<pre><code>_layouts/tag_index.html
+</code></pre>
+
+<p>and</p>
+
+<pre><code>_plugins/_tag_gen.rb
+</code></pre>
+
+<p>You probably already have a layouts directory, but you might need to add the plugins one. The tag_index.html file is necessary for the tag_gen.rb script to actually run.</p>
+
+<p>In the tag_index file, put this:</p>
+
+<pre><code>---
+layout: default
+---
+&lt;h2 class="post_title"&gt;{.{page.title}}&lt;/h2&gt;
+&lt;ul&gt;
+  {.% for post in site.posts %}
+  {.% for tag in post.tags %}
+  {.% if tag == page.tag %}
+  &lt;li class="archive_list"&gt;
+    &lt;time style="color:#666;font-size:11px;" datetime='{.{post.date | date: "%Y-%m-%d"}}'&gt;{.{post.date | date: "%m/%d/%y"}}&lt;/time&gt; &lt;a class="archive_list_article_link" href='{.{post.url}}'&gt;{.{post.title}}&lt;/a&gt;
+    &lt;p class="summary"&gt;{.{post.summary}}
+    &lt;ul class="tag_list"&gt;
+      {.% for tag in post.tags %}
+      &lt;li class="inline archive_list"&gt;&lt;a class="tag_list_link" href="/tag/{.{ tag }}"&gt;{.{ tag }}&lt;/a&gt;&lt;/li&gt;
+      {.% endfor %}
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  {.% endif %}
+  {.% endfor %}
+  {.% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p><em>Note: In some of the lines up there, it has a “{.%” … get rid of that period between the curly bracket and the percent sign or between the two curly brackets.</em></p>
+
+<p><strong>What that does:</strong> When this page is created (more on that in a sec), it’ll have a specific tag assigned to it. That is, multiple pages will be created, each with their own official tag. This goes through every post in the site, and if the post has a tag that matches the tag for the page that’s being generated, the post is then listed, along with its publication date and summary. Obviously, if your posts don’t include a summary, you can leave that line off. Or, if there’s some other bit of metadata you want to include, you can add it into the layout.</p>
+
+<p>In the tag_gen file. put this:</p>
+
+<pre><code>module Jekyll
+  class TagIndex &lt; Page
+    def initialize(site, base, dir, tag)
+      @site = site
+      @base = base
+      @dir = dir
+      @name = 'index.html'
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
+      self.data['tag'] = tag
+      tag_title_prefix = site.config['tag_title_prefix'] || 'Posts Tagged &amp;ldquo;'
+      tag_title_suffix = site.config['tag_title_suffix'] || '&amp;rdquo;'
+      self.data['title'] = "#{tag_title_prefix}#{tag}#{tag_title_suffix}"
+    end
+  end
+  class TagGenerator &lt; Generator
+    safe true
+    def generate(site)
+      if site.layouts.key? 'tag_index'
+        dir = site.config['tag_dir'] || 'tag'
+        site.tags.keys.each do |tag|
+          write_tag_index(site, File.join(dir, tag), tag)
+        end
+      end
+    end
+    def write_tag_index(site, dir, tag)
+      index = TagIndex.new(site, site.source, dir, tag)
+      index.render(site.layouts, site.site_payload)
+      index.write(site.dest)
+      site.pages &lt;&lt; index
+    end
+  end
+  	end
+</code></pre>
+
+<p><strong>What that does:</strong> Essentially, it creates a directory (folder) for each tag in your blog, and creates an index.html file in it. In that index.html file, it plugs in that template we just set up a few minutes ago. For the page title, it’ll combine the variables “tag_title_prefix” and “tag_title_suffix”, flanking the tag itself.</p>
+
+<h2 id="thats-it">That’s It</h2>
+
+<p>I’m still learning a lot about Jekyll, and the liquid templating system. But I thought this might be useful to some of you who are considering Jekyll, but for whom tags are a deal-breaker. My entire site is at <a href="http://github.com/charliepark/charliepark.github.com">http://github.com/charliepark/charliepark.github.com</a>, so if you want to see how I’m using it (or any tweaks I’ve made since posting this), you can check them out there.</p>
+
+</article>
+
 <footer>
 <p class="next_actions">To get updates when I post more, you can <a href="http://twitter.com/charliepark/">follow me on Twitter</a>.</p>
 </footer>
