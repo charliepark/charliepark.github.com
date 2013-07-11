@@ -43,7 +43,7 @@
     a{text-decoration:none;-webkit-transition: all linear 0.2s;-moz-transition: all linear 0.2s;-ms-transition: all linear 0.2s;-o-transition: all linear 0.2s;transition: all linear 0.2s}    
     body{font-size:20px;font-family:"crimson text",crimson,"helvetica neue",helvetica,"droid sans", sans-serif;line-height:1.3}
     p{}
-    .content-secondary p{font-size:16px}
+    .content-secondary p{font-size:16px;margin-top:10px}
     ul{}
     .content-secondary ul{font-size:16px;margin:-12px 0 0;padding-left:20px}
     .book-author{color:#666;font-size:12px;letter-spacing:1px;line-height:1.7;text-transform:uppercase}
@@ -66,7 +66,7 @@
     .content-secondary{float:left;margin-left:100px;padding:40px 0 0 50px;position:relative;width:230px}
     .details{position:relative}
     .intro{margin-left:40px}
-    .title-sidebar{font-size:30px;line-height:1;margin:40px 0 20px;position:relative}
+    .title-sidebar{font-size:30px;line-height:1;margin:40px 0 10px;position:relative}
     .title-sidebar-sub{display:block;padding:4px 0 0}
     .quote{margin:0 auto;padding: 1px 24px;position:relative}
     /*
@@ -105,7 +105,7 @@
       .content-primary{float:none;margin:0 auto;max-width:90%;width:90%;padding:0}
       .content-secondary{background:#EBE0D4;float:none;margin:0 auto;max-width:90%;width:90%;padding:0}
       .details{clear:none;float:left;margin:0 0 0 8%;width:25%}
-      .details + .details + .details + .details{position:absolute;left:33%;bottom:14px}
+      .details + .details + .details + .details{position:absolute;left:33%;bottom:0}
       .salutation{padding-top:0px}
     }
     @media (min-width: 990px){
@@ -198,20 +198,16 @@
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
   </script>
   <div id="search"><div id="cse" style="width: 100%;">Loading</div></div>
-  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-  <script type="text/javascript"> 
-    google.load('search', '1', {language : 'en'});
-    google.setOnLoadCallback(function() {
-      var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
-      customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-      customSearchControl.draw('cse');
-    }, true);
-  </script>
   <script type="text/javascript">
-    try {
-      var pageTracker = _gat._getTracker("UA-15921981-1");
-      pageTracker._trackPageview();
-    } catch(err) {}
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15921981-1']);
+    _gaq.push(['_setDomainName', 'charliepark.org']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 </body>
 </html>
