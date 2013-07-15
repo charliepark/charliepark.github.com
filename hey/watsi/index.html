@@ -10,7 +10,7 @@
 		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 		/* end of Eric Meyer's CSS Reset */
 		body, input, select, textarea{font-family: 'Open Sans', 'helvetica neue',helvetica,arial,sans-serif;font-size:16px;line-height:1.3}
-		body{background:#2D82D4;background:#fff;color:#fff;}
+		body{background:#2D82D4;background:#fff;color:#fff}
 		a{color:#2D82D4}
 		b, strong{font-weight:bold}
 		em, i{font-style:italic}
@@ -29,61 +29,56 @@
 			gray-light: 	#E4E4E4
 			gray: #333
 		*/
-		/*
-			Typograpy
-
-			body: 	 'Helvetica Neue', Helvetica, Arial, sans-serif;
-			display: 'Myriad Pro', Helvetica, Arial, sans-serif;
-
-		*/
-		.caption{background:rgba(0,0,0,0.7);color:#ccc;display:block;font-size:10px;height:20px;line-height:20px;position:absolute;text-align:center;left:20px;top:235px;width:240px;}
-		.clear{border:0;clear:both;height:0;padding-top:20px;}
+.caption{background:rgba(0,0,0,0.7);color:#ccc;display:block;font-size:10px;height:20px;line-height:20px;position:absolute;text-align:center;left:20px;top:235px;width:240px}
+		.clear{border:0;clear:both;height:0;padding-top:20px}
 		.col{float:left;margin:0 10px}
-		.col-l{width:240px;margin-left:20px;text-align:right;}
+		.col-l{width:240px;margin-left:20px;text-align:right}
 		.col-r{margin-right:20px;width:700px;width:calc(100% - 240px - 60px)}
-		.content{margin:60px auto;width:1000px;}
-		.img-turtle{float:left;height:240px;width:240px;}
-		.introduction{line-height:1.5;}
-		.introduction p{font-size:18px;margin:0;padding:0;}
-		.opening{font-family: 'Great Vibes', cursive;font-size:200px;font-weight:normal;line-height:1.2;text-align:center;}
+		.content{margin:60px auto;width:1000px}
+		.img-turtle{float:left;height:240px;width:240px}
+		.introduction{line-height:1.5}
+		.introduction p{font-size:18px;margin:0 0 1em;padding:0}
+		.introduction p:last-child{margin-bottom:0}
+		.opening{font-family: 'Great Vibes', cursive;font-size:200px;font-weight:normal;line-height:1.2;text-align:center}
 		.opening-challenge{background:#9DC4E9;color:#333;display:block;font-family: 'Open Sans Condensed', sans-serif;font-size:64px;font-weight:bold;height:2em;line-height:2em;border-top:2px solid #2D82D4;border-color:#fff}
-		.opening-salutation{background:#418DD7;display:block;position:relative;line-height:1;padding-top:.2em;text-indent:-.15em;}
-		.q{font-size:22px;font-weight:bold;line-height:1.3;margin-top:4px;}
+		.opening-salutation{background:#418DD7;display:block;position:relative;line-height:1;padding-top:.2em;text-indent:-.15em}
+		.q{font-size:22px;font-weight:bold;line-height:1.3;margin-top:4px}
 		.quote{background:#418DD7;color:#fff;line-height:1.5;margin-top:4px;padding:6px 90px 14px 20px;position:relative}
-		.quote::before{font-family:'Great Vibes', cursive;height:30px;color:#5398DB;content:"”";display:block;font-size:400px;line-height:1;position:absolute;right:5px;}
-		.quote-cite{color:#9FC6EB;color:#9DC4E9;text-align:right;}
-		.row{clear:both;padding:20px 0 40px;position:relative;}
+		.quote::before{font-family:'Great Vibes', cursive;height:30px;color:#5398DB;content:"”";display:block;font-size:400px;line-height:1;position:absolute;right:5px}
+		.quote-cite{color:#9FC6EB;color:#9DC4E9;text-align:right}
+		.row{clear:both;padding:20px 0 40px;position:relative}
 		.tease{background:#95C0E9;background:#F8F8F8;color:#333;line-height:1.4;border-top:2px solid #2D82D4;border-color:#fff}
 	    /*
 	        ALTERNATE DEVICES
 	    */
-	    @media (max-width: 1100px) {
-			.content{margin-top:2%;}
+    @media (max-width: 1100px) {
+			.content{margin-top:2%}
 		}
-	    @media (max-width: 1023px) {
+	  @media (max-width: 1023px) {
 			.caption{top:195px;width:200px}
 			.col-l{width:200px}
 			.col-r{width:calc(100% - 200px - 60px)}
 			.content{margin-top:4%;width:90%}
-			.img-turtle{height:200px;width:200px;}
+			.img-turtle{height:200px;width:200px}
 			.opening{font-size:120px}
 			.opening-challenge{font-size:40px}
-	    }
-	    @media (max-width: 767px) {
+	  }
+	  @media (max-width: 767px) {
+      .introduction p{font-size:16px}
 			.col-l{float:none;margin:0 auto;text-align:left;width:90%}
-			.col-r{float:none;margin:0 auto;width:90%;}
+			.col-r{float:none;margin:0 auto;width:90%}
 			.content{width:90%}
 			.figure-turtle{display:none}	      
 			.opening{font-size:77px}
 			.opening-challenge{font-size:26px}
-			.quote{padding-right:20px;}
+			.quote{padding-right:20px}
 			.quote::before{content:''}
-	    }
-	    @media (max-width: 479px) {
+	  }
+	  @media (max-width: 479px) {
 			.opening{font-size:55px}
 			.opening-challenge{font-size:17px}
 		}
-	    @media (max-width: 319px) {
+	  @media (max-width: 319px) {
 			.opening{font-size:43px}
 			.opening-challenge{font-size:13px}
 		}
