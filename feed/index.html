@@ -259,13 +259,13 @@ git checkout ${CURRENT}
   </ol>
 </div>
 
-<p>In the last few days, I’ve seen a few people talking about a new <acronym>CSS</acronym> property, <code>position: sticky</code>. The idea is straightforward, and neat: If an object has “position:sticky”, treat it as a normal position:relative block, as long as it’s on screen. If the user scrolls far enough that the object (let’s say it’s an h3) would be scrolled off the screen, but the h3’s parent div is still visible onscreen, treat the object as though it were position:fixed (at whatever <code>top</code> or <code>left</code> or <code>right</code> or <code>bottom</code> parameters you give it).</p>
+<p>In the last few days, I’ve seen a few people talking about a new <abbr>CSS</abbr> property, <code>position: sticky</code>. The idea is straightforward, and neat: If an object has “position:sticky”, treat it as a normal position:relative block, as long as it’s on screen. If the user scrolls far enough that the object (let’s say it’s an h3) would be scrolled off the screen, but the h3’s parent div is still visible onscreen, treat the object as though it were position:fixed (at whatever <code>top</code> or <code>left</code> or <code>right</code> or <code>bottom</code> parameters you give it).</p>
 
 <p>That explanation gets a little complicated, but it’s a principle you’ve seen before. Basically, if the parent div containing the headline (or whatever) is still on-screen, the headline should remain on-screen as well. Scroll down a bit to see an example (look for a table titled “The First 40 Elements”).</p>
 
 <h3 id="why-is-this-new-implementation-interesting">Why is this new implementation interesting?</h3>
 
-<p>What’s neat about this is that you get the effect of the static table headers by introducing a few lines of <acronym>CSS</acronym>. No  jQuery, no weird <acronym>CSS</acronym> that breaks the semantic intent of the content, and no javascript handlers built off scroll events.</p>
+<p>What’s neat about this is that you get the effect of the static table headers by introducing a few lines of <abbr>CSS</abbr>. No  jQuery, no weird <abbr>CSS</abbr> that breaks the semantic intent of the content, and no javascript handlers built off scroll events.</p>
 
 <p>Lots of thanks to the developers at Apple for making this work.</p>
 
@@ -273,9 +273,9 @@ git checkout ${CURRENT}
 
 <p>One of the best use-cases for this is with really long tables. That is, tables where you want to see the different columns’ headers, as well as the data in the table. Tables like we sometimes have in <a href="https://pearbudget.com/">PearBudget</a>.</p>
 
-<p>This is a use-case that, so far, has been served by javascript. A great front-end dev (and friend), Russell Heimlich, built a great implementation of it as a plugin for jQuery, Prototype, MooTools, and Dojo: <a href="https://github.com/kingkool68/stickyHeader">Sticky Header</a>. And <strong>his plugin is probably the best way to implement this effect for now</strong>, since browser support for this <acronym>CSS</acronym> property is currently almost non-existent.</p>
+<p>This is a use-case that, so far, has been served by javascript. A great front-end dev (and friend), Russell Heimlich, built a great implementation of it as a plugin for jQuery, Prototype, MooTools, and Dojo: <a href="https://github.com/kingkool68/stickyHeader">Sticky Header</a>. And <strong>his plugin is probably the best way to implement this effect for now</strong>, since browser support for this <abbr>CSS</abbr> property is currently almost non-existent.</p>
 
-<h3 id="but-how-do-you-make-sticky-headers-with-just-acronymcssacronym">But how do you make sticky headers with just <acronym>CSS</acronym>?</h3>
+<h3 id="but-how-do-you-make-sticky-headers-with-just-abbrcssabbr">But how do you make sticky headers with just <abbr>CSS</abbr>?</h3>
 
 <p>It’s super-easy. All you do is add</p>
 
@@ -287,7 +287,7 @@ position: sticky;
 top: 0;
 </code></pre>
 
-<p>to the <acronym>CSS</acronym> for whatever object you want to stay on-screen. <strong>In the “elements” example below, I’ve applied that <acronym>CSS</acronym> to the &lt;thead&gt;.</strong></p>
+<p>to the <abbr>CSS</abbr> for whatever object you want to stay on-screen. <strong>In the “elements” example below, I’ve applied that <abbr>CSS</abbr> to the &lt;thead&gt;.</strong></p>
 
 <div id="example_sticky_header"></div>
 
@@ -765,9 +765,9 @@ top: 0;
 
 <p>First, this property is new. It’s not supported at all, apart from the beta builds of Webkit-based browsers. So <em>caveat formator</em>. Again, if you really want for your users to benefit from sticky headers, go with <a href="https://github.com/kingkool68/stickyHeader">a javascript implementation</a>.</p>
 
-<p>Second, if you do use it, you’ll need to incorporate vendor prefixes. Perhaps <code>position: sticky</code> will work one day. For now, though, you need to use <code>position:-webkit-sticky</code> (and the others; check the block of <acronym>CSS</acronym> further up in this post).</p>
+<p>Second, if you do use it, you’ll need to incorporate vendor prefixes. Perhaps <code>position: sticky</code> will work one day. For now, though, you need to use <code>position:-webkit-sticky</code> (and the others; check the block of <abbr>CSS</abbr> further up in this post).</p>
 
-<p>Third, there aren’t any positioning defaults at the moment, so you need to at least include <code>top: 0;</code> in the same <acronym>CSS</acronym> declaration as the <code>position:-webkit-sticky</code>. Otherwise, it’ll just scroll off-screen.</p>
+<p>Third, there aren’t any positioning defaults at the moment, so you need to at least include <code>top: 0;</code> in the same <abbr>CSS</abbr> declaration as the <code>position:-webkit-sticky</code>. Otherwise, it’ll just scroll off-screen.</p>
 
 <p>Have fun, kids!</p>
 
@@ -860,7 +860,7 @@ top: 0;
 
 <p>Here’s what it’ll look like:</p>
 
-<p><img src="/images/css_bookmarks/bookmark.png" style="margin:0 auto;" /></p>
+<p><img src="/images/css_bookmarks/bookmark.png" style="margin:0 auto;" alt="an image showing the final result, a ribbon-style bookmark" /></p>
 
 <p>It’s really, really easy.</p>
 
