@@ -39,7 +39,15 @@ git checkout popups
 
 <p>If you add the following line to your <code>.bash_profile</code>, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
 
-<strike>alias gpm="temp=$(git branch 2&gt; /dev/null | grep '^\*' | sed 's/^\*\ //'); git checkout master; git merge $temp; git push; git checkout $temp;" # mnemonic: git push master</strike>
+<table>
+  <tbody>
+    <tr>
+      <td><span style="text-decoration:line-through">alias gpm=”temp=$(git branch 2&gt; /dev/null</span></td>
+      <td>grep ‘^*’</td>
+      <td>sed ‘s/^*\ //’); git checkout master; git merge $temp; git push; git checkout $temp;” # mnemonic: git push master&lt;/span&gt;</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>Update: Actually, I found <a href="http://reinh.com/blog/2008/08/27/hack-and-and-ship.html">a better option</a>. This puts the work into an external bash script, which looks like this:</p>
 
