@@ -46,7 +46,7 @@ That sets up the post to have tags. To get the tags pulled onto a page, create t
 
 and
 
-    _plugins/_tag_gen.rb
+    _plugins/tag_gen.rb
 
 You probably already have a layouts directory, but you might need to add the plugins one. The tag_index.html file is necessary for the tag_gen.rb script to actually run.
 
