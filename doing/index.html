@@ -6,6 +6,7 @@
   <meta name="keywords" content="" />
   <title>Doing.</title>
   <style type="text/css" media="screen">
+    a{color:inherit;text-decoration:none}
     body{align-items:center;background:rebeccapurple;color:rgba(255,255,255,0.5);display:flex;font-family:avenir, sans-serif;flex-wrap: wrap;justify-content:center;height:100vh;width:100vw}
     p{line-height:1.4;margin: auto 10vw;text-align:center;transform:translateY(-15vh)}
     p span{display:block;font-size:.25em;letter-spacing:.1em;opacity:.5;text-transform:uppercase;}
@@ -23,7 +24,7 @@
       if(subtasks.length > 0){task = "<span>[ "+task+" ]</span>" + subtasks[0];}
 
       var size = 700 / task.length;
-      var html = "<p style='font-size:calc(16px + "+size+"vw)'>"+task+"</p>";
+      var html = "<p style='font-size:calc(16px + "+size+"vw)'><a href='https://gist.github.com/charliepark/b1fb82504725279256bd/edit'>"+task+"</a></p>";
 
       var body = document.getElementsByTagName('body')[0];
       body.innerHTML = body.innerHTML + html;
