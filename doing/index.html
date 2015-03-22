@@ -21,9 +21,13 @@
       Tasks = JSON.parse(gist.textContent);
       var task = Object.keys(Tasks)[0];
       var subtasks = Tasks[task];
-      if(subtasks.length > 0){task = "<span>[ "+task+" ]</span>" + subtasks[0];}
+      var size;
+      if(subtasks.length > 0){
+        task = "<span>[ "+task+" ]</span>" + subtasks[0];size = 700 / task.length;
+      } else {
+        size = 200 / task.length;
+      }
 
-      var size = 700 / task.length;
       var html = "<p style='font-size:calc(16px + "+size+"vw)'><a href='https://gist.github.com/charliepark/b1fb82504725279256bd/edit'>"+task+"</a></p>";
 
       var body = document.getElementsByTagName('body')[0];
