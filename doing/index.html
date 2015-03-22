@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <title>Doing.</title>
+  <style type="text/css" media="screen">
+    body{align-items:center;background:rebeccapurple;color:rgba(255,255,255,0.5);display:flex;font-family:avenir, sans-serif;flex-wrap: wrap;justify-content:center;height:100vh;width:100vw}
+    p{line-height:1.4;margin: auto 10vw;text-align:center;transform:translateY(-15vh)}
+    p span{display:block;font-size:.25em;letter-spacing:.1em;opacity:.5;text-transform:uppercase;}
+    .gist:first-child{display:none}
+  </style>
+  <script src='https://gist.github.com/b1fb82504725279256bd.js'></script>
+</head>
+<body>
+  <script type="text/javascript" charset="utf--62">
+    var populatePage = function(){
+      var gist = document.getElementsByClassName("gist")[0].getElementsByTagName("pre")[0];
+      Tasks = JSON.parse(gist.textContent);
+      var task = Object.keys(Tasks)[0];
+      var subtasks = Tasks[task];
+      if(subtasks.length > 0){task = "<span>[ "+task+" ]</span>" + subtasks[0];}
+
+      var size = 700 / task.length;
+      var html = "<p style='font-size:calc(16px + "+size+"vw)'>"+task+"</p>";
+
+      var body = document.getElementsByTagName('body')[0];
+      body.innerHTML = body.innerHTML + html;
+
+      var title = document.getElementsByTagName('title')[0];
+      title.innerHTML = task.split('<span>')[0];
+    };
+    populatePage();
+  </script>
+</body>
+</html>
