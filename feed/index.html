@@ -2178,7 +2178,7 @@ layout: default
   {.% if tag == page.tag %}
   &lt;li class="archive_list"&gt;
     &lt;time style="color:#666;font-size:11px;" datetime='{.{post.date | date: "%Y-%m-%d"}}'&gt;{.{post.date | date: "%m/%d/%y"}}&lt;/time&gt; &lt;a class="archive_list_article_link" href='{.{post.url}}'&gt;{.{post.title}}&lt;/a&gt;
-    &lt;p class="summary"&gt;{.{post.summary}}
+    &lt;p class="summary"&gt;{.{post.summary}}&lt;/p&gt;
     &lt;ul class="tag_list"&gt;
       {.% for tag in post.tags %}
       &lt;li class="inline archive_list"&gt;&lt;a class="tag_list_link" href="/tag/{.{ tag }}"&gt;{.{ tag }}&lt;/a&gt;&lt;/li&gt;
