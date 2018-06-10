@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FAQ Patrol Example</title>
+	<style type="text/css" media="screen">
+		a{color:inherit}
+		body{background:#123456;color:#fff;margin: 0 auto;text-align:left;width:500px}
+		div{background:rgba(0,0,0,0.5);margin: 20px 0;padding:5px 20px;-moz-border-radius: 5px;border-radius: 5px;}
+		div#too_short{display:none}
+		html{font-family:verdana;font-size:smaller;text-align:center;}
+		input{background:#ddd;border:2px solid #888;font-size:20px;line-height:1;-moz-border-radius: 5px;border-radius: 5px;}
+	</style>
+</head>
+<body>
+	<h1>FAQ Patrol Example Page!</h1>
+	<p>FAQ Patrol is a real-time filter for FAQ pages, using jQuery. For more on FAQ Patrol, visit <a href="https://github.com/charliepark/faq-patrol">the Github project page for it</a>. The text examples are excerpts from <em><a href="http://gettingreal.37signals.com/">Getting Real</a></em>.</p>
+
+	<h4>Just type in your search term below.</h4>
+	<input id="filter" />
+	<div class="section">
+		<h3>Underdo your competition</h3>
+		<p>Conventional wisdom says that to beat your competitors you need to one-up them. If they have four features, you need ﬁve (or 15, or 25). If they’re spending x, you need to spend xx. If they have 20, you need 30.</p>
+	</div>
+
+	<div class="section">
+
+		<h3>Build software for yourself</h3>
+		<p>A great way to build software is to start out by solving your own problems. You’ll be the target audience and you’ll know what’s important and what’s not. That gives you a great head start on delivering a breakout product.</p>
+	</div>
+
+	<div class="section">
+		<h3>Outside money is plan B</h3>
+		<p>The ﬁrst priority of many startups is acquiring funding from investors. But remember, if you turn to outsiders for funding, you’ll have to answer to them too. Expectations are raised. Investors want their money back – and quickly. The sad fact is cashing in often begins to trump building a quality product.</p>
+
+	</div>
+
+	<div class="section">
+		<h3>Launch on time and on budget</h3>
+		<p>Here’s an easy way to launch on time and on budget: keep them ﬁxed. Never throw more time or money at a problem, just scale back the scope.</p>
+	</div>
+	
+	<div id="too_short"><p>Please enter a longer search term.</p></div>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+	<script type="text/javascript" src="javascripts/application.js"></script>
+	<script type="text/javascript">$(function(){$().onloadEvents();});
+
+		// extend :contains to be case-insensitive; via http://stackoverflow.com/questions/187537/
+		jQuery.expr[':'].contains = function(a,i,m){return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;};
+
+		$('#filter').keydown(function(){
+			if($(this).val().length <= 1){
+				$("div").css('display','none');
+				$("#too_short").fadeIn();
+			} else {
+				$("div").css('display','none');
+				var array_of_strings = $(this).val().split(' ');
+				$.each(array_of_strings, function(index, value) { 
+			  	$(":contains("+value+")").parents(".section").css('display','block');
+				});
+			}
+		});
+	</script>
+	
+</body>
+</html>

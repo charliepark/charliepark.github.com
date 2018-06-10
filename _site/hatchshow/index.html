@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HATCHSHOW &raquo; a jQuery typesetting plugin for balancing measures</title>
+  <link href='http://fonts.googleapis.com/css?family=Ultra' rel='stylesheet' type='text/css'>
+  <style type="text/css" media="screen">
+  @font-face {
+      font-family: 'LeagueGothicRegular';
+      src: url('http://charliepark.org/fonts/League_Gothic-webfont.eot');
+      src: url('http://charliepark.org/fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+           url('http://charliepark.org/fonts/League_Gothic-webfont.woff') format('woff'),
+           url('http://charliepark.org/fonts/League_Gothic-webfont.ttf') format('truetype'),
+           url('http://charliepark.org/fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  /* from Eric Meyer: v2.0b1 | 201101 */
+  a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{border:0;font:inherit;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section{display:block}
+  body{line-height:1}
+  ol, ul{list-style:none}
+  blockquote, q{quotes:none}
+  blockquote:before, blockquote:after, q:before, q:after{content:'';content:none}
+  ins{text-decoration:none}
+  del{text-decoration:line-through}
+  table{border-collapse:collapse;border-spacing:0}
+  /* end of Eric Meyer's CSS Reset */
+  .hatchshow_container{text-align:center;margin:0 auto;}
+	.hsjs{visibility:hidden}
+  a{color:#c00;text-decoration:none}
+  body{font-family:'LeagueGothicRegular','helvetica neue', helvetica, arial;padding:30px 30px 30px}
+  h1{font-weight:normal;padding:1em 0 2em;text-align:center}
+	h3{background:#444;color:#fff;font-size:24px;text-align:left;padding: 4px 15px}
+  hr{background:none;border:0;border-top:10px solid #000;height:0;margin-top:0px;padding-top:5px;visibility:hidden}
+  p{line-height:1.2}
+  span.hsjs{line-height:1;position:relative;text-transform:uppercase}
+  h1 span{line-height:.9}
+  </style>
+</head>
+<body>
+  <h1 class="hatchshow_container" style="width:95%"><span class="hsjs" style="color:#c00;font-family:'Ultra','LeagueGothicRegular','helvetica neue', helvetica, arial;"><span style="letter-spacing:.03em">H</span><span style="letter-spacing:-.08em">a</span><span style="letter-spacing:0">t</span><span style="letter-spacing:-.01em">c</span>hS<span style="letter-spacing:-.03em">ho</span>w</span><span class="hsjs" style="">is a jQuery typesetting plugin. It balances measures.</span></h1>
+  <div style="margin:0 auto;width:95%">
+    <div class="hatchshow_container" style="float:left;margin-right:5%;width:30%">
+      <p>
+      <span class="hsjs" style="top:.12em">The &ldquo;measure&rdquo; is the width of</span>
+      <span class="hsjs">a column of text.</span>
+    </p>
+    <hr />
+    <p style="color:#666;padding-bottom:10px;">
+      <span class="hsjs">(<span style="position:relative;top:-.1em">&uarr;</span>this is a measure)</span>
+    </p>
+    <p>
+      <span class="hsjs">Each line in this code&rsquo;s HTML</span>
+      <span class="hsjs">is set off with a</span>
+      <span class="hsjs" style="line-height:.89">&lt;span></span>
+      <span class="hsjs">element, &amp; HatchShow adjusts the font size</span>
+      <span class="hsjs">automatically.</span>
+      <span class="hsjs" style="line-height:.8;top:-.05em">Each line should end up</span>
+      <span class="hsjs">(roughly) the same width.</span>
+    </p>
+    <p>
+      <span class="hsjs" style="top:.2em">For details on how to use HatchShow, <a href="how.html" id="code_trigger">check out the code</a>.</span>
+    </p>
+    </div>
+    <p class="hatchshow_container" style="float:left;margin-right:5%;width:30%">
+      <span class="hsjs">It&rsquo;s named after</span>
+      <span class="hsjs">the classic print shop</span>
+      <a href="http://countrymusichalloffame.org/our-work/" style="color:#000">
+      <span class="hsjs" style="line-height:.85em;padding-to">Hatch</span>
+      <span class="hsjs" style="line-height:.84em">Show</span>
+      <span class="hsjs" style="line-height:.84em">Print</span></a>
+    </p>
+    <p class="hatchshow_container" style="float:right;width:30%">
+      <span class="hsjs">This text will</span>
+      <span class="hsjs" style="line-height:.8;top:.02em">expand</span>
+      <span class="hsjs" style="line-height:1.4">or contract, depending on how many characters are in the line.</span>
+			<span class="hsjs">Every font size on this page was</span>
+			<span class="hsjs">generated by an</span>
+			<span class="hsjs" style="line-height:.8">algorithm.</span>
+      <span class="hsjs" style="display:inline-block;padding-top:.25em;">HatchShow was made (with <span style="position:relative;top:-.1em">&hearts;</span>)</span>
+      <span class="hsjs">by <a href="http://charliepark.org">Charlie Park</a>,</span>
+      <span class="hsjs" style="line-height:.8">for <a href="https://monotask.com">Monotask</a></span>
+      <span class="hsjs" style="line-height:1.5">(which you should <a href="https://monotask.com">check out</a> if you&rsquo;re as distractible as we are).</span>
+    </p>
+  </div>
+	<hr id="how_to_use_divider" style="clear:both;background:none;border:0;height:1px" />
+
+  <div id="how_to_use" style="visibility:hidden;clear:both;margin:50px auto;width:95%;padding-top:40px;background:#eee;border:1px solid #ddd;">
+	  <div class="hatchshow_container" style="width:95%"><h1><span class="hsjs" style="line-height:0.5">On the care and feeding of your</span><span class="hsjs" style="color:#c00;font-family:'Ultra','LeagueGothicRegular','helvetica neue', helvetica, arial;line-height:0.6"><span style="letter-spacing:.03em">H</span><span style="letter-spacing:-.08em">a</span><span style="letter-spacing:0">t</span><span style="letter-spacing:-.01em">c</span>hS<span style="letter-spacing:-.03em">ho</span>w</span></h1>
+    <div class="hatchshow_container" style="color:#222;float:left;margin:0;width:48%">
+      <p>
+      	<span class="hsjs">Hatchshow is super-easy to implement.</span>
+      	<span class="hsjs" style="line-height:1.3em">Simply insert the javascript (over on the right) &rarr;</span> <span class="hsjs">into your HTML or JS file, and wrap each line of your text with &lt;span class="hsjs">.</span><span class="hsjs" style="line-height:0.92">That&rsquo;s it.</span> <span class="hsjs">Oh. You need to already include jQuery,</span><span class="hsjs">but if you want to help move Hatchshow off of jQuery as a dependency, I&rsquo;d love your help with that.</span>
+      </p>
+    </div>
+		<div id="code_block" class="hatchshow_container" style="float:right;margin 0;width:48%">
+			<h3>Hatchshow.js</h3>
+			<div class="" style="font-family:monaco,monospace;font-size:12px;overflow:auto;text-align:left;text-transform:none;">
+			<script src="https://gist.github.com/1115680.js?file=hatchshow.js"></script>
+			</div>
+		<p style="padding-top:.25	em;text-align:cener;"><span class="hsjs">You can view the source code for this page</span> <span class="hsjs">if you&rsquo;d like to see Hatchshow in action.</span></p>
+	</div>
+
+		<hr style="clear:both;background:none;border:0;height:1px" />
+	</div>
+  </div>
+
+
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(window).load(function(){
+      $().hatchShow();
+			$('#how_to_use').hide();
+      $('hr').css('visibility','visible');
+    });
+		$('#code_trigger').click(function(e){
+			e.preventDefault();
+			$('#how_to_use, #code_block').show().css('visibility','visible');
+			$.scrollTo('#how_to_use_divider', 1000);
+		});
+    jQuery.fn.hatchShow = function(){
+      $('.hsjs').css('display','inner-block').css('white-space','pre').each(function(){
+        var t = $(this);
+        t.wrap("<span class='hatchshow_temp' style='display:block'>");
+        var pw = t.parent().width();
+        while( t.width() < pw ){t.css('font-size', (t.fontSize()+1)+"px"),
+          function(){while( t.width() > pw ){t.css('font-size', (t.fontSize()-.1)+"px")}};
+        };
+      }).css('visibility','visible');
+    };
+    jQuery.fn.fontSize = function(){return parseInt($(this).css('font-size').replace('px',''));};
+
+		/**
+		 * jQuery.ScrollTo - Easy element scrolling using jQuery.
+		 * Copyright (c) 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+		 * Dual licensed under MIT and GPL.
+		 * Date: 5/25/2009
+		 * @author Ariel Flesler
+		 * @version 1.4.2
+		 *
+		 * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+		 */
+		;(function(d){var k=d.scrollTo=function(a,i,e){d(window).scrollTo(a,i,e)};k.defaults={axis:'xy',duration:parseFloat(d.fn.jquery)>=1.3?0:1};k.window=function(a){return d(window)._scrollable()};d.fn._scrollable=function(){return this.map(function(){var a=this,i=!a.nodeName||d.inArray(a.nodeName.toLowerCase(),['iframe','#document','html','body'])!=-1;if(!i)return a;var e=(a.contentWindow||a).document||a.ownerDocument||a;return d.browser.safari||e.compatMode=='BackCompat'?e.body:e.documentElement})};d.fn.scrollTo=function(n,j,b){if(typeof j=='object'){b=j;j=0}if(typeof b=='function')b={onAfter:b};if(n=='max')n=9e9;b=d.extend({},k.defaults,b);j=j||b.speed||b.duration;b.queue=b.queue&&b.axis.length>1;if(b.queue)j/=2;b.offset=p(b.offset);b.over=p(b.over);return this._scrollable().each(function(){var q=this,r=d(q),f=n,s,g={},u=r.is('html,body');switch(typeof f){case'number':case'string':if(/^([+-]=)?\d+(\.\d+)?(px|%)?$/.test(f)){f=p(f);break}f=d(f,this);case'object':if(f.is||f.style)s=(f=d(f)).offset()}d.each(b.axis.split(''),function(a,i){var e=i=='x'?'Left':'Top',h=e.toLowerCase(),c='scroll'+e,l=q[c],m=k.max(q,i);if(s){g[c]=s[h]+(u?0:l-r.offset()[h]);if(b.margin){g[c]-=parseInt(f.css('margin'+e))||0;g[c]-=parseInt(f.css('border'+e+'Width'))||0}g[c]+=b.offset[h]||0;if(b.over[h])g[c]+=f[i=='x'?'width':'height']()*b.over[h]}else{var o=f[h];g[c]=o.slice&&o.slice(-1)=='%'?parseFloat(o)/100*m:o}if(/^\d+$/.test(g[c]))g[c]=g[c]<=0?0:Math.min(g[c],m);if(!a&&b.queue){if(l!=g[c])t(b.onAfterFirst);delete g[c]}});t(b.onAfter);function t(a){r.animate(g,j,b.easing,a&&function(){a.call(this,n,b)})}}).end()};k.max=function(a,i){var e=i=='x'?'Width':'Height',h='scroll'+e;if(!d(a).is('html,body'))return a[h]-d(a)[e.toLowerCase()]();var c='client'+e,l=a.ownerDocument.documentElement,m=a.ownerDocument.body;return Math.max(l[h],m[h])-Math.min(l[c],m[c])};function p(a){return typeof a=='object'?a:{top:a,left:a}}})(jQuery);
+  </script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15921981-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</body>
+</html>

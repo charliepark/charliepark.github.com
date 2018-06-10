@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="A neat little sideproject, made to create pretty buttons in any color. A plugin (of sorts) for the Twitter Bootstrap framework. (from Charlie Park)">
+	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
+  <!--  old OpenID credentials; keep around for a bit longer <link rel="openid.server" href="http://charliepark.mp/server" /> <link rel="openid.delegate" href="http://charliepark.mp/"> -->
+	<title>Beautiful Buttons for Twitter Bootstrappers</title>
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
+		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
+	</header>
+	<section id="main_content">
+		<h1 class="post_title">Beautiful Buttons for Twitter Bootstrappers</h1>
+	<div class="meta_wrapper"><time datetime="2012-02-01">February  1, 2012</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/a thing I made">a thing I made</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/front-end stuff">front-end stuff</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/Twitter Bootstrap">Twitter Bootstrap</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/jQuery">jQuery</a></li></ul></div>
+	<p>Six months ago, a small team at Twitter (<a href="http://twitter.com/mdo">Mark</a> and <a href="http://twitter.com/fat">Jacob</a>) made their front-end design framework — something they called “<a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>” — public. It’s a really nice piece of work, and I’ve been a big fan from day one.</p>
+
+<p>One issue I was having, though, was that I didn’t like the button colors. I mean, yeah, the blue was nice, but button colors should be a bit more flexible. And with the new Bootstrap 2.0, you can kind of set up some custom colors. But, even with the customizations, I thought it could be a bit more dynamic.</p>
+
+<p>So using jQuery and — of course — Twitter Bootstrap, I built a tool for building … <a href="http://charliepark.org/bootstrap_buttons">Beautiful Buttons for Twitter Bootstrappers</a>.</p>
+
+<p><a class="screenshot" href="http://charliepark.org/bootstrap_buttons" style="box-shadow:0 0 10px rgba(0,0,0,0.4)"><img src="../images/beautiful_buttons_for_twitter_bootstrappers/beautiful_buttons_screenshot.png" /></a></p>
+
+<p><strong>I’m actually really happy with how it turned out.</strong> It lets you use sliders to adjust the hue, the saturation, the lightness, and, um, the “puffiness” of your buttons. And it generates customized CSS for you to select, copy, and paste into your project. It works with Twitter Bootstrap 2.0 and with all earlier versions — I actually built it back on Twitter Bootstrap 1.1.1. (The only thing I’m not 100% thrilled with is how as you “puffify” the buttons, the colors sometimes desaturate. Also, I don’t think <em>all</em> of those browser-specific prefixes are necessary, but I figured I’d leave them in for now. If you have suggestions, as always, I’m open.)</p>
+
+<p>I’m not sure why I didn’t announce this or make it available before now. I first built it back in the fall. I think I was waiting until Monotask was a <em>leetle closer</em> to being publicly shareable. But with the Twitter Bootstrap team’s announcement of version 2.0, I figured I’d go ahead and roll this out. Here you go, kids. Have fun.</p>
+
+<p>I hope you enjoy it, and that it makes tons of pretty buttons for you. And — although it’s not <em>quite</em> public, if you <a href="https://monotask.com">sign up to be notified when we launch Monotask</a>, we’ll let you know when it’s available for checking out, and you can see how I used these buttons in the app.</p>
+
+<div class="update_box">
+  <p>Oh &hellip; if you like this, could you do me a big favor and upvote it at Hacker News (<a href="http://news.ycombinator.com/item?id=3538053">http://news.ycombinator.com/item?id=3538053</a>)? I&rsquo;d love for more folks to get to see (and use) these buttons. Thanks!</p>
+</div>
+
+	<footer>
+	<p class="next_actions">I would really enjoy connecting with you <a href="http://twitter.com/charliepark/">on Twitter</a><br>(but I&rsquo;m taking a little break from it at the moment).</p>
+	</footer>
+	</section>
+	<aside id="sidebar">
+	 <h3>My Most Popular Posts</h3>
+	 <p>You&rsquo;ll like these.</p>
+	 <ul>
+	   <li><a href="/slopegraphs">Slopegraphs</a></li>
+	   <li><a href="/a-slopegraph-update">A Slopegraph Update</a></li>
+	   <li><a href="/beautiful-buttons-for-twitter-bootstrappers">Beautiful Buttons for Twitter Bootstrappers</a></li>
+	   <li><a href="/tags-in-jekyll">Tags in Jekyll</a></li>
+	 </ul>
+	</aside>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div></div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-15921981-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <title>IFTTT Speed Audit</title>
+  <style type="text/css">
+    /*
+        COLORS
+
+        Base:       #F1E7E0;
+        Callout:    #EBE0D4;
+        Copy:       #3E2C43;
+        Copy Sub:   #666666;
+        Copy High:  [#A1A361;] #7E845C
+        Copy High2: #8F6B6D;
+    */
+    a{color:#7E845C}
+    a:hover{color:#8F6B6D;color:#A1A361}
+    body{background:#F1E7E0;color:#3E2C43}
+    .clear{background:none;border:0;height:0}
+    .quote{background:#EBE0D4}
+    /*
+        TYPOGRAPHY – FONT SIZE
+        Class               Size
+        ------------------------
+        salutation          36px
+        title-sidebar       30px
+        requirement         28px
+        intro               24px
+        default             20px
+        quote               16px
+        title-sidebar-sub   15px
+        book-author         12px
+    */
+    a{text-decoration:none;-webkit-transition: all linear 0.2s;-moz-transition: all linear 0.2s;-ms-transition: all linear 0.2s;-o-transition: all linear 0.2s;transition: all linear 0.2s}    
+    body{font-size:20px;font-family:"crimson text",crimson,"helvetica neue",helvetica,"droid sans", sans-serif;line-height:1.3}
+    p{}
+    .content-secondary p{font-size:16px;margin-top:10px;}
+    ul{}
+    .content-secondary ul{font-size:16px;margin:-12px 0 0;padding-left:20px}
+    .book-author{color:#666;font-size:12px;letter-spacing:1px;line-height:1.7;text-transform:uppercase}
+    .intro{font-size:24px}
+    .quote{font-size:16px}
+    .requirement, .pitch, .task, .title-section, .title-subsection{clear:both;font-size:26px;font-weight:bold}
+    .title-subsection{font-size:20px;margin-left:20px;text-indent:-20px;}
+    .salutation{font-size:36px}
+    .title-sidebar{font-size:30px;line-height:1}
+    .title-sidebar-sub{color:#666;font-size:15px;font-weight:normal;letter-spacing:1px;line-height:1.3;text-transform:uppercase}
+    /*
+        LAYOUT
+    */
+    figure{margin:0;padding:0}
+    figcaption{color:#F1E7E0;display:block;font-family:'helvetica neue', sans-serif;font-size:10px;height:40px;letter-spacing:2px;line-height:40px;margin:-40px 0 0 -30px;opacity:.35;padding:0;position:relative;text-align:center;text-transform:uppercase;width:100%}
+    li, ol{margin:0;padding:0}
+    ul{margin-top:-16px}
+    .biopic{margin-left:-40px;opacity:.9}
+    .biopic-for-phones, .biopic-for-tablets{display:none}
+    .book{display:block;line-height:1.2;padding-left:16px;text-indent:-16px}
+    .book-author{display:block;padding-bottom:20px;padding-left:2px}
+    .content{margin:10px auto;width:1000px}
+    .content-primary{float:left;width:600px;padding-bottom:50px}
+    .content-secondary{float:left;margin-left:100px;padding:40px 0 0 50px;position:relative;width:230px}
+    .details{position:relative}
+    .intro{margin-left:40px}
+    .title-sidebar{font-size:30px;line-height:1;margin:40px 0 10px;position:relative}
+    .title-sidebar-sub{display:block;padding:4px 0 0}
+    .quote{margin:0 auto;padding: 1px 24px;position:relative}
+    /*
+        ALTERNATE DEVICES
+    */
+    @media (max-width: 640px) {
+      body{background:rgba(255,255,255,0.8)}
+      .biopic-for-phones{display:block;width:100%}
+      .content{width:100%;margin:0 auto}
+      .content-primary{margin:0 5%;padding-top:10px;width:90%}
+      .content-secondary{display:none}
+      .quote{padding: 1px 15px}
+      .salutation{position:absolute;top:4%;color:#fff;text-shadow:0 2px 10px #000;margin:0 auto;font-size:36px;width:90%}
+      .intro{margin:0 auto}
+    }
+
+    @media (max-width: 319px) {
+      .salutation{font-size:30px;top:10%}
+    }
+
+    @media (min-width: 320px) and (max-width: 479px) {
+      .salutation{font-size:50px;line-height:1.1;top:2%}
+    }
+
+    @media (min-width: 479px) and (max-width: 640px) {
+      .salutation{position:absolute;top:4%;color:#fff;text-shadow:0 2px 10px #000;margin:0 auto;font-size:36px;width:90%}
+      .intro{position:absolute;top:25%;color:#fff;font-size:23px;margin:0 auto;text-shadow:0 2px 10px #000;top:45%;width:90%}
+    }
+
+    @media (min-width: 641px) and (max-width: 990px) {
+      .biopic{display:none}
+      .biopic-for-tablets{border-radius:10px;display:inline-block;float:left;height:120px;margin:1px 20px 0 -4px;width:120px}
+      .book-author{padding-bottom:10px}
+      .clear{clear:both;display:block;height:0px;width:0px}
+      .content{margin:0;padding:0;width:100%}
+      .content-primary{float:none;margin:0 auto;max-width:90%;width:90%;padding:0}
+      .content-secondary{display:none;background:#EBE0D4;float:none;margin:0 auto;max-width:90%;width:90%;padding:0}
+      .details{clear:none;float:left;margin:0 0 0 8%;width:25%}
+      .details + .details + .details + .details{position:absolute;left:33%;bottom:0}
+      .salutation{padding-top:0px}
+    }
+    @media (min-width: 990px){
+      .biopic{height:250px;width:250px;border-radius:125px 125px 10px 10px /40px 40px 10px 10px}
+      .content p, .content ul{margin-left:40px}
+    }
+    @media (min-width: 990px) and (max-width: 1200px) {
+      .content-primary{margin-left:30px}
+      .content-secondary{margin-left:70px}
+    }
+  </style>
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,600' rel='stylesheet' type='text/css'>
+</head>
+<body class="content">
+  <img class="biopic-for-phones" src="../images/charlie_and_a_turtle.png" alt="A picture of Charlie, holding a turtle. The turtle is hiding in its shell. Charlie is investigating." style="width:100%">
+  <article class="content-primary">
+    <h1 class="salutation">Let&rsquo;s make IFTTT <em>faster</em><span style="margin-left:.07em">!</span></h1>
+    <p class="intro">I wanted to throw together a few thoughts for quick wins: Things the IFTTT team can do to speed up page load times.</p>
+    <section>
+      <h2 class="title-section">First, let&rsquo;s run an <b>audit</b>.</h2>
+      <p>We want to have a good baseline sense of how fast the page loads. After all, if we&rsquo;re going to apply objective metrics (10% faster, etc.), we need to have a good record of where we&rsquo;re starting from.</p>
+      <p>Running PageSpeed and YSlow on a few pages on IFTTT.com show scores between 86 and 94 out of 100. So a lot of front-end optimizations are already in place, but there&rsquo;s some more we could do.</p>
+      <p>It&rsquo;d also be useful to use a tool like Google Analytics&rsquo; Site Speed or Dev Tools that tells you how long pages take to load, to get some hard numbers down to compare with the improved versions.</p>
+    </section>
+    <section>
+      <h2 class="title-section">What to tackle?</h2>
+      <p>I&rsquo;m really excited about the possibility of joining the IFTTT team. <b>If we decide my joining IFTTT makes sense, here are some of the things I&rsquo;d do to make the IFTTT site load more quickly:</b></p>
+
+      <h3 class="title-subsection">1. Combine CSS files, and JS files, where possible.</h3>
+      <p>There are currently two JS files (application.js and authenticated.js) that we could combine into a single file. Obviously, there might be reasons why they aren&rsquo;t combined now, but authenticated.js is a pretty small file (16KB), and I suspect it could be combined with application.js. It&rsquo;d be a slightly larger file at the initial load, but would be only one hit, instead of two.</p>
+    	<p>For CSS, there are three files, main.css, hi-dpi.css, and authenticated.css. Like with the JS, I would imagine these could be combined. Same tradeoffs to consider.</p>
+
+      <h3 class="title-subsection">2. Cut down on the size of the main CSS file by optimizing how the Sass file is written.</h3>
+      	<p>There&rsquo;s currently a lot of duplication in the main.css file, especially regarding responsive breakpoints.</p>
+      	<p>For example, the breakpoint &ldquo;@media (min-width: 720px) and (max-width: 959px)&rdquo; is in main.css 106 times, when it really only needs to be in the file once.</p>
+      	<p>Same with &ldquo;@media (min-width: 960px)&rdquo;, which is in there 102 times.</p>
+      	<p>I&rsquo;m not sure what aspect of the Sass build process is causing that duplication, but I imagine the Sass file currently utilizes Sass&rsquo;s &ldquo;mixin&rdquo;  method, rather than using the newer &ldquo;extend&rdquo; method, which gets you many of the same benefits without the duplication.</p>
+      	<p>Regardless of the source of that duplication, though, there are some ways we could optimize it and drop that file size.</p>
+
+        <h3 class="title-subsection">3. Convert smaller PNGs (Facebook, Twitter links) to more efficient resources.</h3>
+        <p>A few options here. But files like the social media buttons could be converted to inline data URIs (first choice) or to a sprite (second choice, as there&rsquo;s still an external data call for the file).</p>
+
+        <h3 class="title-subsection">4. Move JS calls to just before &lt;/body>.</h3>
+        <p>Because JavaScript is a &ldquo;blocking&rdquo;  file, it prevents other parts of the page from setting up while it&rsquo;s loading in. So the page has the appearance of taking longer to load. Moving where the JS is called in helps the page feel snappier.</p>
+
+        <h3 class="title-subsection">5. Put assets on a secondary domain or a CDN.</h3>
+        <p>At the very least, we could put IFTTT&rsquo;s assets on a separate domain &mdash; assets.ifttt.com (or similar) &mdash; to speed up asset downloading. This benefits the site in two ways. For one, browsers have a ceiling on how many assets they can download from any one server at a time. Putting assets on a second server means the browser can pull assets in parallel with other resources. Also, that server is then a &ldquo;cookieless domain&rdquo;, which benefits download times as well.</p>
+        <p>An alternate (and probably better) option would be to put all assets on a CDN.</p>
+
+        <h3 class="title-subsection">6. Explore using PJAX and other pre-loading alternatives</h3>
+        <p>Pages like Browse Recipes could be sped up by incorporating PJAX or other means of prefetching content without requiring a full page reload.</p>
+
+        <h3 class="title-subsection">7. Make sure all images have height and width dimensions on them.</h3>
+        <p>Browsers can &ldquo;paint&rdquo; the screen more rapidly when they know how big the images are going to be on the page. Although the channel icons have heights and widths declared on them, other images on the page are missing explicit heights and widths. Declaring explicit dimensions on all images would lead to a faster perceived load time.</p>
+
+        <h3 class="title-subsection">8. Convert the main IFTTT logo to inline SVG.</h3>
+        <p>Right now, the logo at the top of the page is an external .svg file. That&rsquo;s great. We could speed it up even more by embedding it as inline SVG code, which would eliminate another HTTP call.</p>
+
+        <h3 class="title-subsection">9. Combine all Channels icons into a single sprite, and slice it up via CSS.</h3>
+      	<p>In the interest of exploring all options, I&rsquo;m including this one. <em>We&rsquo;d need to test it</em>, to see if the results actually improve loading time or not. (I&rsquo;m skeptical.)</p>
+      	<p>Currently, there are 68 channels, and there are multiple versions of each logo:</p>
+    		<ul>
+    		  <li>small</li>
+    		  <li>regular</li>
+    		  <li>large</li>
+    		  <li>grayscale</li>
+    		  <li>grayscale large</li>
+    		</ul>
+      	<p>We could combine all the channel icons into a single sprite (or a couple of sprites, based on icon size), which could be cached with a far-future expires header, which would eliminate subsequent server hits. So on a page like /channels, we could cut the HTTP requests down to just a few hits.</p>
+        <p>We would still want to have the individual images available, for a few reasons. For one, the cached image would be available for longer without needing to reload. For another, there&rsquo;s no need to download the entire large sprite if the user only needs one or two logos.</p>
+        <p>One downside to combining the channel icons into a sprite: the sprite would be huge. It very well might make no sense at all to combine the resources. (Again, we&rsquo;d need to test these tradeoffs, to see what makes the most sense.)</p>
+
+      <h3 class="title-subsection">10. Use CSS3 filters to cut down on asset loading.</h3>
+      <p>Currently, on larger icons that aren&rsquo;t activated, IFTTT shows a grayscale version of the channel.</p>
+      <p>We could take advantage of newer CSS3 tools, like -webkit-filter:grayscale(1), so that it wouldn&rsquo;t need to load in another set of resources. Instead, the regular colored versions would be loaded in, and then the images would be converted to grayscale by the browser. For browsers that don&rsquo;t yet have grayscale filters, we could keep the grayscale assets available, and just call those assets in dynamically when necessary.</p>
+
+      <h3 class="title-subsection">11. Defer loading JavaScript until it&rsquo;s necessary.</h3>
+      <p>Nicholas Zakas spoke about this recently. See <a href="http://www.slideshare.net/kubide/enough-with-the-javas-cript-already-de-nicholas-zakas">slides 38–49 of his recent talk</a> for more on this.</p>
+      <p>In essence, though, there are javascript interactions that can be held off on loading until they&rsquo;re likely to be used. That leads to a smaller initial file loading.</p>
+      <p>As with the other elements of this, the overhead to set this up might not have an adequate payoff, but it would be one more way to optimize load times.</p>
+    </section>
+  </article>
+  <aside class="content-secondary">
+    <figure>
+    <img class="biopic" src="../images/charlie_and_a_turtle.png" alt="A picture of Charlie, holding a turtle. The turtle is hiding in its shell. Charlie is investigating." style="height:250px;width:250px" height="250" width="250">
+    <figcaption>Y u slow, turtle?</figcaption>
+    </figure>
+    <section class="details">
+      <h2 class="title-sidebar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" style="opacity:.7;position:absolute;top:-3px;left:-50px">
+      <path d="M51.288,96.463c-26.44,0-47.951-21.512-47.951-47.95c0-26.439,21.511-47.952,47.951-47.952s47.951,21.512,47.951,47.952  C99.239,74.951,77.729,96.463,51.288,96.463z M51.288,8.01c-22.332,0-40.501,18.169-40.501,40.502  c0,22.332,18.169,40.501,40.501,40.501c22.333,0,40.501-18.169,40.501-40.501C91.789,26.179,73.621,8.01,51.288,8.01z"></path>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="83.031" y1="66.326" x2="73.505" y2="60.828"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="87.759" y1="48.683" x2="76.759" y2="48.684"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="83.03" y1="31.038" x2="73.505" y2="36.539"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="70.114" y1="18.123" x2="64.614" y2="27.648"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="52.47" y1="13.395" x2="52.47" y2="24.395"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="34.827" y1="18.123" x2="40.327" y2="27.649"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="21.91" y1="31.039" x2="31.437" y2="36.539"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="17.183" y1="48.684" x2="28.183" y2="48.684"></line>
+      <line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="21.91" y1="66.327" x2="31.437" y2="60.827"></line>
+      <path d="M51.288,43.233c-0.458,0-0.895,0.077-1.319,0.187L31.668,28.082l-4.623-1.714l2.229,3.991l16.792,17.561  c-0.022,0.197-0.06,0.391-0.06,0.594c0,2.91,2.369,5.278,5.28,5.278c2.912,0,5.28-2.368,5.28-5.278  C56.568,45.601,54.2,43.233,51.288,43.233z"></path>
+      </svg>Tools <span class="title-sidebar-sub">to speed up IFTTT</span></h2>
+      <ol class="ol-resources">
+        <li><a href="https://developers.google.com/speed/pagespeed/insights">PageSpeed</a></li>
+        <li><a href="http://yslow.org/">YSlow</a></li>
+        <li><a href="https://developers.google.com/speed/articles/">Google Developers: Speed Articles</a></li>
+        <li><a href="http://www.stevesouders.com/blog/">Steve Souders&rsquo; blog</a></li>
+        
+      </ol>
+    </section>
+    <hr class="clear">
+  </aside>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15921981-1']);
+    _gaq.push(['_setDomainName', 'charliepark.org']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

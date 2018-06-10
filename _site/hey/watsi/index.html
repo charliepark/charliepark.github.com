@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+	<title>Hey, Watsi! Let's make the world better!</title>
+	<style type="text/css">
+	
+		/* from Eric Meyer: 20110126 - http://meyerweb.com/eric/tools/css/reset/ */
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+		/* end of Eric Meyer's CSS Reset */
+		body, input, select, textarea{font-family: 'Open Sans', 'helvetica neue',helvetica,arial,sans-serif;font-size:16px;line-height:1.3}
+		body{background:#2D82D4;background:#fff;color:#fff}
+		a{color:#2D82D4}
+		b, strong{font-weight:bold}
+		em, i{font-style:italic}
+		li{list-style:disc;margin-left:20px}
+		p{margin-top:10px}
+		ul{margin-top:10px}
+		/*
+			COLORS
+			blue: #2D82D4
+			blue + 50% #fbfbfb:  #9DC4E9
+			blue + 10% #fbfbfbf:  #5398DB
+			blue-light: 	#9FC6EB
+			blue-lighter: 	#6BA6E0
+			white: 			#fff
+			gray-lightest:	#F8F8F8
+			gray-light: 	#E4E4E4
+			gray: #333
+		*/
+.caption{background:rgba(0,0,0,0.7);color:#ccc;display:block;font-size:10px;height:20px;line-height:20px;position:absolute;text-align:center;left:20px;top:235px;width:240px}
+		.clear{border:0;clear:both;height:0;padding-top:20px}
+		.col{float:left;margin:0 10px}
+		.col-l{width:240px;margin-left:20px;text-align:right}
+		.col-r{margin-right:20px;width:700px;width:calc(100% - 240px - 60px)}
+		.content{margin:60px auto;width:1000px}
+		.img-turtle{float:left;height:240px;width:240px}
+		.introduction{line-height:1.5}
+		.introduction p{font-size:18px;margin:0 0 1em;padding:0}
+		.introduction p:last-child{margin-bottom:0}
+		.opening{font-family: 'Great Vibes', cursive;font-size:200px;font-weight:normal;line-height:1.2;text-align:center}
+		.opening-challenge{background:#9DC4E9;color:#333;display:block;font-family: 'Open Sans Condensed', sans-serif;font-size:64px;font-weight:bold;height:2em;line-height:2em;border-top:2px solid #2D82D4;border-color:#fff}
+		.opening-salutation{background:#418DD7;display:block;position:relative;line-height:1;padding-top:.2em;text-indent:-.15em}
+		.q{font-size:22px;font-weight:bold;line-height:1.3;margin-top:4px}
+		.quote{background:#418DD7;color:#fff;line-height:1.5;margin-top:4px;padding:6px 90px 14px 20px;position:relative}
+		.quote::before{font-family:'Great Vibes', cursive;height:30px;color:#5398DB;content:"”";display:block;font-size:400px;line-height:1;position:absolute;right:5px}
+		.quote-cite{color:#9FC6EB;color:#9DC4E9;text-align:right}
+		.row{clear:both;padding:20px 0 40px;position:relative}
+		.tease{background:#95C0E9;background:#F8F8F8;color:#333;line-height:1.4;border-top:2px solid #2D82D4;border-color:#fff}
+	    /*
+	        ALTERNATE DEVICES
+	    */
+    @media (max-width: 1100px) {
+			.content{margin-top:2%}
+		}
+	  @media (max-width: 1023px) {
+			.caption{top:195px;width:200px}
+			.col-l{width:200px}
+			.col-r{width:calc(100% - 200px - 60px)}
+			.content{margin-top:4%;width:90%}
+			.img-turtle{height:200px;width:200px}
+			.opening{font-size:120px}
+			.opening-challenge{font-size:40px}
+	  }
+	  @media (max-width: 767px) {
+      .introduction p{font-size:16px}
+			.col-l{float:none;margin:0 auto;text-align:left;width:90%}
+			.col-r{float:none;margin:0 auto;width:90%}
+			.content{width:90%}
+			.figure-turtle{display:none}	      
+			.opening{font-size:77px}
+			.opening-challenge{font-size:26px}
+			.quote{padding-right:20px}
+			.quote::before{content:''}
+	  }
+	  @media (max-width: 479px) {
+			.opening{font-size:55px}
+			.opening-challenge{font-size:17px}
+		}
+	  @media (max-width: 319px) {
+			.opening{font-size:43px}
+			.opening-challenge{font-size:13px}
+		}
+	</style>
+	<link href='http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans+Condensed:700|Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="content">
+		<div class="content-primary">
+			<section class="section-hello">
+				<h1 class="opening"><span class="opening-salutation">Hi, <span style="letter-spacing:-.04em">W</span>atsi!</span> <span class="opening-challenge">Let&rsquo;s make the world better, together!</span></h1>
+			</section>
+			<section class="tease">
+				<div class="row">
+					<div class="col col-l">
+						<figure class="figure-turtle">
+							<img class="img-turtle" src="charlie_and_a_turtle_bw.png" alt="Charlie investigates a giant turtle that's pulled itself into its shell.">
+							<figcaption class="caption">Turns out: It&rsquo;s a turtle.</figcaption>
+						</figure>
+					</div>
+					<div class="col col-r introduction">
+						<p>You want a <b>front-end developer / designer</b> with <b>extensive Rails and JavaScript experience</b>. Someone with <b>a keen design sense</b> who&rsquo;s focused on <b>improving site performance</b> and <b>visitor conversions</b>. You want someone comfortable with <b>responsive web design</b>, who&rsquo;s <b>able to craft delightful experiences</b> on both mobile devices and desktop browsers. Most important: Someone with <b>a passion for making a difference</b>, and <b>eager to improve the lives of medical patients all around the world</b>.</p>
+						<p><b>I think we&rsquo;d be a great fit.</b> I want to go over <em>why</em> here, but if I miss anything, or if you want to talk further, my e-mail is <b><a href="mailto:charlie@charliepark.org">charlie@charliepark.org</a></b>, and my phone is <b><a href="tel:1-804-814-2064">804.814.2064</a></b>. I&rsquo;ll include that info at the end of the page, too.</p>
+						<p>Let&rsquo;s get into it!</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">So … who are you?</h2>
+					</div>
+					<div class="col col-r">
+						<p>My name is <b>Charlie Park</b>. I&rsquo;m a front-end developer/designer. You can see my list of various <b><a href="http://charliepark.org/projects/">projects</a></b> on my site, and my open source code is over at <b>GitHub: <a href="https://github.com/charliepark/">github.com/charliepark</a></b>.</p>
+						<p>I&rsquo;m currently in Virginia, but if moving forward makes sense, I&rsquo;m up for moving.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">And what do you do?</h2>
+					</div>
+					<div class="col col-r">
+						<p>The main thing I do is <b>think</b>. And <b>problem-solve</b>. But, practically-speaking, I&rsquo;ve been a <b>front-end developer and designer</b> for over 12 years, and a <b>Rails developer</b> for over six years. I love doing it, and I&rsquo;d love to do it for Watsi (and the patients Watsi helps).</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">Tell me about your front-end dev work.</h2>
+					</div>
+					<div class="col col-r">
+						<p>I&rsquo;ve hand-coded <b>HTML</b> and <b>CSS</b> for over 12 years. I know and love programming with <b>JavaScript</b>. I&rsquo;ve written several <b>jQuery</b> plugins and JS-based tools, mostly aimed at helping designers. Here are a few:</p>
+						<ul>
+							<li><a href="http://charliepark.org/bootstrap_buttons/">Beautiful Buttons for Twitter Bootstrappers</a>: a tool for quickly creating the CSS for customized rounded buttons, for people using Twitter Bootstrap (I know you&rsquo;re planning to move Watsi off of Bootstrap; totally on-board with that call)</li>
+							<li><a href="http://charliepark.org/hatchshow/">HATCHSHOW.js</a>: a jQuery typesetting plugin</li>
+							<li><a href="https://github.com/charliepark/parentheticals#readme">parentheticals.js</a>: another jQuery typesetting plugin</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">Can you do back-end work, too?</h2>
+					</div>
+					<div class="col col-r">
+						<p>Yes! I&rsquo;ve been programming in <b>Ruby on Rails for the last six years</b>. Also, some in Sinatra. I wouldn&rsquo;t say I&rsquo;m an expert at Rails, but I have designed, built, and deployed several Rails apps. Most recently, I converted a legacy Rails app over to a JavaScript-on-the-frontend, Rails-on-the-backend app, with most of the logic living on the client side. This both sped up the site&rsquo;s page-rendering time and also allows for more rapid prototyping of new features, since they can be developed on the front-end in realtime.</p>
+						<p>While I&rsquo;ve loved being a web generalist, I&rsquo;m really eager to work on a team, doing front-end work. But a role that blends Rails and front-end JavaScript / HTML / CSS? That&rsquo;d be <em>ideal</em>.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">How about design?</h2>
+					</div>
+					<div class="col col-r">
+						<p>I enjoy both <b>interface design</b> and &mdash; even more &mdash; the total package of <b>user experience design</b>.</p>
+						<p>What&rsquo;s our goal with the site? With the page? With this specific element? What is the user trying to accomplish? <b>Are we making it easy for her to be awesome by default?</b> With Watsi, I&rsquo;d be focused on getting new users to understand, trust, and have faith in Watsi and its partners in the healthcare community, to connect on an emotional level with the receipients of the funding, and to choose to get involved, ideally through donating. I&rsquo;d also be interested in looking at ways that we could optimize and refine the process, through <b>A/B testing</b> and live <b>user testing</b>.</p>
+						<p>I&rsquo;m adept at <b>thinking like a user</b>, and enjoy making a user&rsquo;s experience &mdash; especially their <em>first</em> experience with a site &mdash; as smooth as possible. <b>For example, at Watsi, there&rsquo;s currently some awkwardness when you first fund someone&rsquo;s treatment.</b></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">Awkwardness?</h2>
+					</div>
+					<div class="col col-r">
+						<p>Yeah. A few rough edges to the Watsi onboarding process. I&rsquo;m sure you&rsquo;re aware of them, and have probably just pushed the new code to the server, fixing them, but I thought I&rsquo;d mention them anyway.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">Like what?</h2>
+					</div>
+					<div class="col col-r">
+						<p>So, let&rsquo;s say I&rsquo;ve just heard about Watsi, and I&rsquo;m really excited: &ldquo;This exists?! How awesome is this!?&rdquo; And I decide I want to help fund Adjaratou&rsquo;s treatment of her osteomyelitis. I don&rsquo;t have a Watsi account, so I&rsquo;m given the choice to pay with PayPal or with a credit card. So I go through the process. (I go with PayPal.) Yay. It goes through. But, then, there&rsquo;s some confusion.</p>
+						<p>Will I get updates on Adjaratou&rsquo;s surgery? I hope so! But at this point in my new relationship with Watsi, I&rsquo;m not sure. I&rsquo;d love to have some sort of ongoing &ldquo;relationship&rdquo; with the people I&rsquo;ve supported. I want to know what happens with them. Is that going to happen? My excitement is dampened a bit.</p>
+						<p>So I guess I need to … create an account at Watsi? Okay. I can do that, I guess. So I sign up.</p>
+						<p>But, now, in my Watsi account, there&rsquo;s no indication at this point that my PayPal donation is linked up to my account … so … I&rsquo;m just not clear on it. Does Watsi know that I&rsquo;m interested in Adjaratou&rsquo;s surgery? Will I get updates without having to check out the transparency doc? Do I need to do something to my account? Even just in the e-mail confirmation I got, some more details about &ldquo;here&rsquo;s what&rsquo;s next&rdquo; would be awesome. My initial enthusiasm has really taken a hit. I&rsquo;m still on-board with everything Watsi&rsquo;s doing, but some of the lack of clarity in the interface / interactions is preventing me from being as excited as I was at the beginning.</p>
+						<p><b>So: all of those flows?</b> Helping the user to be clear on what their relationship is with Watsi, and with the patient they just helped fund, and with future patients? And wanting to share their involvement with their circles of friends? <b>Those are the kinds of things I love working on. Those are the kinds of UX details that will both delight users and help Watsi more effectively realize its vision. And those are the things I want to help make awesome.</b> I know you&rsquo;ve probably already fixed those issues in your development code, but I also know there are probably tons more that we can tackle.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">Hm. Okay. Are you able to work with a small, nimble org like Watsi? Startups are fast-moving beasties.</h2>
+					</div>
+					<div class="col col-r">
+						<p>Absolutely. I&rsquo;ve worked for the last six years on my own, running a (profitable) bootstrapped business. I know that <b>moving quickly</b> is important in a startup, that <b>taking risks</b> is a normal part of business, and that decisions often have to be made with only vague, ambiguous, or contradictory input. Sometimes, the wrong decision gets made. That&rsquo;s not a bad thing. <b>I&rsquo;m extremly confusion-tolerant.</b></p>
+						<p>I enjoy charting a clear path through choppy waters, but if we have to ride out the storm for a little while, that&rsquo;s okay, too.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">And you get that Watsi&rsquo;s a non-profit?</h2>
+					</div>
+					<div class="col col-r">
+						<p>Yup. Funny story: <b>I actually wrote to you guys back in February, offering to volunteer as a front-end developer for Watsi.</b></p>
+						<p>I&rsquo;ve long felt that <b>a job you&rsquo;d do even if you weren&rsquo;t paid is a good job to have.</b></p>
+						<p>So the fact that I might be able to work full-time on Watsi&rsquo;s mission? Pretty exciting.</p>
+						<p>I think a lot of startups are doing interesting things, but way way <em>way</em> too many of them are solving trite problems. I really admire that you&rsquo;re using the power of emerging technologies and business models to change lives in the developing world. I&rsquo;d love to be a part of it.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">You up for Nepal?</h2>
+					</div>
+					<div class="col col-r">
+						<p><span class="nepali" title="absolutely!">एंड होव!</span> (and how!)</p>
+						<p>Totally up for it. Passport&rsquo;s up-to-date and everything.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">What&rsquo;s it like working with you? If I asked a former boss of yours, what would he or she say?</h2>
+					</div>
+					<div class="col col-r">
+						<p><b>Here&rsquo;s what one of my previous bosses said:</b></p>
+						<blockquote class="quote"><p>If I could wave a magic wand and turn all the designers I work with into clones of Charlie, I would do so in an instant.</p>
+						<p>He&rsquo;s passionate about producing excellent, clean, beautiful work; his intelligence is nimble and wide-ranging, and he communicates clearly and fluently—a skill that I&rsquo;ve found to be all too rare among web designers.</p>
+						<p>When our company evaluated the work he had done for us, we found that everyone’s product had improved when Charlie was in the room, because his creativity, enthusiasm, and work ethic energized us all.</p>
+						<p class="quote-cite">&mdash; Justin Moore, <span style="display:inline-block">Executive Editor,</span> <span style="display:inline-block;margin-right:9px">Peace Hill Press</span></p>
+					</blockquote>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-l">
+						<h2 class="q">Want to talk further?</h2>
+					</div>
+					<div class="col col-r">
+						<p><b>I&rsquo;d love to talk with you more</b>. I know you&rsquo;re eager to find the right person for the team, and quickly. I think we could do some <em>awesome</em> stuff together.</p>
+						<p>My phone is <b><a href="tel:1-804-814-2064">804.814.2064</a></b>. My primary e-mail is <b><a href="mailto:charlie@charliepark.org">charlie@charliepark.org</a></b>.</p>
+						<p>Let me know your thoughts! I&rsquo;d really love to help make the world better. <b>Let&rsquo;s talk!</b></p>
+					</div>
+				</div>
+				<hr class="clear">
+			</section>
+		</div>
+		<div class="content-secondary">
+		</div>
+	</div>
+	<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15921981-1']);
+    _gaq.push(['_setDomainName', 'charliepark.org']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

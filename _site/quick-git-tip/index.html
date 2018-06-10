@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="For solo development, a quick way to make branches easier to use. (from Charlie Park)">
+	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
+  <!--  old OpenID credentials; keep around for a bit longer <link rel="openid.server" href="http://charliepark.mp/server" /> <link rel="openid.delegate" href="http://charliepark.mp/"> -->
+	<title>Quick Git Tip ... Quickly Merging Changes From Your Local Branch</title>
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
+		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
+	</header>
+	<section id="main_content">
+		<h1 class="post_title">Quick Git Tip ... Quickly Merging Changes From Your Local Branch</h1>
+	<div class="meta_wrapper"><time datetime="2012-10-22">October 22, 2012</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/git">git</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/development">development</a></li></ul></div>
+	<p>For most of my work, I’m the only developer. That means that, up until now, I’ve mostly just worked in a master branch of my code, and haven’t utilized branches in Git.</p>
+
+<p>But I’m eager to get better at using Git, so I’ve started creating branches for feature pushes. I create the branch, jump into it, make my changes, commit them, jump back to ‘master’, merge the changes, push them to the main repo at GitHub, and jump back to my branch to make more changes.</p>
+
+<p>The problem? That’s a lot of steps.</p>
+
+<p>Just so the steps are clear: After you’ve made your commits (to, say, a branch called “popups”) and are ready to push your repo to GitHub you have to type:</p>
+
+<pre><code>git checkout master
+git merge popups
+git push
+git checkout popups
+</code></pre>
+
+<p>Even with shortcuts and aliases, it’s a number of unnecessary steps. They’re cumbersome, <em>especially</em> since nobody else is pushing code to this repository, so I don’t have to worry about conflicts with other peoples’ code. Apart from the branch name, my code to push it to GitHub looked identical every single time.</p>
+
+<p><strong>I wanted a way to reduce the process down to one simple shortcut.</strong> I asked for help on Twitter and got comments from <a href="https://twitter.com/ShepBook/status/260397069385220098">Jared</a> and <a href="https://twitter.com/metaskills/status/260399832252940288">Ken</a>, and was able to put together a quick bash script.</p>
+
+<p>If you add the following line to your <code>.bash_profile</code>, you’ll execute the four lines above (obviously, intelligently handling the name of the active branch) just by typing in <code>gpm</code> in your Terminal:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><span style="text-decoration:line-through">alias gpm=”temp=$(git branch 2&gt; /dev/null</span></td>
+      <td>grep ‘^*’</td>
+      <td>sed ‘s/^*\ //’); git checkout master; git merge $temp; git push; git checkout $temp;” # mnemonic: git push master&lt;/span&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Update: Actually, I found <a href="http://reinh.com/blog/2008/08/27/hack-and-and-ship.html">a better option</a>. This puts the work into an external bash script, which looks like this:</p>
+
+<pre><code>ref=$(git symbolic-ref HEAD 2&gt; /dev/null) || exit 0
+CURRENT="${ref#refs/heads/}"
+git checkout master
+git merge ${CURRENT}
+git push origin master
+git checkout ${CURRENT}
+</code></pre>
+
+<p>I save that in my root folder, as <code>.ship</code> (so total path: <code>~/.ship</code>).</p>
+
+<p>Then, I alias that in my <code>.bash_profile</code> as <code>alias gpm="sh ~/.ship"</code> and I’m good to go.</p>
+
+<p>Obviously, if you’re on a team, you’ll want to make sure you’re up to date before you push to the remote origin/master, but if you’re working solo like me, this helps cut down the friction on using Git more efficiently.</p>
+
+<p>And if you want a bunch of other shortcuts that do far more than mine, check out Ken’s shell commands, <a href="https://gist.github.com/3932004">posted as a gist at GitHub</a>.</p>
+
+	<footer>
+	<p class="next_actions">I would really enjoy connecting with you <a href="http://twitter.com/charliepark/">on Twitter</a><br>(but I&rsquo;m taking a little break from it at the moment).</p>
+	</footer>
+	</section>
+	<aside id="sidebar">
+	 <h3>My Most Popular Posts</h3>
+	 <p>You&rsquo;ll like these.</p>
+	 <ul>
+	   <li><a href="/slopegraphs">Slopegraphs</a></li>
+	   <li><a href="/a-slopegraph-update">A Slopegraph Update</a></li>
+	   <li><a href="/beautiful-buttons-for-twitter-bootstrappers">Beautiful Buttons for Twitter Bootstrappers</a></li>
+	   <li><a href="/tags-in-jekyll">Tags in Jekyll</a></li>
+	 </ul>
+	</aside>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div></div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-15921981-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>

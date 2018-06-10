@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Deploying a Jekyll-powered site to Github Pages isn't impossible. It just takes a little tweaking. (from Charlie Park)">
+	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
+  <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud" /> 
+  <!--  old OpenID credentials; keep around for a bit longer <link rel="openid.server" href="http://charliepark.mp/server" /> <link rel="openid.delegate" href="http://charliepark.mp/"> -->
+	<title>Jekyll + Plugins + Github + You</title>
+	<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>
+		<h2 class="site_title"><a href="/">Charlie Park</a> <span style="color:#ccc;font-size:19px;"></span></h2>
+		<ul id="nav"><li class="nav_list_item" style="text-align:left"><a class="nav_list_link" href="/about">about me</a></li><li class="nav_list_item" style="left:2px;"><a class="nav_list_link" href="/projects">projects</a></li><li class="nav_list_item" style="text-align:right"><a class="nav_list_link" href="/archives">archives</a></li></ul>
+	</header>
+	<section id="main_content">
+		<h1 class="post_title">Jekyll + Plugins + Github + You</h1>
+	<div class="meta_wrapper"><time datetime="2011-06-15">June 15, 2011</time><ul class="tag_list_in_post"><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/jekyll">jekyll</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/code">code</a></li><li class="inline tag_list_item"><a class="tag_list_link" href="/tag/github">github</a></li></ul></div>
+	<p>Github’s <a href="http://pages.github.com/">Pages</a> is a great “it just works” resource.</p>
+
+<p>Except for when it doesn’t work.</p>
+
+<p>So, for some reason, tags aren’t fully-implemented in <a href="http://jekyllrb.com/">Jekyll</a>. They <em>kind of</em> work, but there’s no tag archive page. I went over this in my post on <a href="http://charliepark.org/tags-in-jekyll/">getting tags to work in Jekyll</a>. The problem with that, though, is that <strong>Github disables any plugins you’re using when it processes/creates your blog</strong> (that’s what the <code>--safe</code> tag does).</p>
+
+<p><strong>How, then, do you get your blog (with tags) to load up on Github?</strong></p>
+
+<p><em>(I’m operating under the assumption here that you already have a Jekyll-powered blog set up on Github Pages, such that when you push commits to Github, it regenerates your blog for you.)</em></p>
+
+<p>I’m going to lay out how to do this, and then how to automate the whole process so you can do it in just a few keystrokes.</p>
+
+<h3 id="split-your-blog-in-two">1. Split Your Blog in Two</h3>
+
+<p>The first step is to clone your repo into a duplicate local copy. In my case, I took my local copy <code>~/applications/charliepark.github.com</code> and cloned it to <code>~/applications/charliepark.github.com.raw</code>.</p>
+
+<p>This leaves you with the “raw” directory and the original directory (both identical).</p>
+
+<h3 id="remove-your-old-content">2. Remove Your Old Content</h3>
+
+<p>In Finder, go into your original directory (again, in my case: <code>~/applications/charliepark.github.com</code>) and delete all of the content. You do <em>not</em> want to do this via the command line, as it’ll either be tedious (you’d need to remove each directory / file) or it’ll be too aggressive, and you’ll lose your .git directory. The point here: <strong>You don’t want to lose your .git directory, as that’s how your local copy will talk to your repo at Github.</strong></p>
+
+<p>You should now have the “raw” directory (again, a clone of what you have at Github) and the now-empty (apart from your .git directory) original repo.</p>
+
+<h3 id="regenerate-your-blog-in-the-raw-directory">3. Regenerate Your Blog, in the “raw” Directory</h3>
+
+<p>This is pretty straightforward. Just <code>cd</code> to the raw directory … in my case:</p>
+
+<pre><code>cd ~/applications/charlie.github.com.raw
+</code></pre>
+
+<p>… and run the <code>jekyll</code> command.</p>
+
+<p>This will regenerate your blog, in the <code>~/applications/charlie.github.com.raw/_site</code> directory. You’ve probably already done this step once or twice before. (Note: You <em>don’t</em> want to run <code>jekyll --server</code>, as the point here is just to generate the blog, not to fire up a server.)</p>
+
+<h3 id="copy-the-site-directory-over-to-your-original-repo">4. Copy the <code>_site</code> Directory Over To Your Original Repo</h3>
+
+<p>This is simple.</p>
+
+<pre><code>cp -r ~/applications/charliepark.github.com.raw/_site/* ~/applications/charliepark.github.com
+</code></pre>
+
+<p>Once you’ve run that command, you’ll now have:
+1. Your “raw” directory
+2. A subdirectory within the “raw” directory (<code>_site</code>), with the generated <abbr>HTML</abbr>
+3. Your original directory, whose contents should now mirror the <code>_site</code> subdirectory of the “raw” directory</p>
+
+<h3 id="add-nojekyll">5. Add .nojekyll</h3>
+
+<p>When you add a file titled <code>.nojekyll</code> to your repo, Github won’t process your files as Jekyll files. I don’t think this step is strictly necessary, as we’re just sending the straight-up <abbr>HTML</abbr> files. But it can’t hurt. In your original directory (<code>~/applications/charliepark.github.com</code>), run:</p>
+
+<pre><code>touch .nojekyll
+</code></pre>
+
+<h3 id="commit-and-push-your-repo">6. Commit and Push Your Repo</h3>
+
+<p>Add the files to your original directory’s git repo:</p>
+
+<pre><code>git add .
+</code></pre>
+
+<p>Commit the new version of the repo:</p>
+
+<pre><code>git commit -am "Converts to flat HTML files."
+</code></pre>
+
+<p>(Note: Your commit flags (<code>-am</code>) might differ from mine.)</p>
+
+<p>Push the code to Github:</p>
+
+<pre><code>git push
+</code></pre>
+
+<h3 id="your-site-should-be-live">7. Your Site Should Be Live</h3>
+
+<p>You can now go to your site (http://yourusername.github.com) and see your site.</p>
+
+<h3 id="automate-the-whole-thing">8. Automate The Whole Thing</h3>
+
+<p>Once you’ve checked that it works, and that everything’s okay, it’s a good idea to automate the whole thing.</p>
+
+<p>I added a shortcut to my <code>~/.bash_profile</code> file:</p>
+
+<pre><code>alias build_blog="cd ~/applications/charliepark.github.com.raw; jekyll;cp -r ~/applications/charliepark.github.com.raw/_site/* ~/applications/charliepark.github.com;cd ~/applications/charliepark.github.com;git add .;git commit -am 'Latest build.';git push"
+alias bb="build_blog"
+</code></pre>
+
+<p>So, now, once I’ve written a new post, or edited a post, or just want to get the site refreshed for some other reason, all I have to do in my command line is type <code>bb</code>, and it’ll regenerate the site, copy it over, run the git commits, and push it live to Github. I can now finish my post and then push it live to the site in about a second.</p>
+
+<p>And it has <a href="http://charliepark.org/archives#tags">tags</a>.</p>
+
+<h3 id="corrections">Corrections?</h3>
+
+<p>I’m always half-expecting that some aspect of one of my writeups is totally broken. If you try this and have any issues, let me know (<a href="http://twitter.com/charliepark">@charliepark</a>). Similarly, if you try it and it works, let me know.</p>
+
+	<footer>
+	<p class="next_actions">I would really enjoy connecting with you <a href="http://twitter.com/charliepark/">on Twitter</a><br>(but I&rsquo;m taking a little break from it at the moment).</p>
+	</footer>
+	</section>
+	<aside id="sidebar">
+	 <h3>My Most Popular Posts</h3>
+	 <p>You&rsquo;ll like these.</p>
+	 <ul>
+	   <li><a href="/slopegraphs">Slopegraphs</a></li>
+	   <li><a href="/a-slopegraph-update">A Slopegraph Update</a></li>
+	   <li><a href="/beautiful-buttons-for-twitter-bootstrappers">Beautiful Buttons for Twitter Bootstrappers</a></li>
+	   <li><a href="/tags-in-jekyll">Tags in Jekyll</a></li>
+	 </ul>
+	</aside>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+	<div id="search"><div id="cse" style="width: 100%;">Loading</div></div>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+	  google.load('search', '1', {language : 'en'});
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('003013616125562838920:lezwpvqsqgo');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.draw('cse');
+	  }, true);
+	</script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-15921981-1");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</body>
+</html>
