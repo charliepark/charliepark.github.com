@@ -82,7 +82,7 @@ h1, h2, h3, h4 {font-family:"LeagueGothicRegular", helvetica,"League Gothic", "H
 h2{font-size:40px}
 section h2{margin-top:40px;}
 section p+h2{margin-top:26px}
-h3{font-size:30px;margin-left:20px;padding-top:20px;text-indent:-20px}
+h3{clear:both;font-size:30px;margin-left:20px;padding-top:20px;text-indent:-20px}
 h3.archive_list_header{float:right;font-size:25px;letter-spacing:0;line-height:1.2;padding-top:0;padding-bottom:5px;width:423px;}
 h3.project_header{padding-top:60px;}
 h2 + h3.project_header{padding-top:20px;}
