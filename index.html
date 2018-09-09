@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>Charlie Park</title>
+    <style>
+        #arrow{background:url('images/arrow.png') 50% 50% no-repeat;background-size:contain;height:250px;transform: scaleY(-1);width:88%}
+        #name{color:#47424F;display:block;font-size:40px;font-weight:300;padding-bottom:1em}
+        a{color:#CF4B46;text-decoration:none}
+        html{color:#8B8594;font-family: 'Work Sans', sans-serif;font-size:20px;text-align:center}
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
   </head>
   <body>
-
+    <div id="arrow"></div>
     <div id="content_container"></div>
+    <link href="https://www.facebook.com/charliepark" rel="me">
     <link href="https://github.com/charliepark" rel="me">
     <link href="https://instagram.com/charliepark" rel="me">
+    <link href="https://www.linkedin.com/in/charlie-park" rel="me">
     <link href="https://tumblr.com/charliepark" rel="me">
     <link href="https://twitter.com/charliepark" rel="me">
 
@@ -16,6 +25,8 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
+
+        // Yes, I know. React? For this site? This is just here so I can mess around with React. Thanks for your concern!
 
         'use strict';
 
@@ -29,7 +40,7 @@
             render() {
                 return (
                     <article>
-                        <p>Charlie Park is a web guy and family man in SF.</p>
+                        <p><span id="name">Charlie Park</span> is a friendly web guy and family man in SF.</p>
                         <p>He&rsquo;s at Slack now, managing an absurdly great team.</p>
                         <p>You can reach out by <a href="mailto:n6n0x4k1o3o6m9w8@parkfamily.slack.com">email</a>, but you might not hear back. Sorry!</p>
                         <p>That&rsquo;s all for now!</p>
