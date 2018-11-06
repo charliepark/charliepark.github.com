@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Charlie Park</title>
+    <style>
+        #arrow{background:url('images/arrow.png') 47% 0 no-repeat ;background-size:contain;height:180px;transform: scaleY(-1)}
+        html{color:#8B8594;color:#47424F;font-family: "avenir next", avenir, "century gothic", sans-serif;font-size:30px;text-align:center;padding-top:10vh}
+    </style>
+  </head>
+  <body>
+    <div id="arrow"></div>
+    <div id="content_container"></div>
+    <link href="https://www.facebook.com/charliepark" rel="me">
+    <link href="https://github.com/charliepark" rel="me">
+    <link href="https://instagram.com/charliepark" rel="me">
+    <link href="https://www.linkedin.com/in/charlie-park" rel="me">
+    <link href="https://tumblr.com/charliepark" rel="me">
+    <link href="https://twitter.com/charliepark" rel="me">
+
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+        // Yes, I know. React? For this site? This is just here so I can mess around with React. Thanks for your concern!
+
+        'use strict';
+
+        const e = React.createElement;
+
+        class Content extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+
+            render() {
+                return (
+                    <article>
+                        <p>Charlie Park is an indie web developer and family man in SF.</p>
+                        <p>He thinks you&rsquo;re swell.</p>
+                    </article>
+                );
+            }
+        }
+
+        const domContainer = document.querySelector('#content_container');
+        ReactDOM.render(e(Content), domContainer);
+
+    </script>
+    </body>
+</html>
