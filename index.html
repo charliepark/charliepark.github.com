@@ -11,6 +11,7 @@
           font-weight: bold;
           margin: 2vh 2vw;
         }
+        p+p{margin-top:20vh}
     </style>
   </head>
   <body>
@@ -25,4 +26,9 @@
     <a href="https://tumblr.com/charliepark"           rel="author me"></a>
     <a href="https://twitter.com/charliepark"          rel="author me"></a>
   </body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+    };
+  </script>
 </html>
