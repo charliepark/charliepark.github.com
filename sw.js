@@ -1,6 +1,6 @@
 console.log('Service Worker loaded / updated');
 
-const cacheName = '20190211-0719';
+const cacheName = '20190211-0840';
 console.log(cacheName);
 
 self.addEventListener('install', (event) => {

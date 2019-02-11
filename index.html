@@ -29,10 +29,8 @@
     <a href="https://www.linkedin.com/in/charlie-park" rel="author me"></a>
     <a href="https://tumblr.com/charliepark"           rel="author me"></a>
     <a href="https://twitter.com/charliepark"          rel="author me"></a>
+    <script>
+      if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js') };
+    </script>
   </body>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-    };
-  </script>
 </html>
