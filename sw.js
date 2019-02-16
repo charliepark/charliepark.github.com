@@ -1,6 +1,6 @@
 console.log('Service Worker loaded / updated');
 
-const cacheName = '20190211-0840';
+const cacheName = '20190215';
 console.log(cacheName);
 
 self.addEventListener('install', (event) => {
@@ -12,6 +12,7 @@ self.addEventListener('install', (event) => {
         [
           'index.html',
           'favicon.ico',
+          'PearBudget.svg',
         ]
       );
     })
