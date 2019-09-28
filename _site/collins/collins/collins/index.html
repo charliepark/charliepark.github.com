@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Collins • A simple microblog, mostly just for you.</title>
+	<style>
+		a{border-bottom:1px solid rgba(255,255,255,0.5);color:inherit;text-decoration:none}
+		a:hover{border-color:rgba(255,255,255,0.9)}
+		article{margin: 0 auto;max-width:800px}
+		h1{font-size:23vw;font-weight:400;letter-spacing:.15em;line-height:1;margin:0;padding:80px 0 0;text-align:center;text-shadow:0 0 10px #000}
+		h2{font-size:24px;font-weight:normal;line-height:1.4;margin: 0 auto;padding: 120px 20px 20px;text-align:center;text-shadow:0 0 10px #000}
+		h2 span{display:inline-block}
+		hr{border:0;border-bottom:1px solid rgba(255,255,255,0.25);height:0;margin:40px 0 }
+		html{background:#000 url('earth.jpg') 50% 87% no-repeat;background-size:24px;color:rgba(255,255,255,0.9);font-family: 'Avenir Next',Avenir,'Helvetica Neue',sans-serif;font-size:20px;letter-spacing:0.02em;line-height:1.4}
+		main{margin:0 auto;padding:0 20px 100vh}
+		#moon{background:url('moon.jpg');background-size:cover;width:100vw;height:100vw;left:-1vw;margin-top:-50vw;position:absolute;z-index:-1}
+		p{line-height:1.6;margin: 2em;}
+
+		/* tablets and desktop */
+		@media only screen and (min-width: 768px){
+			h1{font-size:160px}
+			h2{font-size:27px;padding:20px 0 10vw}
+			html{font-size:24px}
+			#moon{margin-top:-70vw}
+		}
+
+		/* large screens */
+		@media only screen and (min-width: 1700px) {
+			h1{text-align:left;margin-left:-16px}
+			h2{font-size:32px;text-align:left}
+			html{background-attachment: fixed;background-position: 97% 94.5%;font-size: 30px}
+			main{padding:60px 0 90px 43%}
+			#moon{height:3000px;margin:0;position:fixed;left:-3000px;top:-1500px;transform:translateX(50vw);right:auto;width:3000px}
+		}
+
+	</style>
+</head>
+<body>
+	<div id="moon"></div>
+	<main>
+		<h1>Collins</h1>
+		<h2><span>A simple microblogging tool,</span> <span>mostly just for you.</span></h2>
+		<article>
+			<section>
+				<p>Mike Collins was all alone.
+				<p>He knew the two nearest humans were at least 2,000 miles away. After them, nobody for another 232,000 miles. (As far, it turns out, as the earth is from the moon.)
+				<p>His radio stopped working 14 minutes ago. It would be 34 more before he’d be back in contact with the world.
+				<p style="text-indent:-0.4em;">&ldquo;I am alone now, truly alone, and absolutely isolated from any known life. I am it. If a count were taken, the score would be three billion plus two over on the other side of the moon, and <em>one plus God knows what on this side</em>.&rdquo;
+			</section>
+			<hr>
+			<section>
+				<p>Sometimes it’s good to be solo.
+				<p>Get away from the bustle of social media. Take notes for your own benefit. Log your days. Journal your dreams.
+				<p>You, your microblogging software, and <em>God knows what on this side</em>.
+				<p>That’s the premise of Collins.
+				<p>Collins is a simple microblogging tool. Load it onto your own server and have it running in 30 seconds. Then post at will.
+				<p>A straightforward integration with Slack lets you post via slash command. Or from your terminal, using curl. Or post from the web. Style it how you wish. RSS is included, in case you want to let other folks read along. Flip a switch and your posts are automatically backed up to GitHub. Everything’s configurable.
+				<p>Collins is simple, charming, free, and ready for you to <a href="https://github.com/charliepark/collins">get started now</a>.
+			</section>
+		</article>
+	</main>
+</body>
+</html>
