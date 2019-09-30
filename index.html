@@ -126,5 +126,20 @@
 <p>This is a template I built that lets you <strong>jumpstart a Sinatra project using the great authentication library Omniauth</strong>. It lets you get the skeleton of a web app (with user accounts, via Twitter, or GitHub, etc.) functioning inside a few minutes.</p>
 
 	</section>
+
+	<script>
+		navigator.serviceWorker.getRegistrations().then(function(registrations) {
+			for(let registration of registrations) {
+		 		registration.unregister()
+	 		}
+		});
+		if ('caches' in window) {
+    	caches.keys().then(function(keyList) {
+      	return Promise.all(keyList.map(function(key) {
+					return caches.delete(key);
+        }));
+      });
+		}
+	</script>
 </body>
 </html>
