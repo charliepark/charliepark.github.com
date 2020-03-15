@@ -7,7 +7,13 @@
   <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
 	<title>Unity</title>
-	<style>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:type" content="website" />
+	<meta name="twitter:url" property="og:url" content="http://charliepark.org" />
+	<meta name="twitter:title" property="og:title" content="Unity" />
+	<meta name="twitter:description" property="og:description" content="A preimagining of the Democratic debate, in light of the coronavirus pandemic." />
+	<meta name="twitter:image" property="og:image" content="http://charliepark.org/images/bernie_biden.jpg" />
+		<style>
 	/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
@@ -18,35 +24,20 @@ html { box-sizing: border-box }
 * { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5 }
 a { color: inherit; text-decoration-color: #9c0 }
 b, dt, h1, h2, strong { font-weight: 600 }
-h1, p { margin: .5rem }
+h1, p { margin: .8rem; line-height: 1.6; }
 header h1 { font-size: 2rem; margin: 0; padding: 20px; }
-hr {
-  background: hsla(0, 0%, 0%, 0.4);
-  border: 0;
-  box-shadow: none;
-  display: block;
-  height: 1px;
-  margin: 1rem auto;
-  opacity: .5;
-	width: 100%;
-}
+hr { background: hsla(0, 0%, 0%, 0.4); border: 0; display: block; height: 1px; margin: 1rem auto; opacity: .5; width: 100%; }
 
-html {
-  background: #fff;
-  color: #222;
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 35px;
-  margin: 0 auto;
-	padding: 0;
-}
+html { background: #fff; color: #222; font-family: system-ui, -apple-system, sans-serif line-height: 35px; margin: 0 auto; padding: 0; }
 
 li { margin-left: 3rem; list-style: disc;padding-left: .5em }
 
 main { margin: auto; max-width: 960px; padding-left: 80px; padding-right: 80px; padding-bottom: 120px}
 section { display: grid; grid-template-columns: 100px auto}
-section h1 { font-size: 1rem }
+section h1 { font-size: 1rem; }
 section { margin: 1rem;padding: 1.1rem 2rem }
-section hr, section p, section ul { grid-column-start: 2 }
+section hr, section p, section ul, .article_headline { grid-column-start: 2 }
+.article_headline { font-size: 3rem }
 .blocking { border: 1px solid #888 }
 .warren { background: hsla(152, 45.5%, 80.6%, 0.3) }
 .biden { background: hsla(225, 61.7%, 35.9%, 0.1) }
@@ -56,16 +47,28 @@ section hr, section p, section ul { grid-column-start: 2 }
 footer { position: fixed; left: 20px; bottom: 20px; width: 100px; }
 footer a { display: block }
 footer svg { transform: translate(-5px, 3px) }
+
+@media screen and (max-width: 900px) {
+
+	main { padding: 0 0 50px }
+	section { display: block; font-size: 14px; padding: .2rem }
+
+	footer { background: #ccc; border-top: 1px solid #888; display: flex; justify-content: center; margin: 0; padding: 0 10px 10px; left: 0; bottom: 0; width: 100%;}
+	footer a { align-items: flex-end; display: flex; padding-bottom: }
+	footer svg { max-height: 40px; }
+	footer span { background: flex-grow: 1; display: block; padding: 0 0 5px 5px; font-size: 14px;}
+}
+
 	</style>
 </head>
 <body>
 	<header>
 		<h1>Charlie Park</h1>
 	</header>
-	<main>
-
+	<main><article>
 		<section>
-			<p><em>~ a preimagining ~</em></p>
+			<h1 class="article_headline">Unity</h1>
+			<p><em>~ a preimagining of the Democratic debate, in light of the coronavirus pandemic ~</em></p>
 		</section>
 
 		<section class="blocking">
@@ -278,11 +281,11 @@ footer svg { transform: translate(-5px, 3px) }
 			<p>And God bless the <em>United</em> States of America.</p>
 		</section>
 
-	</main>
+	</article></main>
 	<footer>
 		<a href="https://pearbudget.com">
 			<svg viewBox="0 0 150 194" role="img" aria-label="The PearBudget logo, a minimalist pear."><g style="fill:#fff;stroke-width:1.5" aria-hidden="true"><circle cx="76" cy="124" r="67" style="stroke:#9c0" aria-hidden="true"></circle><circle cx="57" cy="75" r="44" aria-hidden="true"></circle><circle cx="57" cy="75" r="42" style="stroke:#9c0" aria-hidden="true"></circle><circle cx="59" cy="80" r="40.3" aria-hidden="true"></circle><path d="M48,44 A30,30 0 0,1 48,13" style="fill:none;stroke:#8D755B;stroke-linecap:round" aria-hidden="true"></path></g></svg>
-			This hypothetical brought to you by PearBudget
+			<span>This hypothetical brought to you by PearBudget</span>
 		</a>
 	</footer>
 	<script>
