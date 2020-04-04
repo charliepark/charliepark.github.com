@@ -12,13 +12,14 @@
 	<meta name="twitter:url" property="og:url" content="https://charliepark.org" />
 	<meta name="twitter:title" property="og:title" content="Charlie Park" />
 	<meta name="twitter:description" property="og:description" content="That nice guy you met that one time." />
-	<meta name="twitter:image" property="og:image" content="https://charliepark.org/images/charliepark_spring_2020.png" />
+	<meta name="twitter:image" property="og:image" content="/images/charliepark_spring_2020.png" />
 		<style>
       a { background: #201c0c; border: 3px double #e5d320; border-width: 3px 0;  color: #e2dfce; font-weight: 500;letter-spacing: .5px; padding: 1px 2px; text-decoration: none; }
       a:hover { color: #e5d320 }
       b { font-weight: 500 }
-      h1, h2 { font-size: 4rem; font-weight: 600; line-height: 1; margin: 0 }
+      h1, h2, h3 { font-size: 4rem; font-weight: 600; line-height: 1; margin: 0 }
       h2 { font-size: 3rem }
+      h3 { clear: right; font-size: 1.5rem; padding-top: 3rem; }
 
       html, body, p { box-sizing: border-box }
       html {
@@ -36,7 +37,7 @@
         padding: 0;
         width: 100%;
       }
-      body { margin-left: 20vw }
+      body { hyphens: auto; margin-left: 20vw }
       code { font-size: 1rem }
       header {
         display: flex;
@@ -47,6 +48,7 @@
         justify-content: flex-end;
       }
       main {
+        font-weight: 300;
         max-width: 600px;
         padding-right: 20vw;
         padding-bottom: 5rem;
@@ -68,9 +70,10 @@
         margin: 0;
         padding: 0;
       }
-      main p { font-weight: 300;}
       meta-information p { width: 45% }
       section { padding: 0 0 4rem }
+      section img { clear: right; float: right; margin: 1em 0 0 1em; max-width: 200px }
+      #projects p { margin-right: 210px; }
 
 @media screen and (max-width: 1300px) {
   html { background-size: 36vw; }
@@ -120,6 +123,74 @@
       <p><b><a href="/santa">Santa is a Game People Play</a>:</b> How we did Christmas with our kids. It worked well. tl;dr: treat your kids like friends who you want to get in on the joke.</p>
 
       <p><b><a href="/unity">Unity</a>:</b> A recent one. A “preimagining” I wrote before the March 15th Democratic Debate. It didn’t play out like this, and who knows how it’s going to play out in the midst of the pandemic. I’m still clinging to hope that Elizabeth Warren will save us all. But this was one possible (if unlikely) future at the time.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p style="margin-right: 0">Many of these are defunct, but were fun, either conceptually or technically. Most of them actually predate my time at Slack (and, before that, IFTTT), so they’re a bit old. Nevertheless, they were fun to build, and I figured I’d share them.</p>
+
+      <h3 style="transform: translateX(-.2em)">
+        <svg viewBox="0 0 190 223" width="1.25em" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: translateY(.33em)">
+          <path d="M121.849 185.266c34.771-12.656 52.699-51.103 40.044-85.8749-12.656-34.7715-51.104-52.6999-85.8751-40.0441-34.7715 12.6558-52.6999 51.103-40.0441 85.875 12.6558 34.771 51.1033 52.7 85.8752 40.044z" fill="#e5d320" stroke="#201c0c" stroke-width="5.5" />
+          <path d="M94.829 111.03c21.797-7.933 33.036-32.0347 25.102-53.8318-7.933-21.7971-32.0346-33.0357-53.8317-25.1023-21.7971 7.9335-33.0357 32.0349-25.1023 53.832 7.9335 21.7971 32.0349 33.0361 53.832 25.1021z" fill="#e5d320" stroke="#201c0c" stroke-width="5.5"/>
+          <path d="M103.38 134.522c20.24-7.366 22.426-52.4109 14.587-73.9485-7.839-21.5376-30.6015-33.0253-50.8416-25.6585-20.2402 7.3668-30.2932 30.7985-22.4542 52.336 7.839 21.538 38.4682 54.638 58.7088 47.271z" fill="#e5d320"/>
+          <path d="M70.1896 47c-2.8226-4.6775-4.3144-10.0369-4.3144-15.5 0-5.4631 1.4918-10.8226 4.3144-15.5" stroke="#201c0c" stroke-width="5" stroke-linecap="round"/>
+        </svg>PearBudget</h3>
+
+      <p style="margin-right: 0">This is an indie webapp I built, originally in Rails, 12 years ago. When I left Slack (fall of 2018) I went back to work on this, solo, to rewrite it from the ground up. I built it this time around in PHP and React (with Hooks, ES6, etc.). Currently still working on the responsive / mobile view, but I thought I’d share it here, since it’s what takes up most of my days.</p>
+      <p style="margin-right: 0">I wrestle with sharing it, as ① I feel it still has areas I want to improve, and ② it is — by design — <em>incredibly</em> simple. But it’s made a postive impact on the world, and I’m really proud of that. Some examples:</p>
+      <ul>
+        <li>A mom of an adult son with special needs wrote to say that the PearBudget design was perfect for him to record spending for Social Security purposes. I can’t think of higher praise for a site’s UX design.</li>
+        <li>A husband wrote in to comment that PearBudget “practically saved my marriage”. (!)</li>
+        <li>A wife (different couple) wrote in, saying “in 10 years of marriage we have never been so aware of our spending”.</li>
+      </ul>
+      <p style="margin-right: 0">There’s a steady stream of notes like that from users. I cherish every one. (Also, how cute is that logo?)<a href="https://pearbudget.com" aria-label="visit Pear Budget dot com">→</a></p>
+
+      <h3>correctEmailTypos.js</h3>
+      <p style="margin-right: 0">If you run a webapp, you’ve probably seen someone accidentally sign up with an account at gmal.com, or yaho.com, or something similar. Typos in email domains are bad for all parties.</p>
+      <p style="margin-right: 0">This is a so-basic-it’s-kind-of-clever? script to correct those. <b>It’s not impressive in the least, but ends up being invisibly useful. To me, that’s one of the hallmarks of a good piece of technology.</b> <small><a href="https://github.com/charliepark/correct_email_typos" aria-label="visit this project at GitHub">→</a></small></p>
+
+      <h3>Find You A Gif</h3>
+      <img src="images/findyouagif/findyouagif.png" alt="A screenshot of a website showing a collection of gifs" />
+      <p>Again, super-basic. Uses the Giphy API, and ends up being a good deal faster than their own site. Useful for finding just the right GIF for your in-the-moment joke in Slack. I guess this was a JAMStack site, about four years before that was a term. <small><a href="http://findyouagif.com" aria-label="visit Find You A Gif dot com">→</a></small></p>
+
+      <h3>Collins</h3>
+      <img src="images/collins/collins.png" alt="A screenshot of the Collins homepage" />
+      <p>A very basic personal microblog for you to run on your own server. Install one file and it does the rest. You can post to it via the web, curl, or Slack. Technically, it’s a static site generator, but that feels a bit fancy for what amounts to about 300 lines of code.<small><a href="https://github.com/charliepark/collins" aria-label="visit this project at GitHub">→</a></small></p>
+
+      <h3>Monotask</h3>
+      <img src="images/monotask.png" alt="A screenshot of the Monotask app" />
+      <p>I’m really interested in how we can better engage in meaningful work. Or, alternately, how we can keep from getting distracted by non-meaningful work. I spent some time working on a startup with a friend, focused on attention management. The core idea: Monotask let you turn off the distracting parts of the internet, so you could do good work.</p>
+      <p>I was proud of the interface I designed and built, and of the total service we built together. But in the end, we couldn’t get enough paying subscribers to justify the work that was involved in keeping it going. Ironically, Monotask became an object lesson in itself — a distraction from other work that deserved deeper attention than it was getting. So we shut Monotask down.</p>
+
+      <h3>attnmgmtblog</h3>
+      <img src="images/attnmgmtblog.png" alt="A screenshot of the Attention Management Blog" />
+      <p>In line with my interest in attention management (see Monotask, above), this was a tumblelog I kept from 2008 – 2018. Quotes, links, excerpts, and other foraged bits from the web that address focus, distraction, and doing good work. (This was on Tumblr, so isn’t here as an example of my coding; I just found the content.) <small><a href="https://attnmgmtblog.com" aria-label="visit the Attention Management Blog">→</a></small></p>
+
+      <h3>Remojōbo</h3>
+      <img src="images/remojobo/remojobo.png" alt="A screenshot of a job board website" />
+      <p>As a side project, I built a job board for remote folks. This was back in 2013. Someone was interested in buying it, so I sold it and moved on to other things. Unfortunately, it didn’t last too long once they had it.</p>
+
+      <h3>Blipnote</h3>
+      <img src="images/blipnote.png" alt="A screenshot of a fairly minimalist website, showing a form and a submit button." />
+      <p>Back before DMing yourself notes in Slack was a thing, I often wanted to quickly capture notes, ideas, and other content, often while out and about. Blipnote made that super-easy.</p>
+      <p>Oh, hey. Another JAMStack site from way way before people called them that. A static HTML page, plus some Javascript and the Mailchimp API. Not any more complicated than it needed to be.</p>
+
+      <h3>The Measure</h3>
+      <img src="images/themeasure.png" alt="A screenshot of the home page for The Measure." />
+      <p>Early in my career, I was a book designer and editor. I miss that kind of layout / design work. So in 2015, I created a monthly contest for type nerds to contribute the first chapter of a selected public domain work. We got some great submissions! (One example<span style="color: red">:</span> I think one submission for Dracula used red ink for all of the colons? Fun fun. Spooky stuff.) Anyway, I realized that I was doing more administrative work than design, so I wrapped it up after about three contests.</p>
+
+      <h3>Beautiful Buttons for Twitter Bootstrappers</h3>
+      <img src="images/beautiful_buttons_for_twitter_bootstrappers/beautiful_buttons_screenshot.png" alt="A screenshot of the Beautiful Buttons project." />
+      <p>Back when Bootstrap was new, I made this as a CSS generator for people wanting better button options. Slide some sliders — for hue / saturation / lightness / puffiness — and some JS generated the relevant CSS. You could copy the CSS and be good to go.</p>
+      
+      <h3>Some Way-Old jQuery Plugins</h3>
+      <img src="images/hatchshow.png" alt="A screenshot of the Hatchshow homepage." />
+      <img src="images/parentheticals_example.png" alt="A screenshot of Parentheticals in use." />
+      <p>Hatchshow and Parentheticals were some jQuery plugins I wrote to help with different layout techniques.</p>
+      <p>Hatchshow was named after the HATCH SHOW PRINT print shop, who use a similar technique for their posters.</p>
+      <p>Parentheticals was named after a David Foster Wallace piece in <em>The Atlantic</em> that used his nested footnotes in a really interesting way.</p>
+
     </section>
 
     <section>
