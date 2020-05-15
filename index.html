@@ -2,136 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="Charlie Park is an indie web developer and family man, in San Francisco.">
-	<link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml">
-  <link rel="icon" href="/favicon.png">
+	<meta name="description" content="Charlie Park believes in you.">
+	<!-- <link rel="alternate" href="http://charliepark.org/feed/" type="application/rss+xml"> -->
+  <!-- <link rel="icon" href="/favicon.png"> -->
   <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
-	<title>Charlie Park</title>
+	<title>Charlie Park believes in you.</title>
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="og:type" content="website" />
 	<meta name="twitter:url" property="og:url" content="https://charliepark.org" />
 	<meta name="twitter:title" property="og:title" content="Charlie Park" />
-	<meta name="twitter:description" property="og:description" content="That nice guy you met that one time." />
-	<meta name="twitter:image" property="og:image" content="/images/charliepark_spring_2020.png" />
-		<style>
-      a { background: #201c0c; border: 3px double #e5d320; border-width: 3px 0;  color: #e2dfce; font-weight: 500;letter-spacing: .5px; padding: 1px 2px; text-decoration: none; }
-      a:hover { color: #e5d320 }
-      b { font-weight: 500 }
-      h1, h2, h3 { font-size: 4rem; font-weight: 600; line-height: 1; margin: 0 }
-      h2 { font-size: 3rem }
-      h3 { clear: right; font-size: 1.5rem; padding-top: 3rem; }
-
-      html, body, p { box-sizing: border-box }
-      html {
-        background-attachment: fixed;
-        background-color: #e5d320;
-        background-image: url('images/epa_mask.png');
-        background-position: 100% 100%;
-        background-size: 50vh;
-        background-repeat: no-repeat;
-        color: #201c0c;
-        font-family: system-ui, -apple-system, sans-serif;
-        height: 100%;
-        line-height: 1.4;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-      }
-      body { hyphens: auto; margin-left: 20vw }
-      code { font-size: 1rem }
-      header {
-        display: flex;
-        font-weight: 100;
-        flex-direction: column-reverse;
-        line-height: 1.2;
-        padding: 4rem 0 40vh;
-        justify-content: flex-end;
-      }
-      main {
-        font-weight: 300;
-        max-width: 600px;
-        padding-right: 20vw;
-        padding-bottom: 5rem;
-      }
-      meta-information {
-        display: flex;
-        font-weight: 100;
-        justify-content: space-between;
-        max-width: 100%;
-        width: 390px;
-      }
-      .description {
-        border: 1px solid #201c0c;
-        border-width: 1px 0;
-        margin: 1em 0;
-        padding: 5px 0 8px;
-      }
-      header p {
-        margin: 0;
-        padding: 0;
-      }
-      meta-information p { width: 45% }
-      section { padding: 0 0 4rem }
-      section img { clear: right; float: right; margin: 1em 0 0 1em; max-width: 200px }
-      #projects p { margin-right: 210px; }
-
-@media screen and (max-width: 1300px) {
-  html { background-size: 36vw; }
-  body { margin-left: 4vw }
-  header { padding: 1rem 0 20vh }
-}
-@media screen and (max-width: 1000px) {
-  html { background-position: 100% 150px; background-attachment: scroll; }
-  body { margin-left: 4vw }
-  header { padding: 1rem 0 30vh }
-  main { padding: 0 }
-}
-@media screen and (max-width: 768px) {
-  html { background-position: 100% 150px; background-size: 230px}
-}
-
-	</style>
+	<!-- <meta name="twitter:description" property="og:description" content="That nice guy you met that one time." /> -->
+	<!-- <meta name="twitter:image" property="og:image" content="/images/charliepark_spring_2020.png" /> -->
+		<style>html { font-family: system-ui, -apple-system, sans-serif; padding: 40vh 20px 0; text-align: center }</style>
 </head>
-<body>
-  <header>
-    <h1>Charlie Park</h1>
-    <p class="description">Family man. Believes in you.</p>
-    <meta-information>
-      <p>
-        Still listening to:<br>
-        The Mountain Goats
-      </p>
-      <p>
-        Late Spring 2020<br>
-        San Francisco CA
-      </p>
-    </meta-information>
-  </header>
-  <main>
-
-    <section>
-      <h2>Hi there.</h2>
-      <p>
-        I hope your day is going well. I’ve got a few pies in the oven.<br>
-        One’ll be done soon and I promise I’ll post it here.
-      </p>
-      <p>In the meantime, take care.</p>
-    </section>
-  </main>
-	<script>
-		navigator.serviceWorker.getRegistrations().then(function(registrations) {
-			for(let registration of registrations) {
-		 		registration.unregister()
-	 		}
-		});
-		if ('caches' in window) {
-    	caches.keys().then(function(keyList) {
-      	return Promise.all(keyList.map(function(key) {
-					return caches.delete(key);
-        }));
-      });
-		}
-	</script>
-</body>
+<body><h1>Charlie Park believes in you.</h1></body>
 </html>
