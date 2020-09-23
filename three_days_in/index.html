@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Charlie Park’s tumblelog</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* General CSS for the blog */
+a { color: inherit; text-decoration: none; }
+
+blockquote {
+  border-left: 2px solid #e6e6e6;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+body {
+  background-image: url('/images/arrow.webp');
+  background-size: 200px 125px;
+  background-position: 48.85% -2px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Avenir Next', Avenir, system-ui, -apple-system, sans-serif;
+  justify-content: space-between;
+  line-height: 1.5;
+  margin: 6rem 0 0;
+  min-height: 100vh;
+}
+
+code {
+  font-family: 'Monaco', monospace;
+  font-size: .8em;
+  background: #e6e6e6;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+pre code { border: none; padding: 0 }
+
+footer {
+  background: #464646;
+  color: hsla(0, 0%, 100%, 0.8);
+  margin-top: 5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 { font-size: 2rem; margin-top: 1rem }
+header h1 { font-size: 4rem; margin-bottom: 0 }
+
+h2 { font-size: 1.5rem }
+
+h3 { font-size: 1rem }
+
+header { text-align: center }
+
+html {
+  color: hsla(0, 0%, 0%, 0.9)
+}
+html.darkmode {
+  background: #272727;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+img { max-width: 100% }
+
+main {
+  flex-grow: 1;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+nav { padding: 1rem }
+
+strong { font-weight: 600 }
+
+/* Not supported anywhere yet, but in the spec */
+p:has(> img) { text-align: center }
+
+.callout_box { background: #ececec; border-radius: .25rem; padding: .5rem 1rem; }
+.callout_box p:first-child { margin-top: 0 }
+.callout_box p:last-child { margin-bottom: 0 }
+
+.postbody { padding: 20px }
+nav a, .postbody a { border-bottom: 1px solid #e6e6e6; color: hsl(197, 100%, 30%); font-weight: 600; text-decoration: none }
+nav a { margin: .5rem }
+.postbody a:hover { border-color: #c6c6c6 }
+
+.postdate {
+  border-bottom: 1px solid #e6e6e6;
+  display: block;
+  font-size: .75rem;
+  letter-spacing: .8px;
+  margin-top: 4rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+.postdate a { color: #545454; display: block; padding: 0 1rem }
+
+/* Post-specific CSS */
+
+.image { text-align: center }
+.image p { margin: 0 }
+
+.poem .postbody{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.poem h1 { margin-bottom: 0 }
+.poem h1 + p {
+  font-size: .75rem;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.text {}
+
+.quote .postbody { font-size: 2rem; }
+.quote.long .postbody { font-size: 1.5rem; }
+.quote.short .postbody { font-size: 3rem; line-height: 1.3 }
+.quote p { padding-left: 2rem }
+.quote p:first-child { padding-left: 2rem; position: relative;}
+.quote p:first-child::before { content: '“'; font-family: Georgia; font-size: 4rem; line-height: 3rem; position: absolute; top: 10px; left: 0; }
+.quote p:last-child { font-size: 1rem; text-align: right }
+
+.video iframe { width: 100% !important }
+
+
+
+/* Minified code styling; https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css  */
+code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:0 0;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">Charlie Park!</a></h1>
+    <div>(or, rather, his tumblelog)</div>
+    <nav><a href="/">home</a><a href="/about">about me</a><a href="/projects">projects</a></nav>
+  </header>
+  <main>
+    
+<article class="text">
+<time class="postdate" datetime="2020-09-18T07:00:00.000Z">
+  <a href="">September 18, 2020</a>
+</time>
+<div class="postbody">
+  <h1>Three Days In</h1>
+<p>I’m three days into using <a href="https://github.com/charliepark/tumblelog/">this tumblelogging tool</a>, and am pretty happy with it. Obviously, the test is how I’ll use it over time, but things are going well so far.</p>
+<h2>A few things I love</h2>
+<h3>It’s great how low-stress it is</h3>
+<blockquote>
+<p>I don’t worry about whether things are “good enough” to post. I just post them. That’s a big improvement over what I had before, where I let the perfect be the enemy of the good, and, consequently, didn’t post.</p>
+</blockquote>
+<h3>The different formatting types are fun</h3>
+<blockquote>
+<p>I love being able to come up with new post types, and then to style them independently. For example, yesterday, when I added the “poem” type. I’ll come up with a few more, for sure. I still haven’t come up with the “link” format, but look forward to the occasion where I do.</p>
+</blockquote>
+<h3>Posting and hosting are both easy</h3>
+<blockquote>
+<p>It’s really easy to add a new post right now. Create a file with the right Markdown format and frontmatter, run <code>eleventy --serve</code> to see what it looks like, and then commit to git and push remote. (TBH, I actually just leave an iTerm window open with <code>eleventy --serve</code> going all the time.)</p>
+</blockquote>
+<blockquote>
+<p>The workflow is a little dependent on VS Code, where I’m writing these, and running eleventy on my local machine. And I have a few ideas around requiring less of the template in the Markdown file that I need to play with. But it’s working for now.</p>
+</blockquote>
+<h2>Some things to work on</h2>
+<h3>Less metawork</h3>
+<aside class="callout_box">
+  <p><b>Update:</b> I’ve fixed this now! See here for more: <a href="/smarter_permalinks_in_eleventy">Smarter Permalinks in Eleventy</a></p>
+</aside>
+<blockquote>
+<p>Right now I have a bit of duplication of effort, in that I name the file something like <code>2020_09_18_three_days_in.md</code> and then add metadata like</p>
+</blockquote>
+<pre class="language-text"><code class="language-text">---<br>date: "2020-09-18"<br>permalink: "three_days_in/"<br>---</code></pre>
+<blockquote>
+<p>The eleventy docs say that it’ll use any YYYY-MM-DD in the file name as a date, but I haven’t found that to be the case (I know my date in the filename is using underscores; even when using dashes it doesn’t seem to quite work). It’d be nice to add something to the compiler / preferences that interpreted the filename correctly and then just used it for the date and permalink. Perhaps there’s a way to configure that, and I just haven’t found it yet.</p>
+</blockquote>
+<h3>Mmmmmaybe a posting interface?</h3>
+<blockquote>
+<p>I can imagine a Svelte app that gives an easy posting input. Name the permalink, adjust the date if needed (but default to now), and give an input field for posting the content. Write the .md file on submission, then run <code>eleventy</code> to process it. At that point, you could just add a button that pushes it to GitHub as well. That’d be pretty cool.</p>
+</blockquote>
+<h3>RSS, or posting to Twitter, etc.</h3>
+<blockquote>
+<p>Right now, hardly anybody knows about this tumblelog, and that’s fine. (Hi, folks who are here!) But I could see it being useful to have some sort of “push this content to Twitter”. I’m not sure how that works with eleventy, and it’s possible there isn’t a convenient hook to do that. But it’d be cool to have that as an option. Maybe it’d be another bit of metadata in the header — if <code>post_to_twitter: true</code>, push it.</p>
+</blockquote>
+<h3>Social?</h3>
+<blockquote>
+<p>I’ve realized that one of the things that Tumblr did well was to give you a place to both create and consume. Twitter, too. Right now, this is just a place where I publish stuff. If I ever decide to make this more of a thing, it’d be helpful to have a place where I can read other people’s stuff, too. (I’ve always wondered why RSS readers don’t also give you a way to publish your own stuff. [Or maybe they do! Dunno!])</p>
+</blockquote>
+<h3>Separating <em>my</em> instance of this from the tool to let you do it yourself</h3>
+<blockquote>
+<p>When I wrote my two-times-ago blog, in Jekyll, a lot of people cloned it on GitHub, I believe to help them with a tagging issue that I solved. The problem was that I began to get worried about changing my blog (because it might mess up other peoples’ stuff?). That’s kind of silly. But if I ever do make this a more general-purpose tool for folks, I’ll want to figure out the best way to split them up. Very do-able; I just haven’t had to think through that piece yet.</p>
+</blockquote>
+<h2>So.</h2>
+<p>So that’s where things are right now. It’s still fun, and I’m enjoying it. And I have a few clear ”next thing to work on”s.</p>
+<p>If you have any feedback, let me know! My DMs on Twitter (@charliepark) are open, though I’m on a bit of a Twitter break at the moment. Nevertheless, say hi!</p>
+
+</div>
+</article>
+
+  </main>
+  <footer>
+    <p>Hey there. I’m Charlie. I like adventures, friends, and adventures with friends.</p>
+    <p>Would love for you to say hi! charlie@charliepark.org</p>
+  </footer>
+</body>
+</html>
+
