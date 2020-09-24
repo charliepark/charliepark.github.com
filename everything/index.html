@@ -51,7 +51,9 @@ header h1 { font-size: 4rem; margin-bottom: 0 }
 
 h2 { font-size: 1.5rem }
 
-h3 { font-size: 1rem }
+h3 { font-size: 1.2rem }
+
+h4 { font-size: 1rem }
 
 header { text-align: center }
 
@@ -83,18 +85,23 @@ p:has(> img) { text-align: center }
 .callout_box p:first-child { margin-top: 0 }
 .callout_box p:last-child { margin-bottom: 0 }
 
+.gray { color: #545454 }
+
 .postbody { padding: 20px }
 nav a, .postbody a { border-bottom: 1px solid #e6e6e6; color: hsl(197, 100%, 30%); font-weight: 600; text-decoration: none }
 nav a { margin: .5rem }
 .postbody a:hover { border-color: #c6c6c6 }
 
+.smallcaps, .postdate, .poem h1 + p {
+  font-size: .75em;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
 .postdate {
   border-bottom: 1px solid #e6e6e6;
   display: block;
-  font-size: .75rem;
-  letter-spacing: .8px;
   margin-top: 4rem;
-  text-transform: uppercase;
   text-align: right;
 }
 .postdate a { color: #545454; display: block; padding: 0 1rem }
@@ -110,11 +117,6 @@ nav a { margin: .5rem }
   flex-direction: column;
 }
 .poem h1 { margin-bottom: 0 }
-.poem h1 + p {
-  font-size: .75rem;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-}
 
 .text {}
 
