@@ -31,6 +31,15 @@ button {
   padding: .075em 1em;
 }
 
+figcaption {
+  color: hsla(0, 0%, 0%, 0.7);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  justify-content: center;
+  text-align: center;
+}
+
 code {
   font-family: 'Monaco', monospace;
   font-size: .8em;
@@ -39,6 +48,8 @@ code {
   padding: 2px 3px;
 }
 pre code { border: none; padding: 0 }
+
+figure { margin: 0 }
 
 footer {
   background: #464646;
