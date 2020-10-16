@@ -136,6 +136,7 @@ nav a { margin: .5rem }
   flex-direction: column;
 }
 .poem h1 { margin-bottom: 0 }
+.poem pre { font-family: inherit }
 
 .serif .postbody { font-family: 'Hoefler Text', serif; line-height: 1.6 }
 
