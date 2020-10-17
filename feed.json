@@ -9,6 +9,13 @@
   "items": [
   
     {
+      "id": "https://charliepark.org/photomicrography/",
+      "url": "https://charliepark.org/photomicrography/",
+      "title": "image: /photomicrography/",
+      "content_html": "<p><img src='/images/photomicrography/photomicrography_1.jpg' alt='A colorful image from a light microscope: A fluorescent turtle embryo'></p><p><img src='/images/photomicrography/photomicrography_2.jpg' alt='A colorful image from a light microscope: The dorsal view of bones and scales (blue) and lymphatic vessels (orange) in a juvenile zebrafish'></p><p><img src='/images/photomicrography/photomicrography_3.jpg' alt='A colorful image from a light microscope: An octopus bimaculoides embryo'></p><p>“<a href='https://www.nikonsmallworld.com/'>The Nikon Small World Competition</a> first began in 1975 as a means to recognize and applaud the efforts of those involved with photography through the light microscope. Since then, Small World has become a leading showcase for photomicrographers from the widest array of scientific disciplines.”</p>"
+    },
+  
+    {
       "id": "https://charliepark.org/dont_be_afraid_of_the_clocks/",
       "url": "https://charliepark.org/dont_be_afraid_of_the_clocks/",
       "title": "poem: /dont_be_afraid_of_the_clocks/",
