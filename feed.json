@@ -9,6 +9,13 @@
   "items": [
   
     {
+      "id": "https://charliepark.org/oryoki/",
+      "url": "https://charliepark.org/oryoki/",
+      "title": "image: /oryoki/",
+      "content_html": "<p><img src='/images/oryoki.jpg' alt='A set of six black Japanese bowls of different sizes, laid out on a table.'></p><p>Ōryōki: “vessel that contains just enough”<br>(From <a href='https://pojstudio.com/products/oryoki'>POJ Studio</a>, via <a href='https://twitter.com/brookshelley/status/1319758516677046272'>Brook Shelley</a>)</p>"
+    },
+  
+    {
       "id": "https://charliepark.org/photomicrography/",
       "url": "https://charliepark.org/photomicrography/",
       "title": "image: /photomicrography/",
