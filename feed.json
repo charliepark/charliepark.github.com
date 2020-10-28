@@ -9,6 +9,20 @@
   "items": [
   
     {
+      "id": "https://charliepark.org/the_standard_you_walk_past/",
+      "url": "https://charliepark.org/the_standard_you_walk_past/",
+      "title": "video: /the_standard_you_walk_past/",
+      "content_html": "<iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/QaqpoeVgr8U' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe><blockquote><p>“Every one of us is responsible for the culture and reputation of our Army and the environment in which we work. <strong>If you become aware of any individual degrading another, then show moral courage and take a stand against it.</strong> No one has EVER explained to me how the exploitation or degradation of others, enhances capability, or honours the traditions of the Australian Army.</p><p>I will be ruthless in ridding the army of people who cannot live up to it’s values. And I need every one of you to support me in achieving this. <strong>The standard you walk past, is the standard you accept.</strong> That goes for all of us, but especially those, who by their rank, have a leadership role.”</p></blockquote>"
+    },
+  
+    {
+      "id": "https://charliepark.org/seismic/",
+      "url": "https://charliepark.org/seismic/",
+      "title": "image: /seismic/",
+      "content_html": "<p><img src='/images/seismic.gif' alt='A gif showing a professor moving blocks to represent buildings of different heights, showing that buildings of different heights respond in different ways to earthquake waves of varying frequencies. A tall building will respond to low-frequency oscillations. A medium building will respond to medium-frequency oscillations. A short building will respond to high-frequency oscillations.'></p><p>A demonstration of the various responses from buildings of different heights to earthquake waves of varying frequencies.</p>"
+    },
+  
+    {
       "id": "https://charliepark.org/oryoki/",
       "url": "https://charliepark.org/oryoki/",
       "title": "image: /oryoki/",
