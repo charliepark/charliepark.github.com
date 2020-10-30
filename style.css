@@ -81,7 +81,7 @@ html.darkmode {
   color: hsla(0, 0%, 100%, 0.7);
 }
 
-img { max-width: 100% }
+img, video { max-width: 100% }
 
 main {
   flex-grow: 1;
@@ -127,7 +127,7 @@ nav a { margin: .5rem }
 /* Post-specific CSS */
 
 .image { text-align: center }
-.image img { margin-bottom: 1rem }
+.image img, .image video { margin-bottom: 1rem }
 .image p { margin: 0 }
 
 .poem .postbody{

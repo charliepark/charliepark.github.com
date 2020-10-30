@@ -12,7 +12,7 @@
       "id": "https://charliepark.org/crater_lake/",
       "url": "https://charliepark.org/crater_lake/",
       "title": "image: /crater_lake/",
-      "content_html": "<video controls width='560'>  <source src='/images/crater_lake_timelapse.mp4' type='video/mp4'></video><p>The Milky Way, stabilized, at Crater Lake. By <a href='https://www.instagram.com/brummelphoto/'>Eric Brummel</a>.</p>"
+      "content_html": "<video controls>  <source src='/images/crater_lake_timelapse.mp4' type='video/mp4'></video><p>The Milky Way, stabilized, at Crater Lake. By <a href='https://www.instagram.com/brummelphoto/'>Eric Brummel</a>.</p>"
     },
   
     {
