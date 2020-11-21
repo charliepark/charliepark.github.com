@@ -9,6 +9,13 @@
   "items": [
   
     {
+      "id": "https://charliepark.org/wasps/",
+      "url": "https://charliepark.org/wasps/",
+      "title": "image: /wasps/",
+      "content_html": "<p><img src='/images/wasps.jpg' alt='A black-and-white image of four World War 2-era women on a runway, walking away from a B-17 bomber.'></p><p>Frances Green, Margaret (Peg) Kirchner, Ann Waldner and Blanche Osborn (members of the <a href='https://en.wikipedia.org/wiki/Women_Airforce_Service_Pilots'>WASPs</a>) leaving their plane, “Pistol Packin’ Mama”</p>"
+    },
+  
+    {
       "id": "https://charliepark.org/circumtambulation/",
       "url": "https://charliepark.org/circumtambulation/",
       "title": "text: /circumtambulation/",
