@@ -9,6 +9,13 @@
   "items": [
   
     {
+      "id": "https://charliepark.org/prop_drilling_regex/",
+      "url": "https://charliepark.org/prop_drilling_regex/",
+      "title": "text: /prop_drilling_regex/",
+      "content_html": "<h1>A RegEx To Help You Move From Prop-Drilling In React To Using The useContext Hook</h1><p>I added hooks to my app a while ago, but hadn't gone through to refactor a number of places where I was drilling props from one component down through to a component many layers deep.</p><p>I wanted to see which properties I was passing along a lot, to see what some of the more common offenders were, so I could move them into useContext hooks.</p><p>In VSCode there's a really handy global regex search. Just select the last two options from the search bar (&quot;case senseitive&quot; and &quot;regex&quot;) and paste this in:</p><pre class='language-js'><code class='language-js'><span class='token punctuation'>(</span><span class='token punctuation'>.</span><span class='token operator'>*</span><span class='token punctuation'>)</span><span class='token operator'>=</span>\\<span class='token punctuation'>{</span>\\<span class='token number'>1</span>\\<span class='token punctuation'>}</span></code></pre><p>The results will look something like this:</p><img src='/images/props.png' alt='A screenshot of VSCode with a search term and its results showing React code.' style='border-radius: 0.3em'><p>The regex is doing this:</p><pre class='language-js'><code class='language-js'><span class='token punctuation'>(</span><span class='token punctuation'>.</span><span class='token operator'>*</span><span class='token punctuation'>)</span> → <span class='token string'>'Capture some string of text …'</span><br><span class='token operator'>=</span>\\<span class='token punctuation'>{</span>  → <span class='token string'>'… followed by an equals sign and an open bracket …'</span><br>\\<span class='token number'>1</span>   → <span class='token string'>'… followed by the same exact string of text …'</span><br>\\<span class='token punctuation'>}</span>   → <span class='token string'>'… with a closing bracket following it.'</span></code></pre><p>So. Go refactor. Have fun.</p><p>(Side note: 485 results in 58 files. Merp. Good news, though: it's getting better.)</p>"
+    },
+  
+    {
       "id": "https://charliepark.org/wasps/",
       "url": "https://charliepark.org/wasps/",
       "title": "image: /wasps/",
