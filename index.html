@@ -14,7 +14,16 @@
     <nav><a href="/">home</a><a href="/about">about me</a><a href="/projects">projects</a></nav>
   </header>
   <main>
-    <article class="text">
+    <article class="quote">
+  <time class="postdate" datetime="2020-11-23T08:00:00.000Z">
+    <a href="/being_a_good_manager_is_like_being_a_good_friend/">November 23, 2020</a>
+  </time>
+  <div class="postbody">
+    <p>Much of [being a good] manager is not dissimilar from being a good partner or friend. Both involve active, empathetic listening, and a decentering of one’s own experiences to coach and mentor other folks instead of just waiting for a chance to tell our own stories.</p>
+<p><a href="https://www.brookshelley.com/posts/2020-11-12-two-weeks-as-a-manager/">Brook Shelley</a></p>
+
+  </div>
+</article><article class="text">
   <time class="postdate" datetime="2020-11-21T08:00:00.000Z">
     <a href="/prop_drilling_regex/">November 21, 2020</a>
   </time>
@@ -28,6 +37,7 @@
 <img src="/images/props.png" alt="A screenshot of VSCode with a search term and its results showing React code." style="border-radius: 0.3em">
 <p>The regex is doing this:</p>
 <pre class="language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span> → <span class="token string">"Capture some string of text …"</span><br><span class="token operator">=</span>\<span class="token punctuation">{</span>  → <span class="token string">"… followed by an equals sign and an open bracket …"</span><br>\<span class="token number">1</span>   → <span class="token string">"… followed by the same exact string of text …"</span><br>\<span class="token punctuation">}</span>   → <span class="token string">"… with a closing bracket following it."</span></code></pre>
+<p>Obviously, <em>some</em> of the instances that match that pattern will be legit. But if you’re seeing a lot of the same ones over and over, they might be good candidates for moving either into a ContextProvider or closer to wherever you’re using them.</p>
 <p>So. Go refactor. Have fun.</p>
 <p>(Side note: 485 results in 58 files. Merp. Good news, though: it’s getting better.)</p>
 

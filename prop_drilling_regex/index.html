@@ -29,6 +29,7 @@
 <img src="/images/props.png" alt="A screenshot of VSCode with a search term and its results showing React code." style="border-radius: 0.3em">
 <p>The regex is doing this:</p>
 <pre class="language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">)</span> → <span class="token string">"Capture some string of text …"</span><br><span class="token operator">=</span>\<span class="token punctuation">{</span>  → <span class="token string">"… followed by an equals sign and an open bracket …"</span><br>\<span class="token number">1</span>   → <span class="token string">"… followed by the same exact string of text …"</span><br>\<span class="token punctuation">}</span>   → <span class="token string">"… with a closing bracket following it."</span></code></pre>
+<p>Obviously, <em>some</em> of the instances that match that pattern will be legit. But if you’re seeing a lot of the same ones over and over, they might be good candidates for moving either into a ContextProvider or closer to wherever you’re using them.</p>
 <p>So. Go refactor. Have fun.</p>
 <p>(Side note: 485 results in 58 files. Merp. Good news, though: it’s getting better.)</p>
 
