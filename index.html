@@ -30,18 +30,25 @@ section{ padding: 1rem }
 section + section { border-top: 1px solid #ccc }
 a { color: blue }
 ul { margin: .2rem 0 0 }
+.screenreader {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px; width: 1px;
+  overflow: hidden;
+  position: absolute !important;
+}
 </style>
   </head>
   <body>
     <h1>Charlie Park</h1>
     <article>
       <section>
-        <p>Hey there!</p>
-        <p>I’m a frontend engineer in Oakland, California. I’m currently at LaunchDarkly. Previously, I was an engineer at Slack and IFTTT. I also founded and ran a personal finance startup for several years.</p>
-        <p>I love a lot about LaunchDarkly, but have been here for a few years and am open to new opportunities.</p>
+        <h1 class="screenreader">Intro</h1>
+        <p>Hey there! <span aria-hidden="true">👋</span></p>
+        <p>I’m a frontend engineer in Oakland, California. I’m currently at LaunchDarkly. Previously, I was an engineer at Slack and IFTTT. I also founded and ran a personal finance webapp for several years.</p>
       </section>
       <section>
-        <p>Here are some of the things I’m thinking about when considering where I want to work.</p>
+        <h1 class="screenreader">What I’m looking for</h1>
+        <p>I love a lot about LaunchDarkly, but we’ve both grown a lot over the last couple of years and I’m open to new opportunities. Here are some of the things I’m thinking about when considering where I want to work.</p>
         <h2>People</h2>
         <ul>
           <li>Are the people kind? Humble? Friendly?</li>
@@ -53,7 +60,8 @@ ul { margin: .2rem 0 0 }
         <ul>
           <li>Is the company’s culture healthy and do the values mean something to them? Will they commit to their values even if it means they might lose business?</li>
           <li>Are there healthy manager / IC relationships?</li>
-          <li>Does the product development team actively seek input from the support team, to better understand their customers’ needs?</li>
+          <li>Does the product development team actively seek input from the support and sales teams, to better understand their customers’ needs?</li>
+          <li>Is the business side of the house both sustainable and humane? What does the trajectory look like?</li>
         </ul>
         <h2>Product</h2>
         <ul>
@@ -64,7 +72,14 @@ ul { margin: .2rem 0 0 }
         </ul>
       </section>
       <section>
-        <p>I’d love to chat if you think we might be a match. You can reach out on <a href="https://www.linkedin.com/in/charlie-park/">LinkedIn</a>. (Please mention something from the above list so I know you’re not just reaching out cold.) Have a great day!</p>
+        <h1 class="screenreader">What I do well</h1>
+        <p>As to the specific work I do … the stack I’m currently working in is React and Typescript, but I’ve also worked with PHP, Ruby, and Rails in the past. My favorite stack is vanilla HTML/CSS/JS. I think a lot about accessibility and good UX. I actively avoid “clever” code, and have been complimented by junior engineers for how readable and clear my code is.</p>
+        <p>I’ve led several technical projects, including both new feature development and refactoring/migrations.</p>
+      </section>
+      <section>
+        <h1 class="screenreader">Contact</h1>
+        <p>I’d love to chat if you think we might be a match. You can reach out on <a href="https://www.linkedin.com/in/charlie-park/">LinkedIn</a>. (Please mention something from the above list so I know you’re not just reaching out cold.)</p>
+        <p>Have a great day!</p>
       </section>
     </article>
   </body>
