@@ -9,26 +9,63 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      html {
-        align-items: center;
-        background: url('./marin.jpg') 50% 70% / cover;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        justify-content: flex-end;
-      }
-      iframe {
-        border: 0;
-        height: 80px;
-        max-width: 100%;
-        width: 500px;
-      }
-    </style>
+body {
+  align-items: center;
+  background-image: url('https://charliepark.org/images/arrow.webp');
+  background-size: 200px 125px;
+  background-position: 48.85% -2px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Avenir Next', Avenir, system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  margin: 6rem 0 0;
+  padding: 0 0 4rem;
+  min-height: 100vh;
+}
+h1 { margin: 1em 0 0 }
+h2 { font-size: 1rem; margin: 1rem 0 0 .5rem }
+article { max-width: 50ch; width: 100% }
+section{ padding: 1rem }
+section + section { border-top: 1px solid #ccc }
+a { color: blue }
+ul { margin: .2rem 0 0 }
+</style>
   </head>
   <body>
-    <iframe
-      allow="encrypted-media"
-      src="https://open.spotify.com/embed/track/1neicGfHfBxe5jLuHcBL5A?theme=0"
-    ></iframe>
+    <h1>Charlie Park</h1>
+    <article>
+      <section>
+        <p>Hey there!</p>
+        <p>I’m a frontend engineer in Oakland, California. I’m currently at LaunchDarkly. Previously, I was an engineer at Slack and IFTTT. I also founded and ran a personal finance startup for several years.</p>
+        <p>I love a lot about LaunchDarkly, but have been here for a few years and am open to new opportunities.</p>
+      </section>
+      <section>
+        <p>Here are some of the things I’m thinking about when considering where I want to work.</p>
+        <h2>People</h2>
+        <ul>
+          <li>Are the people kind? Humble? Friendly?</li>
+          <li>Is the team diverse? Are the founders and execs women and/or people of color? (This one is really important to me.)</li>
+          <li>Do people from under-represented groups feel like their voices are heard? Are their voices sought out / amplified?</li>
+          <li>Do people lift one another up, and do they help everyone improve? Are they quick to share what they know? Can people communicate well?</li>
+        </ul>
+        <h2>Process</h2>
+        <ul>
+          <li>Is the company’s culture healthy and do the values mean something to them? Will they commit to their values even if it means they might lose business?</li>
+          <li>Are there healthy manager / IC relationships?</li>
+          <li>Does the product development team actively seek input from the support team, to better understand their customers’ needs?</li>
+        </ul>
+        <h2>Product</h2>
+        <ul>
+          <li>Does the product make the world a better place?</li>
+          <li>Is the UX delightful?</li>
+          <li>Does the team prioritize accessibility, so everyone can use their product?</li>
+          <li>(Not a hard requirement, but do they have a Content Designer / UX Writer on the team? At the very least, do they understand that words are a critical part of good design?)</li>
+        </ul>
+      </section>
+      <section>
+        <p>I’d love to chat if you think we might be a match. You can reach out on <a href="https://www.linkedin.com/in/charlie-park/">LinkedIn</a>. (Please mention something from the above list so I know you’re not just reaching out cold.) Have a great day!</p>
+      </section>
+    </article>
   </body>
 </html>
