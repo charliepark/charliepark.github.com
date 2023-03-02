@@ -1,0 +1,21 @@
+{
+  "id": "123456",
+  "url": "https://example.com/resource/123456",
+  "emojis": [
+    {
+      "key": "👍",
+      "usageCount": 10,
+      "url": "https://example.com/emoji/1"
+    },
+    {
+      "key": "❤️",
+      "usageCount": 5,
+      "url": "https://example.com/emoji/2"
+    },
+    {
+      "key": "🚀",
+      "usageCount": 2,
+      "url": "https://example.com/emoji/3"
+    }
+  ]
+}
