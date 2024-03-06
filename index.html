@@ -1,81 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Charlie Park</title>
     <meta
       name="description"
-      content="Charlie Park is a frontend engineer in Oakland, CA. He likes to get outside as much as he can."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      content="Charlie Park is a frontend engineer in Oakland, CA. He likes to get outside as much as he can.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-body {
-  align-items: center;
-  background-image: url('https://charliepark.org/images/arrow.webp');
-  background-size: 200px 125px;
-  background-position: 48.85% -2px;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Avenir Next', Avenir, system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
-  margin: 6rem 0 0;
-  padding: 0 0 4rem;
-  min-height: 100vh;
-}
-h1 { margin: 1em 0 0 }
-h3 { font-size: 1rem; margin: 1rem 0 0 .5rem }
-article { max-width: 50ch; width: 100% }
-section{ padding: 1rem }
-section + section { border-top: 1px solid #ccc }
-a { color: #A32929 }
-ul { margin: .2rem 0 0 }
-.screenreader {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px; width: 1px;
-  overflow: hidden;
-  position: absolute !important;
-}
-</style>
+      html {
+        align-items: flex-end;
+        background: url('./marin.jpg') 50% 70% / cover;
+        color: hsla(0, 100%, 100%, 0.75);
+        display: flex;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, sans-serif;
+        gap: 1rem;
+        height: 100vh;
+        justify-content: flex-end;
+        padding: 0 2rem;
+        text-align: right;
+      }
+    </style>
   </head>
   <body>
     <h1>Charlie Park</h1>
-    <article>
-      <section>
-        <h2 class="screenreader">Intro</h2>
-        <p>Hey there! <span aria-hidden="true">👋</span></p>
-        <p>I’m a frontend engineer in Oakland, California. I’m currently at LaunchDarkly. Previously, I was an engineer at Slack and IFTTT. I also founded and ran a personal finance webapp for several years.</p>
-      </section>
-      <section>
-        <h2 class="screenreader">What I’m looking for</h2>
-        <p>I think a lot about work culture, and what goes into creating a place where people can both do excellent work and can flourish and grow as humans.</p>
-        <p>I’m working on a longer piece, but for now, here are some of the things I’m thinking about:</p>
-        <h3>People</h3>
-        <ul>
-          <li>Are the people kind? Humble? Friendly?</li>
-          <li>Is the team diverse? Are the founders and execs women and/or people of color? (This one is really important to me.)</li>
-          <li>Do people from under-represented groups feel like their voices are heard? Are their voices sought out / amplified?</li>
-          <li>Do people lift one another up, and do they help everyone improve? Are they quick to share what they know? Can people communicate well?</li>
-        </ul>
-        <h3>Process</h3>
-        <ul>
-          <li>Is the company’s culture healthy and do the values (or, perhaps, operating principles / attributes) mean something to them? Will they commit to them even if it means they might lose business? (For the record, excellent values / operating principles / attributes docs look like those at <a href="https://oxide.computer/principles">Oxide</a> and <a href="https://www.ashbyhq.com/blog/culture/ashbys-operating-principles">Ashby</a>.)</li>
-          <li>Are there healthy manager / IC relationships?</li>
-          <li>Does the product development team actively seek input from the support and sales teams, to better understand their customers’ needs?</li>
-          <li>Is the business side of the house both sustainable and humane? What does the trajectory look like?</li>
-        </ul>
-        <h3>Product</h3>
-        <ul>
-          <li>Does the product make the world a better place?</li>
-          <li>Is the UX delightful?</li>
-          <li>Does the team prioritize accessibility, so everyone can use their product?</li>
-          <li>(Not a hard requirement, but do they have a Content Designer / UX Writer on the team? At the very least, do they understand that words are a critical part of good design?)</li>
-        </ul>
-      </section>
-      <section>
-        <h2 class="screenreader">Contact</h2>
-        <p>Want to say hi? charlie@charliepark.org</p>
-      </section>
-    </article>
   </body>
 </html>
